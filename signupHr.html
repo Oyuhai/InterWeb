@@ -5,43 +5,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sign up HR</title>
     <meta name="description" content="HR бүртгэлийн форм бөглөх хэсэг">
+    <!-- CSS файлын замыг зассан -->
+    <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
     <header>
-        <img id="logo" src="logo.png" alt="company logo">
-        <nav>
-            <ul>
-                <li>Нүүр хуудас</li>
-                <li>Зарууд</li>
-            </ul>
+        <nav class="header-top">
+            <a href="./home.html" class="logo">INTERN</a>
+            <a href="/home.html">Нүүр хуудас</a>
+            <a href="/zar.html">Зарууд</a>
         </nav>
-        
-            <img src="profile.png" alt="Profile">
     </header>
     <form>
         <nav>
-            <button onclick="location.href='#'" class="active">Оюутан</button>
-            <button onclick="location.href='#'" class="active">Байгууллага</button>
+            <button type="button" onclick="location.href='#'" class="active1">Оюутан</button>
+            <button type="button" onclick="location.href='#'" class="active2">Байгууллага</button>
         </nav>
         <address>
-            
             <input id="companyName" type="text" name="company name" placeholder="Company Name">
-            
-            
             <input id="email" type="email" name="email" placeholder="Email Address">
-    
-          
             <input id="location" type="text" name="company location" placeholder="Location">
-    
-            
             <input id="phoneNumber" type="tel" name="phone number" placeholder="Phone Number">
-    
-            
-            <input id="password" type="password" name="password" placeholder="create password">
-    
+            <input id="password" type="password" name="password" placeholder="Create password">
             <input type="submit" value="Бүртгүүлэх">
         </address>
     </form>
-    
 </body>
 </html>

@@ -1,0 +1,16 @@
+*{
+
+}
+.header {
+    background-color: 3229dd;
+    width: 1500;
+    height: 142;
+
+}
+.header.img{
+    width: 255;
+    height: 86;
+}
+.header.nav{
+    color:white;
+}
