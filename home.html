@@ -4,137 +4,127 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Homepage</title>
-        <meta name="description" content="Хайлт хийх хэсэг сүүлд нэмэгдсэн зарууд харагдана">
+        <meta name="description" content="intern home page, companies, advertisements">
+        <link rel="stylesheet" href="home.css">
+        <title>INTERN - Homepage</title>
     </head>
 
     <body>
 
-        <head>
-            <meta charset="UTF-8">
-            <meta name="viewport" content="width=device-width, initial-scale=1.0">
-            <meta name="description" content="intern home page, companies, advertisements">
-            <link rel="stylesheet" href="home.css">
-            <title>INTERN - Homepage</title>
-        </head>
+        <!-- Header -->
+        <header>
+            <nav class="header-top">
+                <a href="./home.html" class="logo">INTERN</a>
+                <a href="/home.html">Нүүр хуудас</a>
+                <a href="/zar.html">Зарууд</a>
+                <a class="profile-image" href="./signInStud.html"><img src="./pics/profile.webp"
+                        alt="Хэрэглэгчийн профайл зураг"></a>
+            </nav>
+            <div>
+                <h2>Хүссэн дадлагын ажлаа эндээс олоорой</h2>
+                <form action="/search" method="GET" class="header-search">
+                    <label for="profession" class="visually-hidden">Мэргэжил</label>
+                    <input type="text" id="profession" name="profession" placeholder="Мэргэжил" aria-label="Мэргэжил">
 
-        <body>
+                    <label for="location" class="visually-hidden">Байршил</label>
+                    <input type="text" id="location" name="location" placeholder="Байршил" aria-label="Байршил">
 
-            <!-- Header -->
-            <header>
-                <nav class="header-top">
-                    <a href="./home.html" class="logo">INTERN</a>
-                    <a href="/home.html">Нүүр хуудас</a>
-                    <a href="/zar.html">Зарууд</a>
-                    <a class="profile-image" href="./signInStud.html"><img src="./pics/profile.webp"
-                            alt="Хэрэглэгчийн профайл зураг"></a>
-                </nav>
-                <div>
-                    <h2>Хүссэн дадлагын ажлаа эндээс олоорой</h2>
-                    <form action="/search" method="GET" class="header-search">
-                        <label for="profession" class="visually-hidden">Мэргэжил</label>
-                        <input type="text" id="profession" name="profession" placeholder="Мэргэжил"
-                            aria-label="Мэргэжил">
+                    <label for="duration" class="visually-hidden">Хугацаа</label>
+                    <input type="text" id="duration" name="duration" placeholder="Хугацаа" aria-label="Хугацаа">
 
-                        <label for="location" class="visually-hidden">Байршил</label>
-                        <input type="text" id="location" name="location" placeholder="Байршил" aria-label="Байршил">
+                    <button type="submit">Хайх</button>
+                </form>
+            </div>
+        </header>
 
-                        <label for="duration" class="visually-hidden">Хугацаа</label>
-                        <input type="text" id="duration" name="duration" placeholder="Хугацаа" aria-label="Хугацаа">
-
-                        <button type="submit">Хайх</button>
-                    </form>
-                </div>
-            </header>
-
-            <!-- Main Content -->
-            <main>
-                <!-- Company Section -->
-                <section>
-                    <h3>Компаниуд</h3>
-                    <article>
-                        <img src="./pics/companyLogo.webp" alt="Company 1">
-                        <ul>
-                            <li>
-                                <h4>Company name</h4>
-                                <p>Zar garcig 1</p>
-                                <p>Zar garcig 2</p>
-                                <p>Zar garcig 3</p>
-                            </li>
-                        </ul>
-                    </article>
-                    <article>
-                        <img src="./pics/companyLogo.webp" alt="Company 1">
-                        <ul>
-                            <li>
-                                <h4>Company name</h4>
-                                <p>Zar garcig 1</p>
-                                <p>Zar garcig 2</p>
-                                <p>Zar garcig 3</p>
-                            </li>
-                        </ul>
-                    </article>
-                </section>
-
-                <!-- Latest Job Listings -->
+        <!-- Main Content -->
+        <main>
+            <!-- Company Section -->
+            <section>
+                <h3>Компаниуд</h3>
                 <article>
-                    <h3>Сүүлд нэмэгдсэн зарууд</h3>
+                    <img src="./pics/companyLogo.webp" alt="Company 1">
                     <ul>
                         <li>
-                            <h4>Маркетингийн менежер</h4>
-                            <p>Компани: ABC, Байршил: Улаанбаатар</p>
-                            <p>3.000.000₮ - 3.500.000</p>
-                            <p>Статус</p>
-                            <button>Дэлгэрэнгүй</button>
-                        </li>
-                        <li>
-                            <h4>Маркетингийн менежер</h4>
-                            <p>Компани: ABC, Байршил: Улаанбаатар</p>
-                            <p>3.000.000₮ - 3.500.000</p>
-                            <p>Статус</p>
-                            <button>Дэлгэрэнгүй</button>
-                        </li>
-                        <li>
-                            <h4>Маркетингийн менежер</h4>
-                            <p>Компани: ABC, Байршил: Улаанбаатар</p>
-                            <p>3.000.000₮ - 3.500.000</p>
-                            <p>Статус</p>
-                            <button>Дэлгэрэнгүй</button>
+                            <h4>Company name</h4>
+                            <p>Zar garcig 1</p>
+                            <p>Zar garcig 2</p>
+                            <p>Zar garcig 3</p>
                         </li>
                     </ul>
                 </article>
-            </main>
-
-            <!-- Footer -->
-            <footer>
-                <img id="logoFooter" src="./pics/logo.webp" alt="web logo">
-                <p>Шинэ заруудыг хоцролгүй авахын тулд манайд нэгдээрэй</p>
-                <p>Бүртгүүлснээр та манай Нууцлалын бодлогыг хүлээн зөвшөөрч, манай компаниас мэдээлэл мэйлээр авахыг
-                    зөвшөөрч байна.</p>
-
-                <!-- Хэрэгтэй хуудсууд -->
-                <h5>Хэрэгтэй хуудсууд</h5>
-                <nav>
+                <article>
+                    <img src="./pics/companyLogo.webp" alt="Company 1">
                     <ul>
-                        <li><a href="">Нүүр хуудас</a></li>
-                        <li><a href="">Зарууд</a></li>
-                        <li><a href="">Нэвтрэх</a></li>
-                        <li><a href="">Бүртгүүлэх</a></li>
+                        <li>
+                            <h4>Company name</h4>
+                            <p>Zar garcig 1</p>
+                            <p>Zar garcig 2</p>
+                            <p>Zar garcig 3</p>
+                        </li>
                     </ul>
-                </nav>
+                </article>
+            </section>
 
-                <!-- Бидэнтэй нэгдээрэй -->
-                <h5>Бидэнтэй нэгдээрэй</h5>
-                <nav>
-                    <ul>
-                        <li><a href="">Facebook</a></li>
-                        <li><a href="">Instagram</a></li>
-                        <li><a href="">Youtube</a></li>
-                        <li><a href="">X</a></li>
-                    </ul>
-                </nav>
-            </footer>
+            <!-- Latest Job Listings -->
+            <article>
+                <h3>Сүүлд нэмэгдсэн зарууд</h3>
+                <ul>
+                    <li>
+                        <h4>Маркетингийн менежер</h4>
+                        <p>Компани: ABC, Байршил: Улаанбаатар</p>
+                        <p>3.000.000₮ - 3.500.000</p>
+                        <p>Статус</p>
+                        <button>Дэлгэрэнгүй</button>
+                    </li>
+                    <li>
+                        <h4>Маркетингийн менежер</h4>
+                        <p>Компани: ABC, Байршил: Улаанбаатар</p>
+                        <p>3.000.000₮ - 3.500.000</p>
+                        <p>Статус</p>
+                        <button>Дэлгэрэнгүй</button>
+                    </li>
+                    <li>
+                        <h4>Маркетингийн менежер</h4>
+                        <p>Компани: ABC, Байршил: Улаанбаатар</p>
+                        <p>3.000.000₮ - 3.500.000</p>
+                        <p>Статус</p>
+                        <button>Дэлгэрэнгүй</button>
+                    </li>
+                </ul>
+            </article>
+        </main>
 
-        </body>
+        <!-- Footer -->
+        <footer>
+            <img id="logoFooter" src="./pics/logo.webp" alt="web logo">
+            <p>Шинэ заруудыг хоцролгүй авахын тулд манайд нэгдээрэй</p>
+            <p>Бүртгүүлснээр та манай Нууцлалын бодлогыг хүлээн зөвшөөрч, манай компаниас мэдээлэл мэйлээр авахыг
+                зөвшөөрч байна.</p>
+
+            <!-- Хэрэгтэй хуудсууд -->
+            <h5>Хэрэгтэй хуудсууд</h5>
+            <nav>
+                <ul>
+                    <li><a href="">Нүүр хуудас</a></li>
+                    <li><a href="">Зарууд</a></li>
+                    <li><a href="">Нэвтрэх</a></li>
+                    <li><a href="">Бүртгүүлэх</a></li>
+                </ul>
+            </nav>
+
+            <!-- Бидэнтэй нэгдээрэй -->
+            <h5>Бидэнтэй нэгдээрэй</h5>
+            <nav>
+                <ul>
+                    <li><a href="">Facebook</a></li>
+                    <li><a href="">Instagram</a></li>
+                    <li><a href="">Youtube</a></li>
+                    <li><a href="">X</a></li>
+                </ul>
+            </nav>
+        </footer>
+
+    </body>
 
 </html>
