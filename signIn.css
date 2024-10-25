@@ -1,0 +1,9 @@
+html {
+    padding: 0;
+}
+
+header {
+    background-color: #3229DD;
+    display: flex;
+    flex-direction: row;
+}
