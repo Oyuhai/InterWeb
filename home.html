@@ -13,26 +13,31 @@
 
         <!-- Header -->
         <header>
-            <nav class="header-top">
+            <nav class="wrap header-top flex-row">
                 <a href="./home.html" class="logo">INTERN</a>
                 <a href="/home.html">Нүүр хуудас</a>
                 <a href="/zar.html">Зарууд</a>
                 <a class="profile-image" href="./signInStud.html"><img src="./pics/profile.webp"
                         alt="Хэрэглэгчийн профайл зураг"></a>
             </nav>
-            <div>
+            <div class="flex-col wrap header-search">
                 <h2>Хүссэн дадлагын ажлаа эндээс олоорой</h2>
-                <form action="/search" method="GET" class="header-search">
-                    <label for="profession" class="visually-hidden">Мэргэжил</label>
-                    <input type="text" id="profession" name="profession" placeholder="Мэргэжил" aria-label="Мэргэжил">
+                <form action="/search" method="GET" class="flex-row filter">
+                    <div class="test">
+                        <label for="profession" class="visually-hidden">Мэргэжил</label>
+                        <input type="text" id="profession" name="profession" placeholder="Мэргэжил"
+                            aria-label="Мэргэжил">
+                    </div>
+                    <div class="test">
 
-                    <label for="location" class="visually-hidden">Байршил</label>
-                    <input type="text" id="location" name="location" placeholder="Байршил" aria-label="Байршил">
-
-                    <label for="duration" class="visually-hidden">Хугацаа</label>
-                    <input type="text" id="duration" name="duration" placeholder="Хугацаа" aria-label="Хугацаа">
-
-                    <button type="submit">Хайх</button>
+                        <label for="location" class="visually-hidden">Байршил</label>
+                        <input type="text" id="location" name="location" placeholder="Байршил" aria-label="Байршил">
+                    </div>
+                    <div class="test">
+                        <label for="duration" class="visually-hidden">Хугацаа</label>
+                        <input type="text" id="duration" name="duration" placeholder="Хугацаа" aria-label="Хугацаа">
+                    </div>
+                    <button type="submit">Зар шүүх</button>
                 </form>
             </div>
         </header>
@@ -40,59 +45,114 @@
         <!-- Main Content -->
         <main>
             <!-- Company Section -->
-            <section>
+            <div class="wrap companies-container">
                 <h3>Компаниуд</h3>
-                <article>
-                    <img src="./pics/companyLogo.webp" alt="Company 1">
-                    <ul>
-                        <li>
-                            <h4>Company name</h4>
-                            <p>Zar garcig 1</p>
-                            <p>Zar garcig 2</p>
-                            <p>Zar garcig 3</p>
-                        </li>
-                    </ul>
-                </article>
-                <article>
-                    <img src="./pics/companyLogo.webp" alt="Company 1">
-                    <ul>
-                        <li>
-                            <h4>Company name</h4>
-                            <p>Zar garcig 1</p>
-                            <p>Zar garcig 2</p>
-                            <p>Zar garcig 3</p>
-                        </li>
-                    </ul>
-                </article>
-            </section>
+                <div class="company-box flex-row">
+                    <article class="flex-col company">
+                        <img src="./pics/companyLogo.webp" alt="Company 1">
+
+                        <h4>Company name</h4>
+                        <ul>
+                            <li>Zar garcig 1</li>
+                            <li>Zar garcig 2</li>
+                            <li>Zar garcig 3</li>
+                        </ul>
+
+                    </article>
+                    <article class="flex-col company">
+                        <img src="./pics/companyLogo.webp" alt="Company 1">
+                        <h4>Company name</h4>
+                        <ul>
+                            <li>Zar garcig 1</li>
+                            <li>Zar garcig 2</li>
+                            <li>Zar garcig 3</li>
+                        </ul>
+                    </article>
+                    <article class="flex-col company">
+                        <img src="./pics/companyLogo.webp" alt="Company 1">
+                        <h4>Company name</h4>
+                        <ul>
+                            <li>Zar garcig 1</li>
+                            <li>Zar garcig 2</li>
+                            <li>Zar garcig 3</li>
+                        </ul>
+                    </article>
+                    <article class="flex-col company">
+                        <img src="./pics/companyLogo.webp" alt="Company 1">
+                        <h4>Company name</h4>
+                        <ul>
+                            <li>Zar garcig 1</li>
+                            <li>Zar garcig 2</li>
+                            <li>Zar garcig 3</li>
+                        </ul>
+                    </article>
+                    <article class="flex-col company">
+                        <img src="./pics/companyLogo.webp" alt="Company 1">
+                        <h4>Company name</h4>
+                        <ul>
+                            <li>Zar garcig 1</li>
+                            <li>Zar garcig 2</li>
+                            <li>Zar garcig 3</li>
+                        </ul>
+                    </article>
+                    <article class="flex-col company">
+                        <img src="./pics/companyLogo.webp" alt="Company 1">
+                        <h4>Company name</h4>
+                        <ul>
+                            <li>Zar garcig 1</li>
+                            <li>Zar garcig 2</li>
+                            <li>Zar garcig 3</li>
+                        </ul>
+                    </article>
+
+                </div>
+            </div>
 
             <!-- Latest Job Listings -->
-            <article>
+            <div class=" wrap zaruud-container">
                 <h3>Сүүлд нэмэгдсэн зарууд</h3>
-                <ul>
-                    <li>
-                        <h4>Маркетингийн менежер</h4>
-                        <p>Компани: ABC, Байршил: Улаанбаатар</p>
-                        <p>3.000.000₮ - 3.500.000</p>
-                        <p>Статус</p>
-                        <button>Дэлгэрэнгүй</button>
+                <ul class="ul1">
+                    <li class="ad-container">
+                        <div>
+
+                            <h4>Маркетингийн менежер</h4>
+                            <p>Компани: ABC, Байршил: Улаанбаатар</p>
+                            <p>3.000.000₮ - 3.500.000</p>
+                        </div>
+                        <div>
+
+                            <p>Статус</p>
+                            <button>Дэлгэрэнгүй</button>
+                        </div>
                     </li>
-                    <li>
-                        <h4>Маркетингийн менежер</h4>
-                        <p>Компани: ABC, Байршил: Улаанбаатар</p>
-                        <p>3.000.000₮ - 3.500.000</p>
-                        <p>Статус</p>
-                        <button>Дэлгэрэнгүй</button>
+                    <li class="ad-container">
+                        <div>
+
+                            <h4>Маркетингийн менежер</h4>
+                            <p>Компани: ABC, Байршил: Улаанбаатар</p>
+                            <p>3.000.000₮ - 3.500.000</p>
+                        </div>
+                        <div>
+
+                            <p>Статус</p>
+                            <button>Дэлгэрэнгүй</button>
+                        </div>
                     </li>
-                    <li>
-                        <h4>Маркетингийн менежер</h4>
-                        <p>Компани: ABC, Байршил: Улаанбаатар</p>
-                        <p>3.000.000₮ - 3.500.000</p>
-                        <p>Статус</p>
-                        <button>Дэлгэрэнгүй</button>
+                    <li class="ad-container">
+                        <div>
+
+                            <h4>Маркетингийн менежер</h4>
+                            <p>Компани: ABC, Байршил: Улаанбаатар</p>
+                            <p>3.000.000₮ - 3.500.000</p>
+                        </div>
+                        <div>
+
+                            <p>Статус</p>
+                            <button>Дэлгэрэнгүй</button>
+                        </div>
                     </li>
                 </ul>
-            </article>
+            </div>
         </main>
 
         <!-- Footer -->
