@@ -3,31 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="./css/style.css">
     <title>sign up student</title>
     <meta name="description" content="Оюутан бүртгэлийн форм бөглөх хэсэг">
+
 </head>
 <body>
     <header>
-        <img id="logo" src="logo.png" alt="company logo">
-        <nav>
-            <ul>
-                <li>Нүүр хуудас</li>
-                <li>Зарууд</li>
-            </ul>
+        <nav class="header-top">
+            <a href="./home.html" class="logo">INTERN</a>
+            <a href="/home.html">Нүүр хуудас</a>
+            <a href="/zar.html">Зарууд</a>
         </nav>
     </header>
     <form>
         <nav>
-            <button onclick="location.href='#'" class="active">Оюутан</button>
-            <button onclick="location.href='#'" class="active">Байгууллага</button>
+            <button onclick="location.href='pages\signupstud.html'" class="active">Оюутан</button>
+            <button onclick="location.href='pages\signupHr.html'" class="active">Байгууллага</button>
         </nav>
         <address>
             
             <input id="email" type="email" name="email" placeholder="Email Address">
 
-            <input id="firstName" type="text" name="first name" placeholder="First Name">
-
-            <input id="lastName" type="text" name="last name" placeholder="Last Name">
+            <div class="name-fields">
+                <input type="text" name="firstName" placeholder="First Name">
+                <input type="text" name="lastName" placeholder="Last Name">
+            </div>
     
           
             <input id="home address" type="text" name="home address" placeholder="Home Address">
