@@ -1,7 +1,15 @@
 body {
-    margin: auto;
+    margin: 0;
     padding: 0;
     font-family: Arial, sans-serif;
+}
+
+/*Header heseg*/
+
+.wrap {
+    max-width: 1300px;
+    width: 100%;
+    margin: 0 auto;
 }
 
 a {
@@ -10,7 +18,11 @@ a {
     font-size: 16px;
 }
 
-/* Header хэсэг */
+.flex-row {
+    display: flex;
+    flex-direction: row;
+}
+
 header {
     background-color: #3229DD;
     display: flex;
@@ -42,23 +54,9 @@ h2 {
     justify-content: center;
 }
 
-header nav ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
+a.profile-image>img {
+    width: 50px;
 }
-
-header nav ul li {
-    display: inline;
-    margin-right: 20px;
-    font-size: 18px;
-}
-
-header nav ul li a {
-    color: white;
-    text-decoration: none;
-}
-
 
 /* Form хэсэг */
 form {
@@ -71,8 +69,7 @@ form {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-/* Form талбаруудын стиль */
-form input[type="text"],
+form input[type="text"], /*input oruulah hesgiin style*/
 form input[type="email"],
 form input[type="tel"],
 form input[type="password"] {
@@ -118,6 +115,7 @@ form nav {
     display: flex;
     justify-content: space-between;
     width: 100%;
+    height: auto;
 }
 
 form nav button {
@@ -151,7 +149,7 @@ address .register-link {
 }
 
 address .forgot-password-link {
-    color: #777; /* Бүдгэрсэн саарал өнгө */
+    color: #777; 
     text-decoration: none;
 }
 
@@ -159,5 +157,154 @@ address a:hover {
     text-decoration: underline;
 }
 
+/*Footer heseg*/
 
+footer {
+        display: flex;
+        justify-content: space-between;
+        margin: auto;
+        width: 90%;
+        flex-wrap: wrap;
+        gap: 20px;
+        padding: 20px; /* Хүрээний дотор талын зай */
+        border: 1px solid #3229dd; 
+        border-radius: 8px; /* hureenii bulang buurunhii bolgoh */
+   
+}
 
+.footer-logo {
+    flex:1;
+    color: #000;
+    font-size: 12px;
+}
+
+.logo{
+    background-color: #3229DD;
+    color: #ffffff;
+    font-weight: 700;
+    font-size: 50px;
+    line-height: 42px;
+    width: 185px;
+}
+
+footer nav {
+    flex:1;
+    display: block;
+    justify-content: space-between;
+    
+}
+
+footer nav a {
+    display: block;
+    color:#000;
+
+}
+
+footer p{
+    align-content: end;
+    width: 100%;
+}
+
+/* Profile style */
+
+.info-container {
+    width: 80%;
+    height: auto;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: space-between;
+}
+
+.info-container img {
+    flex: 1;
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 15px;
+}
+
+.info-container p {
+    flex: 1;
+    width: auto;
+    margin: 5px 0;
+    font-size: 14px;
+    color: #333;
+}
+
+/* Илгээсэн хүсэлтүүд */
+.huseltuud {
+    max-width: 1000px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.huseltuud h4 {
+    font-size: 20px;
+    font-weight: bold;
+    color: #4a4a9e;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.huseltuud .request-section {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    margin-top: 10px;
+}
+
+.huseltuud article {
+    flex: 1;
+    background-color: #f9f9f9;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+}
+
+.huseltuud h5 {
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 10px;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 5px;
+    text-align: center;
+}
+
+.huseltuud ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.huseltuud li {
+    margin-bottom: 15px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    background-color: #ffffff;
+}
+
+.huseltuud h6 {
+    font-size: 16px;
+    font-weight: bold;
+    color: #4a4a9e;
+    margin: 0;
+}
+
+.huseltuud li p {
+    font-size: 14px;
+    color: #555;
+    margin: 2px 0;
+}

@@ -5,16 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Оюутан Профайл</title>
     <meta name="description" content="Хэрэглэгчийн профайл, боловсролын мэдээлэл болон заруудын хүсэлтүүд.">
-    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" type="text/css" href="./css/signup.css">
 </head>
 <body>
     <header>
-        <nav class="header-top">
+        <nav class="wrap header-top flex-row">
             <a href="./home.html" class="logo">INTERN</a>
-            <a href="/home.html">Нүүр хуудас</a>
-            <a href="/zar.html">Зарууд</a>
-            <a class="profile-image" href="./signInStud.html"><img src="https://raw.githubusercontent.com/Oyuhai/InterWeb/refs/heads/main/pics/profile.webp"
-                    alt="Хэрэглэгчийн профайл зураг"></a>
+            <a href="./home.html">Нүүр хуудас</a>
+            <a href="./zar.html">Зарууд</a>
+            <a class="profile-image" href="./signInStud.html">
+                <img src="./pics/profile.webp" alt="Хэрэглэгчийн профайл зураг"></a>
         </nav>
     </header>
     
@@ -92,32 +92,35 @@
         </article>
     </article>
     <footer>
-        <a href="./home.html" class="logo">INTERN</a>
-        <p>Шинэ заруудыг хоцролгүй авахын тулд манайд нэгдээрэй</p>
-        <p>Бүртгүүлснээр та манай Нууцлалын бодлогыг хүлээн зөвшөөрч, манай компаниас мэдээлэл мэйлээр авахыг зөвшөөрч байна.</p>
-        
-        <!-- Хэрэгтэй хуудсууд -->
-        <h5>Хэрэгтэй хуудсууд</h5>
-        <nav>
+            
+        <div class="footer-logo">
+            <div class="logo">INTERN</div>
+            <p>Шинэ заруудыг хүлээлгүй авахын тулд манайд нэгдээрэй.</p>
+            <p>Бүртгүүлснээр та манай Нууцлалын бодлогыг хүлээн зөвшөөрч, манай компанийн мэдээлэл мэйлээр авахыг зөвшөөрч байна.</p>
+        </div>
+
+        <nav class="footer-links">
+            <h4>Хэрэгтэй хуудас</h4>
             <ul>
-                <li><a href="">Нүүр хуудас</a></li>
-                <li><a href="">Зарууд</a></li>
-                <li><a href="">Нэвтрэх</a></li>
-                <li><a href="">Бүртгүүлэх</a></li>
+                <li><a href="#">Нүүр хуудас</a></li>
+                <li><a href="#">Заруд</a></li>
+                <li><a href="#">Бүртгүүлэх</a></li>
+                <li><a href="#">Нэвтрэх</a></li>
             </ul>
         </nav>
-        
-        <!-- Бидэнтэй нэгдээрэй -->
-        <h5>Бидэнтэй нэгдээрэй</h5>
-        <nav>
+
+        <nav class="footer-social">
+            <h4>Бидэнтэй нэгдээрэй</h4>
             <ul>
-                <li><a href="">Facebook</a></li>
-                <li><a href="">Instagram</a></li>
-                <li><a href="">Youtube</a></li>
-                <li><a href="">X</a></li>
+                <li><a href="#">Facebook</a></li>
+                <li><a href="#">Instagram</a></li>
+                <li><a href="#">X</a></li>
+                <li><a href="#">LinkedIn</a></li>
+                <li><a href="#">Youtube</a></li>
             </ul>
         </nav>
-    </footer>
+    <p class="footer-bottom">© 2024 Internships. All rights reserved.</p>
+</footer>
     
 </body>
 </html>

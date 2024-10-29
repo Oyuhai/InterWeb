@@ -173,3 +173,51 @@ ul {
 .zaruud-container {
     padding: 0px 100px;
 }
+
+footer {
+    display: flex;
+    justify-content: space-between;
+    margin: auto;
+    width: 90%;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 20px; /* Хүрээний дотор талын зай */
+    border: 1px solid #3229dd; /* өнгийн хүрээ */
+    border-radius: 8px; /* Хүрээг булангуудыг зөөлрүүлэх */
+
+}
+
+.footer-logo {
+flex:1;
+color: #000;
+font-size: 12px;
+
+
+}
+
+.logo{
+background-color: #3229DD;
+color: #ffffff;
+font-weight: 700;
+font-size: 50px;
+line-height: 42px;
+width: 185px;
+}
+
+footer nav {
+flex:1;
+display: block;
+justify-content: space-between;
+
+}
+
+footer nav a {
+display: block;
+color:#000;
+
+}
+
+footer p{
+align-content: end;
+width: 100%;
+}

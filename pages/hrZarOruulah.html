@@ -5,32 +5,33 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ZarOruulah</title>
     <meta name="description" content="HR ажлын байрны зар оруулах.">
+    <link rel="stylesheet" href="./css/signup.css">
 </head>
 <body>
     <header>
-        <img id="logo" src="logo.png" alt="Intern Logo">
-        <nav>
-            <ul>
-                <li><a href="/home">Нүүр хуудас</a></li>
-                <li><a href="/zar">Зарууд</a></li>
-            </ul>
-        </nav>
-        <img src="profile.png" alt="Хэрэглэгчийн профайл">
+        <nav class="wrap header-top flex-row">
+                <a href="./home.html" class="logo">INTERN</a>
+                <a href="./home.html">Нүүр хуудас</a>
+                <a href="./zar.html">Зарууд</a>
+                <a class="profile-image" href="./signInStud.html">
+                    <img src="./pics/profile.webp" alt="Хэрэглэгчийн профайл зураг"></a>
+            </nav>
     </header>
     <form>
-            <label for="position">Албан тушаал:</label>
+            <label for="position">Албан тушаал</label>
             <input type="text" id="position" name="position" placeholder="Албан тушаалын нэр">
 
-            <label for="experience">Үэдсэн шалгуурууд </label>
-            <input id="experience" name="experience">
+            <label for="experience">Үндсэн шалгуурууд </label>
+            <input type="text" name="experience" placeholder="Тавигдах шалгууруудаа энд бичнэ">
 
-            <label for="salary">Цалин:</label>
-            <input type="number" id="salary" name="salary"  >
+            <label for="position">Цалин</label>
+            <input type="text" id="salary" name="salary" placeholder="Цалингийн хэмжээг оруулна">
+
             <input type="radio" id="unaa" name="benefit" value="Унаатай">
             <label for="unaa">Унаа</label><br>
             
             <input type="radio" id="hool" name="benefit" value="Хоолтой">
-            <label for="hool">Хоол</label><br>
+            <label for="hool">Хоол</label><br><br><br>
         
             <input type="radio" id="hugatsaa1" name="duration" value="3saraas baga">
             <label for="hugatsaa1">3сараас бага</label><br>
@@ -42,35 +43,38 @@
             <label for="hugatsaa3">6сараас илүү</label><br>
             <a href="">ажлын байрны зураг оруулах</a>
 
-            <button type="submit">Нийтлэх</button>
+            <input type="submit" value="Нийтлэх">
     </form>
     <footer>
-        <img id="logo" src="logo.png" alt="web logo">
-        <p>Шинэ заруудыг хоцролгүй авахын тулд манайд нэгдээрэй</p>
-        <p>Бүртгүүлснээр та манай Нууцлалын бодлогыг хүлээн зөвшөөрч, манай компаниас мэдээлэл мэйлээр авахыг зөвшөөрч байна.</p>
-        
-        <!-- Хэрэгтэй хуудсууд -->
-        <h5>Хэрэгтэй хуудсууд</h5>
-        <nav>
+            
+        <div class="footer-logo">
+            <div class="logo">INTERN</div>
+            <p>Шинэ заруудыг хүлээлгүй авахын тулд манайд нэгдээрэй.</p>
+            <p>Бүртгүүлснээр та манай Нууцлалын бодлогыг хүлээн зөвшөөрч, манай компанийн мэдээлэл мэйлээр авахыг зөвшөөрч байна.</p>
+        </div>
+
+        <nav class="footer-links">
+            <h4>Хэрэгтэй хуудас</h4>
             <ul>
-                <li><a href="">Нүүр хуудас</a></li>
-                <li><a href="">Зарууд</a></li>
-                <li><a href="">Нэвтрэх</a></li>
-                <li><a href="">Бүртгүүлэх</a></li>
+                <li><a href="#">Нүүр хуудас</a></li>
+                <li><a href="#">Заруд</a></li>
+                <li><a href="#">Бүртгүүлэх</a></li>
+                <li><a href="#">Нэвтрэх</a></li>
             </ul>
         </nav>
-        
-        <!-- Бидэнтэй нэгдээрэй -->
-        <h5>Бидэнтэй нэгдээрэй</h5>
-        <nav>
+
+        <nav class="footer-social">
+            <h4>Бидэнтэй нэгдээрэй</h4>
             <ul>
-                <li><a href="">Facebook</a></li>
-                <li><a href="">Instagram</a></li>
-                <li><a href="">Youtube</a></li>
-                <li><a href="">X</a></li>
+                <li><a href="#">Facebook</a></li>
+                <li><a href="#">Instagram</a></li>
+                <li><a href="#">X</a></li>
+                <li><a href="#">LinkedIn</a></li>
+                <li><a href="#">Youtube</a></li>
             </ul>
         </nav>
-    </footer>
+    <p class="footer-bottom">© 2024 Internships. All rights reserved.</p>
+</footer>
 
 </body>
 </html>
