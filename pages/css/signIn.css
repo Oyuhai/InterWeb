@@ -1,9 +1,60 @@
-html {
+body {
+    margin: auto;
     padding: 0;
+    font-family: Arial, sans-serif;
 }
 
+a {
+    text-decoration: none;
+    color: white;
+    font-size: 16px;
+}
+
+/* Header хэсэг */
 header {
     background-color: #3229DD;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
+    gap: 50px;
+    padding: 38px 100px;
+}
+
+.logo {
+    font-weight: 700;
+    font-size: 50px;
+    line-height: 42px;
+}
+
+.header-top {
+    gap: 44px;
+    align-items: end;
+}
+
+h2 {
+    color: white;
+    font-weight: 400;
+    font-size: 40px;
+    margin: 0;
+}
+
+.profile-image {
+    margin-left: auto;
+    justify-content: center;
+}
+
+header nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+header nav ul li {
+    display: inline;
+    margin-right: 20px;
+    font-size: 18px;
+}
+
+header nav ul li a {
+    color: white;
+    text-decoration: none;
 }

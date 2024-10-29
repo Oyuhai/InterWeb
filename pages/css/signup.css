@@ -12,16 +12,34 @@ a {
 
 /* Header хэсэг */
 header {
-    background-color: #3229dd;
-    color: white;
+    background-color: #3229DD;
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px 50px;
+    flex-direction: column;
+    gap: 50px;
+    padding: 38px 100px;
 }
 
-header img {
-    height: 50px;
+.logo {
+    font-weight: 700;
+    font-size: 50px;
+    line-height: 42px;
+}
+
+.header-top {
+    gap: 44px;
+    align-items: end;
+}
+
+h2 {
+    color: white;
+    font-weight: 400;
+    font-size: 40px;
+    margin: 0;
+}
+
+.profile-image {
+    margin-left: auto;
+    justify-content: center;
 }
 
 header nav ul {
@@ -41,11 +59,7 @@ header nav ul li a {
     text-decoration: none;
 }
 
-header img[alt="Profile"] {
-    height: 40px;
-    width: 40px;
-    border-radius: 50%;
-}
+
 /* Form хэсэг */
 form {
     max-width: 400px;
@@ -123,6 +137,27 @@ form nav button:hover {
     background-color: #3d3d84;
 }
 
+address .links {
+    display: flex;
+    justify-content: space-between;
+    font-size: 14px;
+    margin: 5px, 10px;
+}
+
+address .register-link {
+    color: #000;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+address .forgot-password-link {
+    color: #777; /* Бүдгэрсэн саарал өнгө */
+    text-decoration: none;
+}
+
+address a:hover {
+    text-decoration: underline;
+}
 
 
 

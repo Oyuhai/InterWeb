@@ -6,42 +6,39 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="description" content="Intern page, Дадлагын зар, сурагч болон хүний нөөцөд зориулсан">
         <title>Intern</title>
-        <link rel="stylesheet" href="signIn.css">
+        <link rel="stylesheet" href="./css/signup.css">
     </head>
 
     <body>
         <header>
             <!-- contact info <address> dotor bichih -->
             <!-- zaruudin bblock <article dotor hiivel zgr sanagdlaa -->
-            <a href="#">
-                <img src="./pics/logo.png" alt="Logo">
-            </a>
-            <nav>
-                <a href="./homePage.html">Нүүр хуудас</a>
-                <a href="./zar.html">Зарууд</a>
+            <nav class="header-top">
+                <a href="./home.html" class="logo">INTERN</a>
+                <a href="/home.html">Нүүр хуудас</a>
+                <a href="/zar.html">Зарууд</a>
             </nav>
-            <a href="signInStud.html">
-                <img src="./pics/profile.png" alt="Profile">
-            </a>
         </header>
-        <main>
-            <button onclick="location.href='signInStud'" class="active">Нэвтрэх</button>
-            <button onclick="location.href='#'">Байгууллагаар нэвтрэх</button>
-            <fieldset>
-                <form action="login.html" method="POST">
+        <form>
+            <nav>
+                <button onclick="location.href='./pages/signInStud.html'" class="active">Оюутан</button>
+                <button onclick="location.href='pages\signupHr.html'" class="active">Байгууллага</button>
+            </nav>
+            <address>
                     <label for="email">Email Address</label>
                     <input type="email" id="email" name="email" placeholder="Email Address" required>
 
                     <label for="password">Password</label>
                     <input type="password" id="password" name="password" placeholder="Password" required>
 
-                    <a href="#">Бүртгэлгүй юу?</a>
-                    <a href="#">Forgot your password?</a>
+                    <div class="links">
+                        <a href="#" class="register-link">Бүртгэлгүй юу?</a>
+                        <a href="#" class="forgot-password-link">Нууц үгээ мартсан уу?</a>
+                    </div>
 
-                    <button type="submit">Нэвтрэх</button>
-                </form>
-            </fieldset>
-        </main>
+                    <input type="submit" value="Нэвтрэх">
+            </address>
+        </form>
     </body>
 
 </html>
