@@ -61,10 +61,6 @@ a.profile-image>img {
     width: 50px;
 }
 
-.visually-hidden {
-    display: none;
-}
-
 .header-search {
     gap: 15px;
     justify-content: space-between;
@@ -75,19 +71,19 @@ a.profile-image>img {
     gap: 15px;
 }
 
-input {
+select {
     width: 100%;
     line-height: 45px;
+    height: 45px;
     border-radius: 10px;
     font-size: 16px;
     text-align: center;
 }
 
-
-
 form.filter>button {
     width: 100%;
     line-height: 45px;
+    height: 45px;
     border-radius: 10px;
     border: 1px solid white;
     background-color: transparent;
@@ -95,22 +91,6 @@ form.filter>button {
     flex-basis: 200px;
 }
 
-.test {
-    position: relative;
-    flex-grow: 1;
-}
-
-.test::after {
-    content: '';
-    position: absolute;
-    right: 5px;
-    bottom: 50%;
-    width: 50px;
-    height: 50px;
-    transform: translateY(50%);
-
-    background-image: url('./pics/arrow_drop_down.png');
-}
 
 h3 {
     font-size: 35px;
