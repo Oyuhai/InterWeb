@@ -233,6 +233,11 @@ footer p{
     margin-bottom: 30px; 
 }
 
+.hr-img{
+    flex-direction:row;
+    align-items: center;
+}
+
 .info-container ul {
     list-style-type: none; 
     line-height: 30px;
@@ -253,6 +258,7 @@ footer p{
     grid-template-columns: repeat(3, 1fr); /* 3 columns */
     gap: 30px;
     margin: 40px auto;
+    justify-content: center;
 }
 
 .huseltuud article{
@@ -263,4 +269,144 @@ footer p{
 
 .huseltuud article p {
     font-size: 14px;
+}
+
+/* Job posting section */
+.hr-zaruud {
+    margin: 20px auto;
+    max-width: 800px;
+}
+
+.hr-zaruud h4 {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.irsen-huseltuud{
+    display: inline;
+}
+
+.hr-zaruud article h5 {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.hr-zaruud ul {
+    list-style: none;
+    margin-bottom: 20px;
+}
+
+.hr-zaruud ul li {
+    background-color: #e9f3ff;
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    display:contents;
+}
+
+.hr-zaruud ul li h6 {
+    font-size: 16px;
+    margin: 10px 0;
+}
+
+.hr-zaruud ul li p {
+    font-size: 16px;
+}
+
+
+
+/* Mobile navigation bar */
+.mobile-nav {
+    display: none; /* Default: hidden */
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: #3229DD;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 10px 0;
+    border-top: 2px solid #3d3d84;
+    z-index: 1000;
+}
+
+.mobile-nav a {
+    color: white;
+    font-size: 14px;
+    text-decoration: none;
+    text-align: center;
+}
+
+.mobile-nav a:hover {
+    background-color: #575ad0;
+    border-radius: 4px;
+    padding: 5px 10px;
+}
+
+/* Hidden sections on mobile for requests */
+.request-section.mobile-hidden {
+    display: none;
+}
+
+.dropdown {
+    display: none;
+    border: 1px solid #ddd;
+    background-color: #f9f9f9;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.dropdown ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.dropdown ul li {
+    margin: 10px 0;
+}
+
+.dropdown-trigger {
+    display: block;
+    background-color: #ddd;
+    padding: 10px;
+    text-align: center;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* Responsive styles */
+@media screen and (max-width: 768px) {
+    /* Гар утасны загвар */
+    header nav a:not(.logo), 
+    header .profile-image {
+        display: none; /* Desktop navigation links hidden on mobile */
+    }
+
+    .mobile-nav {
+        display: flex; /* Mobile navigation visible */
+    }
+
+    .info-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .request-section {
+        display: none; /* Hide desktop layout for requests */
+    }
+
+    .request-section.mobile-hidden {
+        display: block;
+    }
+
+    .request-section.mobile-hidden .dropdown {
+        display: none;
+    }
+
+    .request-section.mobile-hidden .dropdown.open {
+        display: block;
+    }
 }
