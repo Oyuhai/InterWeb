@@ -1,19 +1,13 @@
-body {
-    margin: 0;
-    padding: 0;
-    font-family: Arial, sans-serif;
-}
-
-.wrap {
-    max-width: 1300px;
-    width: 100%;
-    margin: 0 auto;
+@media screen and (min-width: 769px) {
+    .desktop-none {
+        display: none;
+    }
 }
 
 a {
     text-decoration: none;
     color: white;
-    font-size: 16px;
+    font-size: 1rem;
 }
 
 .flex-row {
@@ -27,29 +21,22 @@ a {
 }
 
 header {
-    background-color: #3229DD;
     display: flex;
     flex-direction: column;
-    gap: 50px;
-    padding: 38px 100px;
-}
-
-.logo {
-    font-weight: 700;
-    font-size: 50px;
-    line-height: 42px;
 }
 
 .header-top {
-    gap: 44px;
+    padding: 2.5rem var(--container-padding) 1rem var(--container-padding);
+    gap: 2.75rem;
     align-items: end;
+    background-color: var(--brand-color);
+    border: 0.1rem solid var(--brand-color);
 }
 
 h2 {
     color: white;
     font-weight: 400;
-    font-size: 40px;
-    margin: 0;
+    font-size: 2rem;
 }
 
 .profile-image {
@@ -58,146 +45,220 @@ h2 {
 }
 
 a.profile-image>img {
-    width: 50px;
+    width: 3rem;
 }
 
 .header-search {
-    gap: 15px;
+    padding: 1rem var(--container-padding) 2.5rem var(--container-padding);
+    gap: 1rem;
     justify-content: space-between;
+    background-color: var(--brand-color);
+    border: 0.1rem solid var(--brand-color);
 }
 
 .filter {
     height: max-content;
-    gap: 15px;
+    gap: 1rem;
 }
 
 select {
-    width: 100%;
-    line-height: 45px;
-    height: 45px;
-    border-radius: 10px;
-    font-size: 16px;
+    flex: 2;
+    padding: 0.75rem;
+    border-radius: 0.75rem;
+    font-size: 1rem;
     text-align: center;
 }
 
 form.filter>button {
-    width: 100%;
-    line-height: 45px;
-    height: 45px;
-    border-radius: 10px;
-    border: 1px solid white;
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.75rem;
+    border: var(--border) white;
     background-color: transparent;
     color: white;
-    flex-basis: 200px;
+    flex: 1;
+    white-space: nowrap;
+    cursor: pointer;
+    font-size: 1rem;
 }
 
 
 h3 {
-    font-size: 35px;
-    margin: 0;
-    padding: 38px 0px;
+    font-size: 2rem;
+    padding-top: 2.25rem;
+    padding-bottom: 0.75rem;
 }
-
-.companies-container {
-    padding: 0px 100px;
-}
-
 
 .company-box {
-    gap: 45px;
-    padding: 0px 100px;
+    gap: 2.75rem;
     overflow-x: auto;
     max-width: 100vw;
 }
 
 .company {
-    gap: 15px;
-    border: 1px solid black;
-    padding: 15px 30px;
-    border-radius: 4;
+    gap: 1rem;
+    border: var(--border) black;
+    padding: 1rem 2rem;
+    border-radius: 0.25rem;
 }
 
 article>img {
-    width: 120px;
+    width: 7.5rem;
+    height: 7.5rem;
 }
 
-h4 {
-    margin: 0;
-    padding: 0;
-}
 
-ul {
-    margin: 0;
-    padding: 0;
-}
-
-.ul1 {
-    margin: 0;
-    padding: 0px 100px;
-
-
+.all-ad {
+    padding-bottom: 2.25rem;
 }
 
 .ad-container {
     display: flex;
     justify-content: space-between;
-    padding: 28px 48px;
-    box-shadow: 0px 16px 16px -1px #eaeaea;
+    padding: 1.5rem 3rem;
+    box-shadow: var(--shadow);
+    border-radius: 0.5rem;
+
 }
 
 .ad-container h4 {
-    font-size: 30px;
-    font-weight: 600;
+    font-size: 1.75rem;
+    font-weight: 400;
 }
 
-.zaruud-container {
-    padding: 0px 100px;
-}
-
-footer {
+.footer-content {
     display: flex;
     justify-content: space-between;
-    margin: auto;
-    width: 90%;
     flex-wrap: wrap;
-    gap: 20px;
-    padding: 20px; /* Хүрээний дотор талын зай */
-    border: 1px solid #3229dd; /* өнгийн хүрээ */
-    border-radius: 8px; /* Хүрээг булангуудыг зөөлрүүлэх */
-
+    gap: 8rem;
+    padding: 2rem;
+    border: var(--border) var(--brand-color);
+    border-radius: 0.25rem;
 }
 
 .footer-logo {
-flex:1;
-color: #000;
-font-size: 12px;
-
-
+    flex: 2;
+    color: #000;
+    font-size: 0.75rem;
 }
 
-.logo{
-background-color: #3229DD;
-color: #ffffff;
-font-weight: 700;
-font-size: 50px;
-line-height: 42px;
-width: 185px;
+.footer-logo .logo {
+    background-color: var(--brand-color);
+    color: white;
+    font-weight: 700;
+    font-size: 2rem;
+    line-height: 2rem;
+    padding: 0.5rem;
+    width: max-content;
+}
+
+.logo {
+    background-color: var(--brand-color);
+    color: white;
+    font-weight: 700;
+    font-size: 3rem;
+    line-height: 2.5rem;
 }
 
 footer nav {
-flex:1;
-display: block;
-justify-content: space-between;
+    flex: 1;
+    display: block;
+    justify-content: space-between;
 
 }
 
 footer nav a {
-display: block;
-color:#000;
+    display: block;
+    color: #000;
+    font-size: 0.75rem;
+}
+
+footer nav h4 {
+    font-size: 0.75rem;
+    font-weight: 600;
+    padding-bottom: 0.4rem;
+}
+
+footer ul {
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
 
 }
 
-footer p{
-align-content: end;
-width: 100%;
+div.footer-logo>p:nth-child(2) {
+    align-content: end;
+    width: 100%;
+    font-size: 1rem;
+}
+
+div.footer-logo>p:nth-child(3) {
+    font-size: 0.75rem;
+}
+
+.footer-bottom {
+    font-size: 0.75rem;
+}
+
+
+@media screen and (max-width: 768px) {
+    .mobile-none {
+        display: none;
+    }
+
+    .header-top {
+        padding-top: 1.25rem;
+        padding-bottom: 1.25rem;
+    }
+
+    .header-search {
+        padding-top: 1.25rem;
+        padding-bottom: 1.25rem;
+        background-color: transparent;
+    }
+
+    form.filter>select {
+        min-width: calc(50% - 2rem);
+    }
+
+    form.filter>button {
+        flex: unset;
+        padding-left: 0.5rem;
+        padding-right: 0.5rem;
+        font-size: 1.25rem
+    }
+
+    h3 {
+        padding-top: 1.5rem;
+        padding-bottom: 1.5rem;
+    }
+
+    .mobile-nav {
+        background-color: white;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+    }
+
+    .mobile-nav>i {
+        font-size: 3rem;
+    }
+
+}
+
+@media screen and (max-width: 425px) {
+    .ad-container {
+        flex-wrap: wrap;
+    }
+
+    .ad-container>div:nth-child(2) {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .ad-container>div:nth-child(2)>p {
+        margin-top: 0;
+        margin-bottom: 0;
+    }
 }
