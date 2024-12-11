@@ -227,17 +227,23 @@ div.footer-logo>p:nth-child(3) {
 /* Job posting section */
 /* Job posting section */
 /* General styles */
-.hr-zaruud h3{
-    padding:40px;
+/* Header styles */
+.hr-zaruud h3 {
+    padding: 20px;
+    font-size: 24px;
 }
 
+/* General layout */
 .irsen-huseltuud {
     margin: 20px auto;
     max-width: 800px;
 }
 
-.irsen-huseltuud h4{
-    padding: 10px;
+.irsen-huseltuud h4 {
+    padding: 10px 0;
+    font-size: 20px;
+    font-weight: bold;
+    text-align: left;
 }
 
 .irsen-huseltuud ul {
@@ -250,49 +256,59 @@ div.footer-logo>p:nth-child(3) {
 }
 
 .irsen-huseltuud ul li {
-    width: calc(25% - 10px);
+    width: calc(25% - 10px); /* 2 item per row */
     padding: 15px;
-    background-color: white;
+    background-color: #f8f9fa;
     border-radius: 8px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    position: relative; /* For dropdown positioning */
+    position: relative;
+    transition: transform 0.2s ease;
 }
 
-/* Dropdown button styles */
-.dropdown-button {
-    background: none;
-    border: none;
-    color: white;
+.irsen-huseltuud ul li:hover {
+    transform: translateY(-5px); /* Slight hover effect */
+}
+
+/* Details element styling */
+details {
+    cursor: pointer;
+}
+
+details summary {
     font-size: 16px;
+    font-weight: bold;
+    color: black;
     cursor: pointer;
-    text-decoration: underline;
+    margin-bottom: 10px;
 }
 
-/* Dropdown menu styles */
-.dropdown-menu {
-    display: none; /* Initially hidden */
-    position: absolute;
-    top: 100%;
-    left: 0;
-    background-color: white;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-    border-radius: 8px;
+details ul {
     margin-top: 10px;
-    list-style: none;
+    padding-left: 15px;
+    background-color: white;
+    border: 1px solid #e9ecef;
+    border-radius: 8px;
     padding: 10px;
-    width: 100%;
-    z-index: 10;
-}
-
-.dropdown-menu li {
-    padding: 5px 10px;
-    cursor: pointer;
-    transition: background 0.2s;
-}
-
-
-
-/* Show dropdown menu on hover */
-.dropdown:hover .dropdown-menu {
     display: block;
+}
+
+details ul li {
+    font-size: 14px;
+    margin-bottom: 5px;
+    color: #495057;
+}
+
+/* Responsive layout for mobile */
+@media screen and (max-width: 480px) {
+    .irsen-huseltuud ul li {
+        width: 100%; /* 1 item per row */
+    }
+
+    .irsen-huseltuud ul {
+        gap: 5px;
+    }
+
+    details summary {
+        font-size: 14px;
+    }
 }
