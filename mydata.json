@@ -6,7 +6,8 @@
         "duration": "1_3",
         "company": "ICT",
         "salary": 1200000,
-        "status": "open"
+        "status": "open",
+        "image": "@url(./pics/ictlogo.png)"
     },
     {
         "id": 2,

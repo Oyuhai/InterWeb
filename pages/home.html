@@ -5,7 +5,11 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="description" content="intern home page, companies, advertisements">
+        <link rel="stylesheet" href="./css/root.css">
         <link rel="stylesheet" href="./css/home.css">
+        <link rel="stylesheet" href="./css/home.m.css">
+        <link rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <title>INTERN - Homepage</title>
         <script type="module">
             const params = new URLSearchParams(document.location.search);
@@ -18,13 +22,18 @@
         <header>
             <nav class="wrap header-top flex-row">
                 <a href="./home.html" class="logo">INTERN</a>
-                <a href="./home.html">Нүүр хуудас</a>
-                <a href="./zar.html">Зарууд</a>
-                <a class="profile-image" href="./signInStud.html">
-                    <img src="./pics/profile.webp" alt="Хэрэглэгчийн профайл зураг"></a>
+                <a class="mobile-none" href="./home.html">Нүүр хуудас</a>
+                <a class="mobile-none" href="./zar.html">Зарууд</a>
+                <a class="mobile-none profile-image" href="./signInStud.html">
+                    <img src="../pics/profile.webp" alt="Хэрэглэгчийн профайл зураг"></a>
+            </nav>
+            <nav class="desktop-none mobile-nav">
+                <i class="fa fa-home"></i>
+                <i class='fa fa-book'></i>
+                <i class='fa fa-user-circle'></i>
             </nav>
             <div class="flex-col wrap header-search">
-                <h2>Хүссэн дадлагын ажлаа эндээс олоорой</h2>
+                <h2 class="mobile-none">Хүссэн дадлагын ажлаа эндээс олоорой</h2>
                 <form action="/list.html" method="GET" class="flex-row filter">
                     <select onchange="selectHandler(this)" name="profession" id="profession">
                         <option value="">Мэргэжил</option>
@@ -36,24 +45,24 @@
                         <option value="hud">Хан Уул</option>
                         <option value="chd">Чингэлтэй</option>
                     </select>
-                    <select onchange="selectHandler(this)" name="duration" id="duration">
+                    <select class="mobile-none" onchange="selectHandler(this)" name="duration" id="duration">
                         <option value="">Хугацаа</option>
                         <option value="1_3">1-3 сар</option>
                         <option value="4_6">4-6 сар</option>
                     </select>
-                    <button type="submit">Зар шүүх</button>
+                    <button class="mobile-none" type="submit">Зар шүүх</button>
+                    <button class="desktop-none" type="submit">&#x1F50D;</button>
                 </form>
             </div>
         </header>
 
         <!-- Main Content -->
         <main>
-            <!-- Company Section -->
-            <div class="wrap companies-container">
+            <div class="wrap container-padding-x">
                 <h3>Компаниуд</h3>
-                <div class="company-box flex-row">
+                <div class="company-box container-padding-x flex-row">
                     <article class="flex-col company">
-                        <img src="./pics/companyLogo.webp" alt="Company 1">
+                        <img src="../pics/ictlogo.png" alt="company logo">
 
                         <h4>Company name</h4>
                         <ul>
@@ -64,7 +73,7 @@
 
                     </article>
                     <article class="flex-col company">
-                        <img src="./pics/companyLogo.webp" alt="Company 1">
+                        <img src="../pics/itoolsLogo.png" alt="company logo">
                         <h4>Company name</h4>
                         <ul>
                             <li>Zar garcig 1</li>
@@ -73,7 +82,7 @@
                         </ul>
                     </article>
                     <article class="flex-col company">
-                        <img src="./pics/companyLogo.webp" alt="Company 1">
+                        <img src="../pics/ithemeLogo.png" alt="company logo">
                         <h4>Company name</h4>
                         <ul>
                             <li>Zar garcig 1</li>
@@ -82,7 +91,7 @@
                         </ul>
                     </article>
                     <article class="flex-col company">
-                        <img src="./pics/companyLogo.webp" alt="Company 1">
+                        <img src="../pics/itoolsLogo.png" alt="company logo">
                         <h4>Company name</h4>
                         <ul>
                             <li>Zar garcig 1</li>
@@ -91,7 +100,7 @@
                         </ul>
                     </article>
                     <article class="flex-col company">
-                        <img src="./pics/companyLogo.webp" alt="Company 1">
+                        <img src="../pics/itoolsLogo.png" alt="company logo">
                         <h4>Company name</h4>
                         <ul>
                             <li>Zar garcig 1</li>
@@ -100,7 +109,7 @@
                         </ul>
                     </article>
                     <article class="flex-col company">
-                        <img src="./pics/companyLogo.webp" alt="Company 1">
+                        <img src="../pics/itoolsLogo.png" alt="company logo">
                         <h4>Company name</h4>
                         <ul>
                             <li>Zar garcig 1</li>
@@ -112,19 +121,16 @@
                 </div>
             </div>
 
-            <!-- Latest Job Listings -->
-            <div class=" wrap zaruud-container">
+            <div class=" wrap container-padding-x">
                 <h3>Сүүлд нэмэгдсэн зарууд</h3>
-                <ul class="ul1">
+                <ul class="all-ad">
                     <li class="ad-container">
                         <div>
-
                             <h4>Маркетингийн менежер</h4>
                             <p>Компани: ABC, Байршил: Улаанбаатар</p>
                             <p>3.000.000₮ - 3.500.000</p>
                         </div>
                         <div>
-
                             <p>Статус</p>
                             <button>Дэлгэрэнгүй</button>
                         </div>
@@ -160,37 +166,41 @@
         </main>
 
         <!-- Footer -->
-        <footer>
-            
-            <div class="footer-logo">
-                <div class="logo">INTERN</div>
-                <p>Шинэ заруудыг хүлээлгүй авахын тулд манайд нэгдээрэй.</p>
-                <p>Бүртгүүлснээр та манай Нууцлалын бодлогыг хүлээн зөвшөөрч, манай компанийн мэдээлэл мэйлээр авахыг зөвшөөрч байна.</p>
+        <footer class="wrap container-padding-x">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <div class="logo">INTERN</div>
+                    <p>Шинэ заруудыг хүлээлгүй авахын тулд манайд нэгдээрэй.</p>
+                    <p>Бүртгүүлснээр та манай <u>Нууцлалын бодлогыг</u> хүлээн зөвшөөрч, манай компанийн мэдээлэл
+                        мэйлээр
+                        авахыг
+                        зөвшөөрч байна.</p>
+                </div>
+
+                <nav class="mobile-none footer-links">
+                    <h4>Хэрэгтэй хуудас</h4>
+                    <ul>
+                        <li><a href="#">Нүүр хуудас</a></li>
+                        <li><a href="#">Заруд</a></li>
+                        <li><a href="#">Бүртгүүлэх</a></li>
+                        <li><a href="#">Нэвтрэх</a></li>
+                    </ul>
+                </nav>
+
+                <nav class="mobile-none footer-social">
+                    <h4>Бидэнтэй нэгдээрэй</h4>
+                    <ul>
+                        <li><a href="#">Facebook</a></li>
+                        <li><a href="#">Instagram</a></li>
+                        <li><a href="#">X</a></li>
+                        <li><a href="#">LinkedIn</a></li>
+                        <li><a href="#">Youtube</a></li>
+                    </ul>
+                </nav>
             </div>
-    
-            <nav class="footer-links">
-                <h4>Хэрэгтэй хуудас</h4>
-                <ul>
-                    <li><a href="#">Нүүр хуудас</a></li>
-                    <li><a href="#">Заруд</a></li>
-                    <li><a href="#">Бүртгүүлэх</a></li>
-                    <li><a href="#">Нэвтрэх</a></li>
-                </ul>
-            </nav>
-    
-            <nav class="footer-social">
-                <h4>Бидэнтэй нэгдээрэй</h4>
-                <ul>
-                    <li><a href="#">Facebook</a></li>
-                    <li><a href="#">Instagram</a></li>
-                    <li><a href="#">X</a></li>
-                    <li><a href="#">LinkedIn</a></li>
-                    <li><a href="#">Youtube</a></li>
-                </ul>
-            </nav>
-        <p class="footer-bottom">© 2024 Internships. All rights reserved.</p>
-    </footer>
-        
+            <p class="footer-bottom">© 2024 Internships. All rights reserved.</p>
+        </footer>
+
     </body>
 
 </html>

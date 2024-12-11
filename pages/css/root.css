@@ -1,0 +1,48 @@
+:root {
+  --container-padding: 6.25rem;
+  --border: 1px solid;
+  --brand-color: #3229dd;
+  --shadow: 0 0.5rem 0.5rem -1px #eaeaea;
+}
+
+@media screen and (max-width: 768px) {
+  :root {
+    --container-padding: 1.25rem;
+    font-size: 14px;
+  }
+}
+
+@media screen and (max-width: 425px) {
+  :root {
+    font-size: 12px;
+  }
+}
+
+*,
+* * {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+.container-padding-x {
+  padding-left: var(--container-padding);
+  padding-right: var(--container-padding);
+}
+
+
+
+.wrap {
+  max-width: 1300px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+body {
+  font-family: Arial, sans-serif;
+}
+
+p {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}

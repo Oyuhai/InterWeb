@@ -7,41 +7,41 @@
         <title>INTERN - List Page</title>
         <meta name="description" content="Заруудын жагсаалт гарч ирнэ">
         <script type="module" src="../list.js"></script>
+        <link rel="stylesheet" href="./css/header.css">
+        <link rel="stylesheet" href="./css/list.css">
     </head>
 
     <body>
 
         <!-- Header -->
         <header>
-            <img id="logo" src="logo.png" alt="web logo">
-            <nav>
-                <a href="/home">Нүүр хуудас</a>
-                <a href="/zar">Зарууд</a>
+            <nav class="wrap header-top flex-row">
+                <a href="./home.html" class="logo">INTERN</a>
+                <a href="./home.html">Нүүр хуудас</a>
+                <a href="./zar.html">Зарууд</a>
+                <a class="profile-image" href="./signInStud.html">
+                    <img src="./pics/profile.webp" alt="Хэрэглэгчийн профайл зураг"></a>
             </nav>
-            <img src="profile.png" alt="Хэрэглэгчийн профайл зураг">
-            <section>
-                <h2>Хүссэн дадлагын ажлаа эндээс олоорой</h2>
-                <div>
-                    <form action="./list.html" method="GET">
-                        <select name="profession" id="profession">
-                            <option value="" s>Мэргэжил</option>
-                            <option value="system_analist">Систем шинжээч</option>
-                            <option value="frontend_developer">Frontend Хөгжүүлэгч</option>
-                        </select>
-                        <select name="location" id="location">
-                            <option value="">Байршил</option>
-                            <option value="hud">Хан Уул</option>
-                            <option value="chd">Чингэлтэй</option>
-                        </select>
-                        <select name="duration" id="duration">
-                            <option value="">Хугацаа</option>
-                            <option value="1_3">1-3 сар</option>
-                            <option value="4_6">4-6 сар</option>
-                        </select>
-                        <button type="submit">Хайх</button>
-                    </form>
-                </div>
-            </section>
+            <div>
+                <form action="/list.html" method="GET" class="flex-row filter">
+                    <select onchange="selectHandler(this)" name="profession" id="profession">
+                        <option value="">Мэргэжил</option>
+                        <option value="system_analist">Систем шинжээч</option>
+                        <option value="frontend_developer">Frontend Хөгжүүлэгч</option>
+                    </select>
+                    <select onchange="selectHandler(this)" name="location" id="location">
+                        <option value="">Байршил</option>
+                        <option value="hud">Хан Уул</option>
+                        <option value="chd">Чингэлтэй</option>
+                    </select>
+                    <select onchange="selectHandler(this)" name="duration" id="duration">
+                        <option value="">Хугацаа</option>
+                        <option value="1_3">1-3 сар</option>
+                        <option value="4_6">4-6 сар</option>
+                    </select>
+                    <button type="submit">Зар шүүх</button>
+                </form>
+            </div>
         </header>
 
 
