@@ -5,10 +5,20 @@
   --shadow: 0 0.5rem 0.5rem -1px #eaeaea;
 }
 
+@media screen and (min-width: 769px) {
+  .desktop-none {
+    display: none;
+  }
+}
+
 @media screen and (max-width: 768px) {
   :root {
     --container-padding: 1.25rem;
     font-size: 14px;
+  }
+
+  .mobile-none {
+    display: none;
   }
 }
 
@@ -29,8 +39,6 @@
   padding-left: var(--container-padding);
   padding-right: var(--container-padding);
 }
-
-
 
 .wrap {
   max-width: 1300px;

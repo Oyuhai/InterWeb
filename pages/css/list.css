@@ -1,9 +1,261 @@
-html {
-    margin: 0;
-    padding: 0;
+a {
+    text-decoration: none;
+    color: white;
+    font-size: 1rem;
 }
 
-header {
-    background-color: purple;
+.flex-row {
+    display: flex;
+    flex-direction: row;
+}
+
+.flex-col {
+    display: flex;
+    flex-direction: column;
+}
+
+.header-top {
+    padding: 2.5rem var(--container-padding) 1rem var(--container-padding);
+    gap: 2.75rem;
+    align-items: end;
+    background-color: var(--brand-color);
+    border: 0.1rem solid var(--brand-color);
+}
+
+.logo {
+    background-color: var(--brand-color);
+    color: white;
+    font-weight: 700;
+    font-size: 3rem;
+    line-height: 2.5rem;
+}
+
+.profile-image {
+    margin-left: auto;
+    justify-content: center;
+}
+
+a.profile-image>img {
+    width: 3rem;
+}
+
+.header-search {
+    padding: 1rem var(--container-padding) 2.5rem var(--container-padding);
+    gap: 1rem;
+    justify-content: space-between;
+    background-color: var(--brand-color);
+}
+
+.filter {
+    height: max-content;
+    gap: 1rem;
+}
+
+select {
+    flex: 2;
+    padding: 0.75rem;
+    border-radius: 0.75rem;
+    font-size: 1rem;
+    text-align: center;
+}
+
+form.filter>button {
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.75rem;
+    border: var(--border) white;
+    background-color: transparent;
+    color: white;
+    flex: 1;
+    white-space: nowrap;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+h3 {
+    font-size: 2rem;
+    padding-top: 2.25rem;
+    padding-bottom: 0.75rem;
+}
+
+.all-ad {
+    padding-bottom: 2.25rem;
+    gap: 0.2rem;
+}
+
+.ad-container {
+    display: flex;
+    justify-content: space-between;
+    padding: 1.5rem 3rem;
+    box-shadow: var(--shadow);
+    border-radius: 0.5rem;
+}
+
+.ad-container>div button {
+    border: 1px solid var(--brand-color);
+    border-radius: .7rem;
+    padding: 0.2rem 1.5rem;
+    background-color: transparent;
+}
+
+.ad-container-bottom p {
+    text-align: end;
+}
+
+.ad-container h4 {
+    font-size: 1.5rem;
+    font-weight: 400;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 8rem;
+    padding: 2rem;
+    border: var(--border) var(--brand-color);
+    border-radius: 0.25rem;
+}
+
+.footer-logo {
+    flex: 2;
+    color: #000;
+    font-size: 0.75rem;
+}
+
+.footer-logo .logo {
+    background-color: var(--brand-color);
+    color: white;
+    font-weight: 700;
+    font-size: 2rem;
+    line-height: 2rem;
+    padding: 0.5rem;
+    width: max-content;
+}
+
+footer nav {
+    flex: 1;
+    display: block;
+    justify-content: space-between;
+
+}
+
+footer nav a {
+    display: block;
+    color: #000;
+    font-size: 0.75rem;
+}
+
+footer nav h4 {
+    font-size: 0.75rem;
+    font-weight: 600;
+    padding-bottom: 0.4rem;
+}
+
+footer ul {
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+}
+
+div.footer-logo>p:nth-child(2) {
+    align-content: end;
+    width: 100%;
+    font-size: 1rem;
+}
+
+div.footer-logo>p:nth-child(3) {
+    font-size: 0.75rem;
+}
+
+.footer-bottom {
+    font-size: 0.75rem;
+}
+
+.mobile-nav-icon {
+    font-size: 2rem;
+    color: var(--brand-color);
+    justify-self: center;
+    display: grid;
+    gap: 0.2rem
+}
+
+.mobile-nav-icon i {
+    justify-self: center;
+}
+
+.mobile-nav-icon p {
+    margin: 0;
+    font-size: 0.8rem;
+    color: black;
+}
+
+@media screen and (max-width: 768px) {
+    .header-top {
+        padding-top: 1.25rem;
+        padding-bottom: 1.25rem;
+    }
+
+    .header-search {
+        padding-top: 1.25rem;
+        padding-bottom: 1.25rem;
+        background-color: transparent;
+    }
+
+    form.filter>select {
+        min-width: calc(50%-2rem);
+    }
+
+    form.filter>button {
+        flex: unset;
+        padding-left: 0.5rem;
+        padding-right: 0.5rem;
+        font-size: 1.25rem;
+    }
+
+    .mobile-nav {
+        background-color: white;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        display: flex;
+        flex-direction: row;
+        gap: 1.6rem;
+        justify-content: center;
+        padding: 0.8rem;
+        box-shadow: 1rem 0px 4px 1px #eaeaea;
+    }
+
+    h3 {
+        font-size: 1.8rem;
+        padding-top: 0.5rem;
+        padding-bottom: 1rem;
+    }
+
+}
+
+@media screen and (max-width: 426px) {
+    .all-ad {
+        gap: 1.5rem;
+    }
+
+    .ad-container {
+        flex-wrap: wrap;
+        border-left: 0.06rem solid #000;
+        border-radius: 0;
+        box-shadow: none;
+        padding: 1rem 2rem;
+    }
+
+    .ad-container>div:nth-child(2) {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .ad-container>div:nth-child(2)>p {
+        margin-top: 0;
+        margin-bottom: 0;
+    }
 
 }

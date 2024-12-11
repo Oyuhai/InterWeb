@@ -56,12 +56,16 @@ async function Render() {
     const filters = getFilter()
     const filteredData = await filterData(filters)
     const data = filteredData.reduce((p, c) => {
-        return p += `<li>
-                    <h4>${professionDictionary[c.profession]}</h4>
-                    <p>Компани: ${c.company}, Байршил:${locationDictionary[c.location]}</p>
-                    <p>${c.salary}₮</p>
-                    <p>${statusDictionary[c.status]}</p>
-                    <button>Дэлгэрэнгүй</button>
+        return p += `<li class="ad-container">
+                    <div>
+                        <h4>${professionDictionary[c.profession]}</h4>
+                        <p>Компани: ${c.company}, Байршил:${locationDictionary[c.location]}</p>
+                        <p>${c.salary}₮</p>
+                    </div>
+                    <div class="ad-container-bottom">
+                        <p>${statusDictionary[c.status]}</p>
+                        <button>Дэлгэрэнгүй</button>
+                    </div>
                 </li>`
     }, '')
     const el = document.getElementById("zar")

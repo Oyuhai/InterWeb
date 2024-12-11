@@ -1,9 +1,3 @@
-@media screen and (min-width: 769px) {
-    .desktop-none {
-        display: none;
-    }
-}
-
 a {
     text-decoration: none;
     color: white;
@@ -53,7 +47,6 @@ a.profile-image>img {
     gap: 1rem;
     justify-content: space-between;
     background-color: var(--brand-color);
-    border: 0.1rem solid var(--brand-color);
 }
 
 .filter {
@@ -117,7 +110,17 @@ article>img {
     padding: 1.5rem 3rem;
     box-shadow: var(--shadow);
     border-radius: 0.5rem;
+}
 
+.ad-container>div button {
+    border: 1px solid var(--brand-color);
+    border-radius: .7rem;
+    padding: 0.2rem 1.5rem;
+    background-color: transparent;
+}
+
+.ad-container-bottom p {
+    text-align: end;
 }
 
 .ad-container h4 {
@@ -182,7 +185,6 @@ footer ul {
     display: flex;
     flex-direction: column;
     gap: 0.2rem;
-
 }
 
 div.footer-logo>p:nth-child(2) {
@@ -199,11 +201,16 @@ div.footer-logo>p:nth-child(3) {
     font-size: 0.75rem;
 }
 
-
-@media screen and (max-width: 768px) {
-    .mobile-none {
+/* @media screen and (min-width: 769px) {
+    .desktop-none {
         display: none;
     }
+} */
+
+@media screen and (max-width: 768px) {
+    /* .mobile-none {
+        display: none;
+    } */
 
     .header-top {
         padding-top: 1.25rem;
@@ -238,13 +245,43 @@ div.footer-logo>p:nth-child(3) {
         bottom: 0;
         left: 0;
         right: 0;
+        display: flex;
+        flex-direction: row;
+        gap: 1.6rem;
+        justify-content: center;
+        padding: 0.8rem;
+        box-shadow: 1rem 0px 4px 1px #eaeaea;
     }
-
-    .mobile-nav>i {
-        font-size: 3rem;
-    }
-
 }
+
+.mobile-nav-icon {
+    font-size: 2rem;
+    color: var(--brand-color);
+    justify-self: center;
+    display: grid;
+    gap: 0.2rem
+}
+
+.mobile-nav-icon i {
+    justify-self: center;
+}
+
+.mobile-nav-icon p {
+    margin: 0;
+    font-size: 0.8rem;
+    color: black;
+}
+
+div.footer-logo>p:nth-child(2) {
+    align-content: end;
+    width: 100%;
+    font-size: 1.2rem;
+}
+
+div.footer-logo>p:nth-child(3) {
+    font-size: 1rem;
+}
+
 
 @media screen and (max-width: 425px) {
     .ad-container {
@@ -260,5 +297,9 @@ div.footer-logo>p:nth-child(3) {
     .ad-container>div:nth-child(2)>p {
         margin-top: 0;
         margin-bottom: 0;
+    }
+
+    .ad-container h4 {
+        font-size: 1.5rem;
     }
 }

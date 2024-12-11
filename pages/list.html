@@ -7,22 +7,25 @@
         <title>INTERN - List Page</title>
         <meta name="description" content="Заруудын жагсаалт гарч ирнэ">
         <script type="module" src="../list.js"></script>
-        <link rel="stylesheet" href="./css/header.css">
+        <link rel="stylesheet" href="./css/root.css">
         <link rel="stylesheet" href="./css/list.css">
+        <link rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     </head>
 
     <body>
-
         <!-- Header -->
-        <header>
+        <header class="flex-col">
             <nav class="wrap header-top flex-row">
                 <a href="./home.html" class="logo">INTERN</a>
-                <a href="./home.html">Нүүр хуудас</a>
-                <a href="./zar.html">Зарууд</a>
-                <a class="profile-image" href="./signInStud.html">
-                    <img src="./pics/profile.webp" alt="Хэрэглэгчийн профайл зураг"></a>
+                <a class="mobile-none" href="./home.html">Нүүр хуудас</a>
+                <a class="mobile-none" href="./zar.html">Зарууд</a>
+                <a class="mobile-none profile-image" class="profile-image" href="./signInStud.html">
+                    <img src="../pics/profile.webp" alt="Хэрэглэгчийн профайл зураг"></a>
             </nav>
-            <div>
+            <!-- <nav class="desktop-none mobile-nav">
+            </nav> -->
+            <div class="flex-col wrap header-search">
                 <form action="/list.html" method="GET" class="flex-row filter">
                     <select onchange="selectHandler(this)" name="profession" id="profession">
                         <option value="">Мэргэжил</option>
@@ -34,54 +37,72 @@
                         <option value="hud">Хан Уул</option>
                         <option value="chd">Чингэлтэй</option>
                     </select>
-                    <select onchange="selectHandler(this)" name="duration" id="duration">
+                    <select class="mobile-none" onchange="selectHandler(this)" name="duration" id="duration">
                         <option value="">Хугацаа</option>
                         <option value="1_3">1-3 сар</option>
                         <option value="4_6">4-6 сар</option>
                     </select>
-                    <button type="submit">Зар шүүх</button>
+                    <button class="mobile-none" type="submit">Зар шүүх</button>
+                    <button class="desktop-none" type="submit">&#x1F50D;</button>
                 </form>
             </div>
+            <nav class="desktop-none mobile-nav">
+                <a class="mobile-nav-icon" href="#">
+                    <i class="fa fa-home"></i>
+                    <p>Нүүр хуудас</p>
+                </a>
+                <a class="mobile-nav-icon" href="#">
+                    <i class='fa fa-book'></i>
+                    <p>Зарууд</p>
+                </a>
+                <a class="mobile-nav-icon" href="#">
+                    <i class='fa fa-user-circle'></i>
+                    <p>Профайл</p>
+                </a>
+            </nav>
         </header>
 
-
-        <!-- Main Content -->
         <main>
-            <article>
+            <article class="flex-col wrap container-padding-x">
                 <h3>Олдсон зарууд</h3>
-                <ul id="zar">
+                <ul class="flex-col all-ad" id="zar">
                 </ul>
             </article>
         </main>
 
-        <!-- Footer -->
-        <footer>
-            <img id="logo" src="logo.png" alt="web logo">
-            <p>Шинэ заруудыг хоцролгүй авахын тулд манайд нэгдээрэй</p>
-            <p>Бүртгүүлснээр та манай Нууцлалын бодлогыг хүлээн зөвшөөрч, манай компаниас мэдээлэл мэйлээр авахыг
-                зөвшөөрч байна.</p>
+        <footer class="wrap container-padding-x">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <div class="logo">INTERN</div>
+                    <p>Шинэ заруудыг хүлээлгүй авахын тулд манайд нэгдээрэй.</p>
+                    <p>Бүртгүүлснээр та манай <u>Нууцлалын бодлогыг</u> хүлээн зөвшөөрч, манай компанийн мэдээлэл
+                        мэйлээр
+                        авахыг
+                        зөвшөөрч байна.</p>
+                </div>
 
-            <!-- Хэрэгтэй хуудсууд -->
-            <h5>Хэрэгтэй хуудсууд</h5>
-            <nav>
-                <ul>
-                    <li><a href="">Нүүр хуудас</a></li>
-                    <li><a href="">Зарууд</a></li>
-                    <li><a href="">Нэвтрэх</a></li>
-                    <li><a href="">Бүртгүүлэх</a></li>
-                </ul>
-            </nav>
+                <nav class="mobile-none footer-links">
+                    <h4>Хэрэгтэй хуудас</h4>
+                    <ul>
+                        <li><a href="#">Нүүр хуудас</a></li>
+                        <li><a href="#">Заруд</a></li>
+                        <li><a href="#">Бүртгүүлэх</a></li>
+                        <li><a href="#">Нэвтрэх</a></li>
+                    </ul>
+                </nav>
 
-            <!-- Бидэнтэй нэгдээрэй -->
-            <h5>Бидэнтэй нэгдээрэй</h5>
-            <nav>
-                <ul>
-                    <li><a href="">Facebook</a></li>
-                    <li><a href="">Instagram</a></li>
-                    <li><a href="">Youtube</a></li>
-                    <li><a href="">X</a></li>
-                </ul>
-            </nav>
+                <nav class="mobile-none footer-social">
+                    <h4>Бидэнтэй нэгдээрэй</h4>
+                    <ul>
+                        <li><a href="#">Facebook</a></li>
+                        <li><a href="#">Instagram</a></li>
+                        <li><a href="#">X</a></li>
+                        <li><a href="#">LinkedIn</a></li>
+                        <li><a href="#">Youtube</a></li>
+                    </ul>
+                </nav>
+            </div>
+            <p class="footer-bottom">© 2024 Internships. All rights reserved.</p>
         </footer>
 
     </body>
