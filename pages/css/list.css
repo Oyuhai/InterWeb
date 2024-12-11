@@ -18,12 +18,14 @@ a {
     padding: 2.5rem var(--container-padding) 1rem var(--container-padding);
     gap: 2.75rem;
     align-items: end;
-    background-color: var(--brand-color);
-    border: 0.1rem solid var(--brand-color);
+    /* background-color: var(--brand-color);
+    border: 0.1rem solid var(--brand-color); */
+    border: none;
+    background: linear-gradient(to bottom, var(--brand-color), rgba(46, 37, 211, 0.65));
 }
 
 .logo {
-    background-color: var(--brand-color);
+    background: transparent;
     color: white;
     font-weight: 700;
     font-size: 3rem;
@@ -43,7 +45,7 @@ a.profile-image>img {
     padding: 1rem var(--container-padding) 2.5rem var(--container-padding);
     gap: 1rem;
     justify-content: space-between;
-    background-color: var(--brand-color);
+    background: linear-gradient(to top, var(--brand-color), rgba(46, 37, 211, 0.65));
 }
 
 .filter {
@@ -114,6 +116,8 @@ h3 {
     padding: 2rem;
     border: var(--border) var(--brand-color);
     border-radius: 0.25rem;
+    background: linear-gradient(to top, #3229dd, rgba(50, 41, 221, 0.5) 80%, #3229dd);
+
 }
 
 .footer-logo {
@@ -136,12 +140,16 @@ footer nav {
     flex: 1;
     display: block;
     justify-content: space-between;
+    align-self: flex-end
+}
 
+footer nav li {
+    color: white;
 }
 
 footer nav a {
     display: block;
-    color: #000;
+    color: white;
     font-size: 0.75rem;
 }
 
@@ -149,26 +157,31 @@ footer nav h4 {
     font-size: 0.75rem;
     font-weight: 600;
     padding-bottom: 0.4rem;
+    color: white;
 }
 
 footer ul {
     display: flex;
     flex-direction: column;
     gap: 0.2rem;
+    color: white;
 }
 
 div.footer-logo>p:nth-child(2) {
     align-content: end;
     width: 100%;
     font-size: 1rem;
+    color: white;
 }
 
 div.footer-logo>p:nth-child(3) {
     font-size: 0.75rem;
+    color: white;
 }
 
 .footer-bottom {
     font-size: 0.75rem;
+
 }
 
 .mobile-nav-icon {
@@ -235,19 +248,105 @@ div.footer-logo>p:nth-child(3) {
 }
 
 @media screen and (max-width: 426px) {
+    .header-top {
+        border: none;
+        background: linear-gradient(to bottom, var(--brand-color), rgba(46, 37, 211, 0.65));
+    }
+
+    .logo {
+        background: transparent;
+    }
+
     .all-ad {
         gap: 1.5rem;
     }
 
     .ad-container {
-        flex-wrap: wrap;
+        /* flex-wrap: wrap;
         border-left: 0.06rem solid #000;
         border-radius: 0;
         box-shadow: none;
-        padding: 1rem 2rem;
+        padding: 1rem 2rem; */
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        padding: 1.5rem;
+        /* 24px */
+        border-left: 0.0625rem solid #ddd;
+        box-shadow: none;
+        border-radius: 0;
+        /* 1px */
+
     }
 
-    .ad-container>div:nth-child(2) {
+    .ad-container>div:first-child {
+        flex: 1;
+    }
+
+    .ad-container h4 {
+        font-size: 1.25rem;
+        /* 20px */
+        font-weight: bold;
+        margin: 0 0 0.5rem;
+        /* 0 0 8px */
+    }
+
+    .ad-container p {
+        margin: 0.25rem 0;
+        /* 4px */
+        color: #666;
+        font-size: 0.875rem;
+        /* 14px */
+    }
+
+    .ad-container p:last-of-type {
+        font-size: 1rem;
+        /* 16px */
+        color: #000;
+    }
+
+    /* Right Side (Status and Button) */
+    .ad-container-bottom {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        justify-content: space-between;
+        text-align: right;
+        gap: 1rem
+    }
+
+    .ad-container-bottom p {
+        font-size: 0.875rem;
+        /* 14px */
+        color: #666;
+        margin-bottom: 0.5rem;
+        /* 8px */
+    }
+
+    .ad-container-bottom button {
+        border: 0.125rem solid #6a0dad;
+        /* 2px */
+        background: transparent;
+        color: #6a0dad;
+        font-size: 0.875rem;
+        /* 14px */
+        padding: 0.5rem 1rem;
+        /* 8px 16px */
+        border-radius: 0.5rem;
+        /* 8px */
+        cursor: pointer;
+        transition: all 0.3s ease;
+    }
+
+    #openPopup {
+        border: none;
+        padding: none;
+        color: black;
+
+    }
+
+
+    /* .ad-container>div:nth-child(2) {
         width: 100%;
         display: flex;
         justify-content: space-between;
@@ -256,6 +355,6 @@ div.footer-logo>p:nth-child(3) {
     .ad-container>div:nth-child(2)>p {
         margin-top: 0;
         margin-bottom: 0;
-    }
+    } */
 
 }

@@ -64,7 +64,9 @@ async function Render() {
                     </div>
                     <div class="ad-container-bottom">
                         <p>${statusDictionary[c.status]}</p>
-                        <button>Дэлгэрэнгүй</button>
+                        <button>Хүсэлт илгээх</button>
+                        <button id="openPopup">Дэлгэрэнгүй</button>
+                        
                     </div>
                 </li>`
     }, '')
