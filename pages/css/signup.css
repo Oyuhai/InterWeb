@@ -6,58 +6,6 @@ body {
 
 /*Header heseg*/
 
-.wrap {
-    max-width: 1300px;
-    width: 100%;
-    margin: 0 auto;
-}
-
-a {
-    text-decoration: none;
-    color: white;
-    font-size: 16px;
-}
-
-.flex-row {
-    display: flex;
-    flex-direction: row;
-}
-
-header {
-    background-color: #3229DD;
-    display: flex;
-    flex-direction: column;
-    gap: 50px;
-    padding: 38px 100px;
-}
-
-.logo {
-    font-weight: 700;
-    font-size: 50px;
-    line-height: 42px;
-}
-
-.header-top {
-    gap: 44px;
-    align-items: end;
-}
-
-h2 {
-    color: white;
-    font-weight: 400;
-    font-size: 40px;
-    margin: 0;
-}
-
-.profile-image {
-    margin-left: auto;
-    justify-content: center;
-}
-
-a.profile-image>img {
-    width: 50px;
-}
-
 /* Form хэсэг */
 form {
     max-width: 400px;
@@ -380,14 +328,6 @@ footer p{
 /* Responsive styles */
 @media screen and (max-width: 768px) {
     /* Гар утасны загвар */
-    header nav a:not(.logo), 
-    header .profile-image {
-        display: none; /* Desktop navigation links hidden on mobile */
-    }
-
-    .mobile-nav {
-        display: flex; /* Mobile navigation visible */
-    }
 
     .info-container {
         flex-direction: column;

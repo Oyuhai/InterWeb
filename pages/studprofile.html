@@ -5,21 +5,39 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Оюутан Профайл</title>
     <meta name="description" content="Хэрэглэгчийн профайл, боловсролын мэдээлэл болон заруудын хүсэлтүүд.">
-    <link rel="stylesheet" type="text/css" href="./css/signup.css">
+    <link rel="stylesheet" type="text/css" href="./css/stud.css">
+    <link rel="stylesheet" href="./css/root.css">
+    <link rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    
+
 </head>
 <body>
     <header>
         <nav class="wrap header-top flex-row">
             <a href="./home.html" class="logo">INTERN</a>
-            <a href="./home.html">Нүүр хуудас</a>
-            <a href="./zar.html">Зарууд</a>
-            <a class="profile-image" href="./signInStud.html">
-                <img src="./pics/profile.webp" alt="Хэрэглэгчийн профайл зураг">
+            <a class="mobile-none" href="./home.html">Нүүр хуудас</a>
+            <a class="mobile-none" href="./zar.html">Зарууд</a>
+            <a class="mobile-none profile-image" href="./signInStud.html">
+                <img src="../pics/profile.webp" alt="Хэрэглэгчийн профайл зураг"></a>
+        </nav>
+        <nav class="desktop-none mobile-nav">
+            <a class="mobile-nav-icon" href="#">
+                <i class="fa fa-home"></i>
+                <p>Нүүр хуудас</p>
+            </a>
+            <a class="mobile-nav-icon" href="#">
+                <i class='fa fa-book'></i>
+                <p>Зарууд</p>
+            </a>
+            <a class="mobile-nav-icon" href="#">
+                <i class='fa fa-user-circle'></i>
+                <p>Профайл</p>
             </a>
         </nav>
     </header>
-    
-    <section class="info-container">
+    <main>
+        <section class=" wrap info-container">
         <div class="link-img">
             <img src="https://raw.githubusercontent.com/Oyuhai/InterWeb/refs/heads/main/pics/profile.webp" alt="Хэрэглэгчийн профайл зураг" loading="lazy">
             <a href="#" class="CV-link">CV upload</a>
@@ -35,11 +53,11 @@
         </ul>
     </section>
     
-    <article class="huseltuud">
+    <article class="wrap huseltuud">
         <h4>Илгээсэн хүсэлтүүд</h4>
-        <div class="request-section">
+        <div class="wrap request-section">
             <article>
-                <h5>Зөвшөөрсөн</h5>
+                <h3>Зөвшөөрсөн</h3>
                 <ul>
                     <li>
                         <h5>Burger King</h5>
@@ -59,7 +77,7 @@
                 </ul>
             </article>
             <article>
-                <h5>Хүлээгдэж байгаа</h5>
+                <h3>Хүлээгдэж байгаа</h3>
                 <ul>
                     <li>
                         <h5>Burger King</h5>
@@ -79,7 +97,7 @@
                 </ul>
             </article>
             <article>
-                <h5>Татгалзсан</h5>
+                <h3>Татгалзсан</h3>
                 <ul>
                     <li>
                         <h5>Burger King</h5>
@@ -139,34 +157,41 @@
 
 
     </article>
+    </main>
     
-    <footer>
-        <div class="footer-logo">
-            <div class="logo">INTERN</div>
-            <p>Шинэ заруудыг хүлээлгүй авахын тулд манайд нэгдээрэй.</p>
-            <p>Бүртгүүлснээр та манай Нууцлалын бодлогыг хүлээн зөвшөөрч, манай компанийн мэдээлэл мэйлээр авахыг зөвшөөрч байна.</p>
+    
+    <footer class="wrap container-padding-x">
+        <div class="footer-content">
+            <div class="footer-logo">
+                <div class="logo">INTERN</div>
+                <p>Шинэ заруудыг хүлээлгүй авахын тулд манайд нэгдээрэй.</p>
+                <p>Бүртгүүлснээр та манай <u>Нууцлалын бодлогыг</u> хүлээн зөвшөөрч, манай компанийн мэдээлэл
+                    мэйлээр
+                    авахыг
+                    зөвшөөрч байна.</p>
+            </div>
+
+            <nav class="mobile-none footer-links">
+                <h4>Хэрэгтэй хуудас</h4>
+                <ul>
+                    <li><a href="#">Нүүр хуудас</a></li>
+                    <li><a href="#">Заруд</a></li>
+                    <li><a href="#">Бүртгүүлэх</a></li>
+                    <li><a href="#">Нэвтрэх</a></li>
+                </ul>
+            </nav>
+
+            <nav class="mobile-none footer-social">
+                <h4>Бидэнтэй нэгдээрэй</h4>
+                <ul>
+                    <li><a href="#">Facebook</a></li>
+                    <li><a href="#">Instagram</a></li>
+                    <li><a href="#">X</a></li>
+                    <li><a href="#">LinkedIn</a></li>
+                    <li><a href="#">Youtube</a></li>
+                </ul>
+            </nav>
         </div>
-
-        <nav class="footer-links">
-            <h4>Хэрэгтэй хуудас</h4>
-            <ul>
-                <li><a href="#">Нүүр хуудас</a></li>
-                <li><a href="#">Заруд</a></li>
-                <li><a href="#">Бүртгүүлэх</a></li>
-                <li><a href="#">Нэвтрэх</a></li>
-            </ul>
-        </nav>
-
-        <nav class="footer-social">
-            <h4>Бидэнтэй нэгдээрэй</h4>
-            <ul>
-                <li><a href="#">Facebook</a></li>
-                <li><a href="#">Instagram</a></li>
-                <li><a href="#">X</a></li>
-                <li><a href="#">LinkedIn</a></li>
-                <li><a href="#">Youtube</a></li>
-            </ul>
-        </nav>
         <p class="footer-bottom">© 2024 Internships. All rights reserved.</p>
     </footer>
 </body>

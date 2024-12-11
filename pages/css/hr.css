@@ -1,0 +1,298 @@
+a {
+    text-decoration: none;
+    color: white;
+    font-size: 1rem;
+}
+
+.flex-row {
+    display: flex;
+    flex-direction: row;
+}
+
+.flex-col {
+    display: flex;
+    flex-direction: column;
+}
+
+header {
+    display: flex;
+    flex-direction: column;
+}
+
+.header-top {
+    padding: 2.5rem var(--container-padding) 1rem var(--container-padding);
+    gap: 2.75rem;
+    align-items: end;
+    /* background-color: var(--brand-color);
+        border: 0.1rem solid var(--brand-color); */
+    border: none;
+    background: linear-gradient(to bottom, var(--brand-color), rgba(46, 37, 211, 0.65));
+}
+
+h2 {
+    color: white;
+    font-weight: 400;
+    font-size: 2rem;
+}
+
+.profile-image {
+    margin-left: auto;
+    justify-content: center;
+}
+
+a.profile-image>img {
+    width: 3rem;
+}
+
+.main{
+    display: flex;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 8rem;
+    padding: 2rem;
+    border: var(--border) var(--brand-color);
+    border-radius: 0.25rem;
+    background: linear-gradient(to top, #3229dd, rgba(50, 41, 221, 0.5) 80%, #3229dd);
+}
+
+.footer-logo {
+    flex: 2;
+    color: white;
+    font-size: 0.75rem;
+}
+
+.footer-logo .logo {
+    background-color: var(--brand-color);
+    color: white;
+    font-weight: 700;
+    font-size: 2rem;
+    line-height: 2rem;
+    padding: 0.5rem;
+    width: max-content;
+}
+
+.logo {
+    background-color: transparent;
+    color: white;
+    font-weight: 700;
+    font-size: 3rem;
+    line-height: 2.5rem;
+}
+
+footer nav {
+    flex: 1;
+    color: white;
+    display: block;
+    justify-content: space-between;
+
+}
+
+footer nav a {
+    display: block;
+    color: white;
+    font-size: 0.75rem;
+}
+
+footer nav h4 {
+    font-size: 0.75rem;
+    font-weight: 600;
+    padding-bottom: 0.4rem;
+}
+
+footer ul {
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+}
+
+div.footer-logo>p:nth-child(2) {
+    align-content: end;
+    width: 100%;
+    font-size: 1rem;
+}
+
+div.footer-logo>p:nth-child(3) {
+    font-size: 0.75rem;
+}
+
+.footer-bottom {
+    font-size: 0.75rem;
+}
+
+/* @media screen and (min-width: 769px) {
+    .desktop-none {
+        display: none;
+    }
+} */
+
+@media screen and (max-width: 768px) {
+    /* .mobile-none {
+        display: none;
+    } */
+
+    .header-top {
+        border: none;
+        background: linear-gradient(to bottom, var(--brand-color), rgba(46, 37, 211, 0.65));
+    }
+
+    .mobile-nav {
+        background-color: white;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        display: flex;
+        flex-direction: row;
+        gap: 1.6rem;
+        justify-content: center;
+        padding: 0.8rem;
+        box-shadow: 1rem 0px 4px 1px #eaeaea;
+    }
+
+    
+}
+
+.mobile-nav-icon {
+    font-size: 2rem;
+    color: var(--brand-color);
+    justify-self: center;
+    display: grid;
+    gap: 0.2rem
+}
+
+.mobile-nav-icon i {
+    justify-self: center;
+}
+
+.mobile-nav-icon p {
+    margin: 0;
+    font-size: 0.8rem;
+    color: black;
+}
+
+div.footer-logo>p:nth-child(2) {
+    align-content: end;
+    width: 100%;
+    font-size: 1.2rem;
+}
+
+div.footer-logo>p:nth-child(3) {
+    font-size: 1rem;
+}
+
+
+
+
+.info-container {
+    width: 70%;
+    height: auto;
+    margin: 20px auto;
+    padding: 20px;
+    display: flex;
+    gap: 30px; /* zurag info hoorondiin zai */
+    border-radius: 8px; 
+    justify-content: center; /* stud infog golluulj bairluulah*/
+    align-items: center;     /*  */ 
+}
+
+.link-img {
+    margin: auto;
+    display: flex;
+    margin: 10px;
+    flex-direction: column;
+    align-items: center;
+}
+
+.link-img img {
+    width: auto;
+    height: 150px;
+    margin-bottom: 30px; 
+}
+
+.hr-img{
+    flex-direction:row;
+    align-items: center;
+}
+
+.info-container ul {
+    list-style-type: none; 
+    line-height: 30px;
+}
+
+
+/* Job posting section */
+/* Job posting section */
+/* General styles */
+.hr-zaruud h3{
+    padding:40px;
+}
+
+.irsen-huseltuud {
+    margin: 20px auto;
+    max-width: 800px;
+}
+
+.irsen-huseltuud h4{
+    padding: 10px;
+}
+
+.irsen-huseltuud ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.irsen-huseltuud ul li {
+    width: calc(25% - 10px);
+    padding: 15px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    position: relative; /* For dropdown positioning */
+}
+
+/* Dropdown button styles */
+.dropdown-button {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+/* Dropdown menu styles */
+.dropdown-menu {
+    display: none; /* Initially hidden */
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: white;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+    margin-top: 10px;
+    list-style: none;
+    padding: 10px;
+    width: 100%;
+    z-index: 10;
+}
+
+.dropdown-menu li {
+    padding: 5px 10px;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+
+
+/* Show dropdown menu on hover */
+.dropdown:hover .dropdown-menu {
+    display: block;
+}
