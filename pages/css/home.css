@@ -1,3 +1,34 @@
+@keyframes pulse {
+    0% {
+        color: #a7a3ec;
+    }
+
+    50% {
+        color: #fff;
+    }
+
+    100% {
+        color: #a7a3ec;
+
+    }
+}
+
+.header-search h2 {
+    animation: pulse 3s infinite;
+}
+
+@media (prefers-color-scheme: dark) {
+    body {
+        background-color: #121212;
+        color: #ffffff;
+    }
+
+    button {
+        color: white;
+    }
+
+}
+
 a {
     text-decoration: none;
     color: white;
@@ -87,6 +118,7 @@ h3 {
     gap: 2.75rem;
     overflow-x: auto;
     max-width: 100vw;
+    padding: 15px 0px;
 }
 
 .company {
@@ -94,6 +126,12 @@ h3 {
     border: var(--border) black;
     padding: 1rem 2rem;
     border-radius: 0.25rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.company:hover {
+    transform: scale(1.1);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
 }
 
 article>img {
