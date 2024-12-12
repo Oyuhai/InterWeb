@@ -199,6 +199,14 @@ div.footer-logo>p:nth-child(3) {
     align-items: center;     /*  */ 
 }
 
+.info-container .left{
+    color: gray;
+}
+
+.info-container .right{
+    color: black;
+}
+
 .link-img {
     margin: auto;
     display: flex;
@@ -228,10 +236,17 @@ div.footer-logo>p:nth-child(3) {
 /* Job posting section */
 /* General styles */
 /* Header styles */
-.hr-zaruud h3 {
-    padding: 20px;
+.hr-zaruud{
+    padding: 1.2rem;
     font-size: 24px;
+    
 }
+
+.hr-zaruud h3{
+    margin: 20px auto;
+    max-width: 800px;
+}
+
 
 /* General layout */
 .irsen-huseltuud {
@@ -242,7 +257,6 @@ div.footer-logo>p:nth-child(3) {
 .irsen-huseltuud h4 {
     padding: 10px 0;
     font-size: 20px;
-    font-weight: bold;
     text-align: left;
 }
 
@@ -256,14 +270,19 @@ div.footer-logo>p:nth-child(3) {
 }
 
 .irsen-huseltuud ul li {
-    width: calc(25% - 10px); /* 2 item per row */
+    width: calc(20% - 10px); /* 2 item per row */
     padding: 15px;
     background-color: #f8f9fa;
     border-radius: 8px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     position: relative;
     transition: transform 0.2s ease;
+    
 }
+
+/*.irsen-huseltuud ul li p{
+    font-weight: bold;
+}*/
 
 .irsen-huseltuud ul li:hover {
     transform: translateY(-5px); /* Slight hover effect */
@@ -276,8 +295,7 @@ details {
 
 details summary {
     font-size: 16px;
-    font-weight: bold;
-    color: black;
+    color: grey;
     cursor: pointer;
     margin-bottom: 10px;
 }
