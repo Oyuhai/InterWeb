@@ -2,137 +2,201 @@
     {
         "id": 1,
         "profession": "system_analist",
-        "location": "hud",
+        "location": "bzd",
         "duration": "1_3",
         "company": "ICT",
         "salary": 1200000,
         "status": "open",
-        "image": "@url(./pics/ictlogo.png)"
+        "image": "../pics/ictLogo.png"
     },
     {
         "id": 2,
         "profession": "frontend_developer",
         "location": "chd",
         "duration": "4_6",
-        "company": "Itools",
-        "salary": 900000,
-        "status": "closed"
+        "company": "ICT",
+        "salary": 1300000,
+        "status": "open",
+        "image": "../pics/ictLogo.png"
     },
     {
         "id": 3,
         "profession": "backend_developer",
-        "location": "bzd",
+        "location": "hud",
         "duration": "7_9",
-        "company": "Itheme",
-        "salary": 1400000,
-        "status": "open"
+        "company": "ICT",
+        "salary": 1500000,
+        "status": "open",
+        "image": "../pics/ictLogo.png"
     },
     {
         "id": 4,
-        "profession": "frontend_developer",
-        "location": "hud",
+        "profession": "system_admin",
+        "location": "bzd",
         "duration": "1_3",
-        "company": "ICT",
-        "salary": 800000,
-        "status": "closed"
+        "company": "itools",
+        "salary": 1100000,
+        "status": "closed",
+        "image": "../pics/itoolsLogo.png"
     },
     {
         "id": 5,
-        "profession": "backend_developer",
+        "profession": "frontend_developer",
         "location": "chd",
         "duration": "4_6",
-        "company": "Itools",
-        "salary": 1300000,
-        "status": "open"
+        "company": "itools",
+        "salary": 1200000,
+        "status": "open",
+        "image": "../pics/itoolsLogo.png"
     },
     {
         "id": 6,
-        "profession": "system_analist",
-        "location": "bzd",
+        "profession": "tuslah_engineer",
+        "location": "hud",
         "duration": "7_9",
-        "company": "Itheme",
-        "salary": 1500000,
-        "status": "closed"
+        "company": "itools",
+        "salary": 1350000,
+        "status": "open",
+        "image": "../pics/itoolsLogo.png"
     },
     {
         "id": 7,
-        "profession": "frontend_developer",
-        "location": "hud",
-        "duration": "4_6",
-        "company": "ICT",
-        "salary": 1100000,
-        "status": "open"
+        "profession": "system_admin",
+        "location": "bzd",
+        "duration": "1_3",
+        "company": "Khan Bank",
+        "salary": 1250000,
+        "status": "open",
+        "image": "../pics/khanbankLogo.png"
     },
     {
         "id": 8,
         "profession": "backend_developer",
         "location": "chd",
-        "duration": "1_3",
-        "company": "Itools",
-        "salary": 700000,
-        "status": "closed"
+        "duration": "4_6",
+        "company": "Khan Bank",
+        "salary": 1450000,
+        "status": "closed",
+        "image": "../pics/khanbankLogo.png"
     },
     {
         "id": 9,
-        "profession": "system_analist",
-        "location": "bzd",
-        "duration": "4_6",
-        "company": "Itheme",
-        "salary": 950000,
-        "status": "open"
+        "profession": "tuslah_engineer",
+        "location": "hud",
+        "duration": "7_9",
+        "company": "Khan Bank",
+        "salary": 1150000,
+        "status": "open",
+        "image": "../pics/khanbankLogo.png"
     },
     {
         "id": 10,
-        "profession": "frontend_developer",
-        "location": "hud",
-        "duration": "7_9",
-        "company": "ICT",
-        "salary": 1250000,
-        "status": "closed"
+        "profession": "system_analist",
+        "location": "bzd",
+        "duration": "1_3",
+        "company": "Mobicom",
+        "salary": 1400000,
+        "status": "open",
+        "image": "../pics/mobicomLogo.png"
     },
     {
         "id": 11,
-        "profession": "system_analist",
+        "profession": "frontend_developer",
         "location": "chd",
-        "duration": "1_3",
-        "company": "Itools",
-        "salary": 1350000,
-        "status": "open"
+        "duration": "4_6",
+        "company": "Mobicom",
+        "salary": 1500000,
+        "status": "closed",
+        "image": "../pics/mobicomLogo.png"
     },
     {
         "id": 12,
-        "profession": "backend_developer",
-        "location": "bzd",
-        "duration": "4_6",
-        "company": "Itheme",
-        "salary": 1450000,
-        "status": "closed"
+        "profession": "system_admin",
+        "location": "hud",
+        "duration": "7_9",
+        "company": "Mobicom",
+        "salary": 1200000,
+        "status": "open",
+        "image": "../pics/mobicomLogo.png"
     },
     {
         "id": 13,
-        "profession": "system_analist",
-        "location": "hud",
-        "duration": "7_9",
-        "company": "ICT",
-        "salary": 500000,
-        "status": "open"
+        "profession": "backend_developer",
+        "location": "bzd",
+        "duration": "1_3",
+        "company": "Unitel",
+        "salary": 1300000,
+        "status": "open",
+        "image": "../pics/unitelLogo.png"
     },
     {
         "id": 14,
-        "profession": "frontend_developer",
+        "profession": "tuslah_engineer",
         "location": "chd",
-        "duration": "1_3",
-        "company": "Itools",
-        "salary": 750000,
-        "status": "closed"
+        "duration": "4_6",
+        "company": "Unitel",
+        "salary": 1350000,
+        "status": "closed",
+        "image": "../pics/unitelLogo.png"
     },
     {
         "id": 15,
+        "profession": "frontend_developer",
+        "location": "hud",
+        "duration": "7_9",
+        "company": "Unitel",
+        "salary": 1450000,
+        "status": "open",
+        "image": "../pics/unitelLogo.png"
+    },
+    {
+        "id": 16,
+        "profession": "system_analist",
+        "location": "bzd",
+        "duration": "1_3",
+        "company": "NUM",
+        "salary": 1100000,
+        "status": "closed",
+        "image": "../pics/numLogo.png"
+    },
+    {
+        "id": 17,
+        "profession": "tuslah_engineer",
+        "location": "chd",
+        "duration": "4_6",
+        "company": "NUM",
+        "salary": 1250000,
+        "status": "open",
+        "image": "../pics/numLogo.png"
+    },
+    {
+        "id": 18,
+        "profession": "system_admin",
+        "location": "hud",
+        "duration": "7_9",
+        "company": "NUM",
+        "salary": 1400000,
+        "status": "open",
+        "image": "../pics/numLogo.png"
+    },
+    {
+        "id": 19,
         "profession": "backend_developer",
         "location": "bzd",
-        "duration": "7_9",
-        "company": "Itheme",
-        "salary": 1350000,
-        "status": "open"
+        "duration": "1_3",
+        "company": "ICT",
+        "salary": 1150000,
+        "status": "open",
+        "image": "../pics/ictLogo.png"
+    },
+    {
+        "id": 20,
+        "profession": "frontend_developer",
+        "location": "chd",
+        "duration": "4_6",
+        "company": "Unitel",
+        "salary": 1500000,
+        "status": "open",
+        "image": "../pics/unitelLogo.png"
     }
 ]
