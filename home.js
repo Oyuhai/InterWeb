@@ -59,7 +59,7 @@ listContainer.innerHTML = recentItems.reduce((html, item) => {
             </div>
             <div class="ad-container-bottom">
                 <p>${item.status === 'open' ? 'Нээлттэй' : 'Хаалттай'}</p>
-                <button>Дэлгэрэнгүй</button>
+                <button>Хүсэлт илгээх</button>
             </div>
         </li>`;
 }, '');
@@ -68,4 +68,37 @@ listContainer.innerHTML = recentItems.reduce((html, item) => {
 ActiveZarHAruulah()
 SuuldOruulsanZarHaruulah()
 
+// // Fetch JSON data from `mydata.json`
+// async function fetchItems() {
+//     const response = await fetch("mydata.json"); // Make sure `mydata.json` is in the same directory as this file
+//     return await response.json();
+// }
+
+// // Function to add an item to the profile
+// async function addToProfile(itemId) {
+//     const items = await fetchItems(); // Fetch the JSON data
+
+//     // Find the item in the JSON data
+//     const item = items.find((item) => item.id === itemId);
+
+//     if (item) {
+//         // Select the "Хүлээгдэж байгаа" <ul> element
+//         const pendingList = document.querySelector("#pending-list");
+
+//         // Create a new <li> element for the item
+//         const li = document.createElement("li");
+//         li.innerHTML = `
+//             <h5>${item.profession}</h5>
+//             <p>${item.company}</p>
+//             <p>${item.datePublished}</p>`;
+
+//         // Append the new item to the list
+//         pendingList.appendChild(li);
+//     }
+// }
+
+// // Attach event listeners to buttons
+// document.querySelectorAll("button").forEach((button, index) => {
+//     button.addEventListener("click", () => addToProfile(index + 1)); // Assuming the button index matches the item ID
+// });
 
