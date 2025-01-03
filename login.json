@@ -1,0 +1,14 @@
+[
+    {
+        "studentId": "student123",
+        "email": "student123@gmail.com",
+        "password": "123",
+        "cvSubmissions": []
+    },
+    {
+        "studentId": "student456",
+        "email": "student456@gmail.com",
+        "password": "456",
+        "cvSubmissions": []
+    }
+]

@@ -21,7 +21,7 @@
                 <a class="mobile-none" href="./home.html">Нүүр хуудас</a>
                 <a class="mobile-none" href="./zar.html">Зарууд</a>
                 <a class="mobile-none profile-image" class="profile-image" href="./signInStud.html">
-                    <img src="../pics/profile.webp" alt="Хэрэглэгчийн профайл зураг"></a>
+                    <img id="profileImage" src="../pics/profileIcon.png" alt="Хэрэглэгчийн профайл зураг"></a>
             </nav>
             <!-- <nav class="desktop-none mobile-nav">
             </nav> -->
@@ -104,7 +104,15 @@
             </div>
             <p class="footer-bottom">© 2024 Internships. All rights reserved.</p>
         </footer>
+        <script>
+            const isLoggedIn = localStorage.getItem('isLoggedIn');
 
+            if (isLoggedIn) {
+                document.getElementById('profileImage').src = '../pics/profile.webp';
+            } else {
+                window.location.href = "/pages/login.html";
+            }
+        </script>
     </body>
 
 </html>

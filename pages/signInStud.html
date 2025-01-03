@@ -13,32 +13,34 @@
         <header>
             <!-- contact info <address> dotor bichih -->
             <!-- zaruudin bblock <article dotor hiivel zgr sanagdlaa -->
-                <nav class="wrap header-top flex-row">
-                    <a href="./home.html" class="logo">INTERN</a>
-                    <a href="/home.html">Нүүр хуудас</a>
-                    <a href="/zar.html">Зарууд</a>
-                </nav>
+            <nav class="wrap header-top flex-row">
+                <a href="home.html" class="logo">INTERN</a>
+                <a href="home.html">Нүүр хуудас</a>
+                <a href="list.html">Зарууд</a>
+            </nav>
         </header>
-        <form>
+        <form id="login-form">
             <nav>
                 <button onclick="location.href='./pages/signInStud.html'" class="active">Оюутан</button>
                 <button onclick="location.href='pages\signupHr.html'" class="active">Байгууллага</button>
             </nav>
             <address>
-                    <label for="email">Email Address</label>
-                    <input type="email" id="email" name="email" placeholder="Email Address" required>
+                <label for="email">Email Address</label>
+                <input type="email" id="email" name="email" placeholder="Email Address" required>
 
-                    <label for="password">Password</label>
-                    <input type="password" id="password" name="password" placeholder="Password" required>
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" placeholder="Password" required>
 
-                    <div class="links">
-                        <a href="#" class="register-link">Бүртгэлгүй юу?</a>
-                        <a href="#" class="forgot-password-link">Нууц үгээ мартсан уу?</a>
-                    </div>
+                <div class="links">
+                    <a href="#" class="register-link">Бүртгэлгүй юу?</a>
+                    <a href="#" class="forgot-password-link">Нууц үгээ мартсан уу?</a>
+                </div>
 
-                    <input type="submit" value="Нэвтрэх">
+                <input type="submit" value="Нэвтрэх">
             </address>
+
         </form>
+        <script src="../login.js"></script>
     </body>
 
 </html>
