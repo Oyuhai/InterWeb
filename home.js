@@ -7,6 +7,12 @@ const professionDictionary = {
     system_admin: "Системийн админ"
 }
 
+const locationDictionary = {
+    bzd: "Баянзүрх дүүрэг",
+    chd: "Чингэлтэй дүүрэг",
+    hud: "Хан-Уул дүүрэг"
+}
+
 const mydata = await fetch('/mydata.json')
     .then((response) => response.json()) //json datagaa irtel huleene
 
@@ -53,15 +59,15 @@ listContainer.innerHTML = recentItems.reduce((html, item) => {
     return html + `
         <li class="ad-container">
             <div>
-                <h4>${item.profession}</h4>
-                <p>Компани: ${item.company}, Байршил: ${item.location}</p>
+                <h4>${professionDictionary[item.profession]}</h4 >
+                <p>${item.company}, ${locationDictionary[item.location]}</p>
                 <p>${item.salary.toLocaleString()}₮</p>
-            </div>
-            <div class="ad-container-bottom">
-                <p>${item.status === 'open' ? 'Нээлттэй' : 'Хаалттай'}</p>
-                <button>Хүсэлт илгээх</button>
-            </div>
-        </li>`;
+            </div >
+        <div class="ad-container-bottom">
+            <p>${item.status === 'open' ? 'Нээлттэй' : 'Хаалттай'}</p>
+            <button>Хүсэлт илгээх</button>
+        </div>
+        </li > `;
 }, '');
 
 
