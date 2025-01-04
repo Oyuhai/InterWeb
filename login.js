@@ -53,4 +53,28 @@ async function handleLogin(event) {
 // // Attach the event listener to the form
 // document.getElementById("login-form").addEventListener("submit", handleLogin);
 
+function handleLogout() {
+    // Логины өгөгдлийг localStorage-оос устгах
+    localStorage.removeItem('studentId');
+    localStorage.removeItem('isLoggedIn');
+
+    // Гарч явах хуудсанд чиглүүлэх
+    window.location.href = "/pages/signInStud.html"; // Логин хуудсанд шилжүүлэх
+}
+
+// Хуудас ачаалагдах үед хэрэглэгчийн нэвтэрсэн эсэхийг шалгах
+window.onload = function() {
+    const isLoggedIn = localStorage.getItem('isLoggedIn');
+
+    if (isLoggedIn === 'true') {
+        // Хэрэглэгч нэвтэрсэн бол гарч явах товчийг харуулах
+        document.getElementById('logout-button').style.display = 'block';
+    } else {
+        // Хэрэглэгч нэвтээгүй бол гарч явах товчийг нуух
+        document.getElementById('logout-button').style.display = 'none';
+    }
+}
+
+// Гарч явах товчийг сонсох
+document.getElementById("logout-button").addEventListener("click", handleLogout);
 

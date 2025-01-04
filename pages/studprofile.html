@@ -38,8 +38,6 @@
             </nav>
         </header>
         <main>
-            <button id="logout-button">Logout</button>
-
             <section class=" wrap info-container">
                 <div class="link-img">
                     <img src="https://raw.githubusercontent.com/Oyuhai/InterWeb/refs/heads/main/pics/profile.webp"
@@ -109,6 +107,7 @@
                     
                 </div>
             </article>
+            <button id="logout-button">Logout</button>
         </main>
 
 
@@ -146,6 +145,17 @@
             </div>
             <p class="footer-bottom">© 2024 Internships. All rights reserved.</p>
         </footer>
+        <script>
+            // Гарч явах үйлдэл
+            document.getElementById("logout-button").addEventListener("click", function() {
+                // localStorage-оос оюутны мэдээллийг устгах
+                localStorage.removeItem('studentId');
+                localStorage.removeItem('isLoggedIn');
+                
+                // Логин хуудас руу чиглүүлэх
+                window.location.href = "/pages/signInStud.html"; // signInStud.html руу шилжих
+            });
+        </script>
     </body>
 
 </html>
