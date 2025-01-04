@@ -108,3 +108,28 @@ SuuldOruulsanZarHaruulah()
 //     button.addEventListener("click", () => addToProfile(index + 1)); // Assuming the button index matches the item ID
 // });
 
+const profileImageElement = document.getElementById('profileImage');
+
+if (localStorage.getItem('isLoggedIn')) {
+    profileImageElement.src = '../pics/profile.webp';
+    profileImageElement.parentElement.href = './studprofile.html';
+} else {
+    profileImageElement.src = '../pics/profileIcon.png';
+    profileImageElement.parentElement.href = './signInStud.html';
+}
+
+
+// Хүсэлт илгээх товчнууд дээр event listener нэмэх
+document.querySelectorAll('.ad-container button').forEach((button, index) => {
+    button.addEventListener('click', function () {
+        // Товчийг "Хүсэлт илгээгдлээ" гэж өөрчлөх
+        this.textContent = 'Хүсэлт илгээгдлээ';
+
+        // Хүсэлт илгэсэн мэдээллийг localStorage-д хадгалах
+        const item = recentItems[index]; // Хүсэлтийн мэдээллийг олно
+        localStorage.setItem(`request-${item.id}`, JSON.stringify(item));
+
+        // Хүсэлтийг "Хүлээгдэж буй" хэсэгт харуулах
+        window.location.href = './studprofile.html'; // Студийн профайл хуудас руу шилжих
+    });
+});

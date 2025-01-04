@@ -18,20 +18,26 @@
             <nav class="wrap header-top flex-row">
                 <a href="./home.html" class="logo">INTERN</a>
                 <a class="mobile-none" href="./home.html">Нүүр хуудас</a>
-                <a class="mobile-none" href="./zar.html">Зарууд</a>
-                <a class="mobile-none profile-image" href="./signInStud.html">
-                    <img src="../pics/profile.webp" alt="Хэрэглэгчийн профайл зураг"></a>
+                <a class="mobile-none" href="./list.html">Зарууд</a>
+                <a class="mobile-none profile-image" href="./studprofile.html">
+                    <img id="studProfileImage" src="../pics/profile.webp" alt="Хэрэглэгчийн профайл зураг">
+                </a>
             </nav>
+            <script>
+                document.getElementById('studProfileImage').addEventListener('click', () => {
+                    window.location.href = './studprofile.html'; // Профайл руу чиглүүлэх
+                });
+            </script>
             <nav class="desktop-none mobile-nav">
-                <a class="mobile-nav-icon" href="#">
+                <a class="mobile-nav-icon" href="home.html">
                     <i class="fa fa-home"></i>
                     <p>Нүүр хуудас</p>
                 </a>
-                <a class="mobile-nav-icon" href="#">
+                <a class="mobile-nav-icon" href="list.html">
                     <i class='fa fa-book'></i>
                     <p>Зарууд</p>
                 </a>
-                <a class="mobile-nav-icon" href="#">
+                <a class="mobile-nav-icon" href="studprofile.html">
                     <i class='fa fa-user-circle'></i>
                     <p>Профайл</p>
                 </a>
@@ -155,6 +161,23 @@
                 // Логин хуудас руу чиглүүлэх
                 window.location.href = "/pages/signInStud.html"; // signInStud.html руу шилжих
             });
+
+    // Хүсэлт илгээгдсэн мэдээллийг localStorage-аас авч үзэх
+const pendingList = document.querySelector('.pending-list ul');
+
+Object.keys(localStorage).forEach(key => {
+    if (key.startsWith('request-')) { // Хүсэлттэй холбоотой түлхүүрийг шалгана
+        const item = JSON.parse(localStorage.getItem(key));
+        const li = document.createElement('li');
+        li.innerHTML = `
+            <h5>${professionDictionary[item.profession]}</h5>
+            <p>${item.company}</p>
+            <p>${item.datePublished}</p>
+        `;
+        pendingList.appendChild(li);
+    }
+});
+
         </script>
     </body>
 
