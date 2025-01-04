@@ -67,7 +67,7 @@ form nav {
 }
 
 form nav button {
-    flex: 1;
+    flex: none;
     padding: 10px;
     margin: 5px;
     background-color: #3229dd;
@@ -87,7 +87,7 @@ address .links {
     display: flex;
     justify-content: space-between;
     font-size: 14px;
-    margin: 5px, 10px;
+    margin: 5px 10px;
 }
 
 address .register-link {

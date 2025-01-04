@@ -42,6 +42,8 @@ h2 {
 
 a.profile-image>img {
     width: 3rem;
+    border-radius: 50%;
+
 }
 
 .main{

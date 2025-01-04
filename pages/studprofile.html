@@ -27,16 +27,21 @@
                     <a id="logout-button" href="./signInStud.html">Гарах</a>
                 </div>
             </nav>
+            <script>
+                document.getElementById('studProfileImage').addEventListener('click', () => {
+                    window.location.href = './studprofile.html'; // Профайл руу чиглүүлэх
+                });
+            </script>
             <nav class="desktop-none mobile-nav">
-                <a class="mobile-nav-icon" href="#">
+                <a class="mobile-nav-icon" href="home.html">
                     <i class="fa fa-home"></i>
                     <p>Нүүр хуудас</p>
                 </a>
-                <a class="mobile-nav-icon" href="#">
+                <a class="mobile-nav-icon" href="list.html">
                     <i class='fa fa-book'></i>
                     <p>Зарууд</p>
                 </a>
-                <a class="mobile-nav-icon" href="#">
+                <a class="mobile-nav-icon" href="studprofile.html">
                     <i class='fa fa-user-circle'></i>
                     <p>Профайл</p>
                 </a>

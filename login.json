@@ -1,14 +1,16 @@
 [
     {
-        "studentId": "student123",
+        "userId": "student123",
         "email": "student123@gmail.com",
         "password": "123",
+        "type": "student",
         "cvSubmissions": []
     },
     {
-        "studentId": "student456",
-        "email": "student456@gmail.com",
-        "password": "456",
-        "cvSubmissions": []
+        "userId": "hr123",
+        "email": "hr@company.com",
+        "password": "hrpass",
+        "type": "hr",
+        "company": "Some Company"
     }
 ]

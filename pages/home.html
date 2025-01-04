@@ -20,20 +20,20 @@
             <nav class="wrap header-top flex-row">
                 <a href="./home.html" class="logo">INTERN</a>
                 <a class="mobile-none" href="./home.html">Нүүр хуудас</a>
-                <a class="mobile-none" href="./zar.html">Зарууд</a>
+                <a class="mobile-none" href="./list.html">Зарууд</a>
                 <a class="mobile-none profile-image" href="./signInStud.html">
                     <img id="profileImage" src="../pics/profileIcon.png" alt="Хэрэглэгчийн профайл зураг"></a>
             </nav>
             <nav class="desktop-none mobile-nav">
-                <a class="mobile-nav-icon" href="#">
+                <a class="mobile-nav-icon" href="home.html">
                     <i class="fa fa-home"></i>
                     <p>Нүүр хуудас</p>
                 </a>
-                <a class="mobile-nav-icon" href="#">
+                <a class="mobile-nav-icon" href="list.html">
                     <i class='fa fa-book'></i>
                     <p>Зарууд</p>
                 </a>
-                <a class="mobile-nav-icon" href="#">
+                <a class="mobile-nav-icon" href="studprofile.html">
                     <i class='fa fa-user-circle'></i>
                     <p>Профайл</p>
                 </a>
@@ -112,13 +112,28 @@
         </footer>
         <script>
             const isLoggedIn = localStorage.getItem('isLoggedIn');
-
+            const profileImage = document.getElementById('profileImage');
+        
             if (isLoggedIn) {
-                document.getElementById('profileImage').src = '../pics/profile.webp';
+                profileImage.src = '../pics/profile.webp'; // Хэрэглэгчийн профайл зураг
+                profileImage.parentElement.href = './studprofile.html'; // Хэрэглэгчийн профайл руу чиглүүлэх
             } else {
-                window.location.href = "/pages/login.html";
+                profileImage.src = '../pics/profileIcon.png'; // Нэвтэрч ороогүй хэрэглэгчийн зураг
+                profileImage.parentElement.href = './signInStud.html'; // Нэвтрэх хуудас руу чиглүүлэх
             }
+
+            document.getElementById('requestButton').addEventListener('click', function() {
+                // Товчийг "Хүсэлт илгээгдлээ" гэж өөрчлөх
+                this.textContent = 'Хүсэлт илгээгдлээ';
+        
+                // Хүсэлт илгээсэн мэдээллийг localStorage-д хадгалах
+                localStorage.setItem('requestStatus', 'pending'); // Хүсэлтийн статус "Хүлээгдэж буй" гэж тэмдэглэх
+        
+                // Хүсэлтийг студийн профайл хуудасны "Хүлээгдэж буй" хэсэгт харуулах
+                window.location.href = './studprofile.html';
+            });
         </script>
+        
 
     </body>
 
