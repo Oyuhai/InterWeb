@@ -126,3 +126,47 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 
+// Add event listener to the profile image toggle
+document.getElementById('user-dropdown-toggle').addEventListener('click', function (event) {
+    event.preventDefault(); // Prevent the default link behavior
+
+    const dropdown = document.getElementById('user-dropdown');
+
+    // Toggle the active state of the dropdown menu
+    dropdown.classList.toggle('active');
+
+    // Get the bounding rectangle of the clicked element
+    const rect = event.target.getBoundingClientRect();
+
+    // Dynamically position the dropdown directly below the profile image
+    dropdown.style.left = `${rect.left}px`; // Align horizontally with the image
+    dropdown.style.top = `${rect.bottom + window.scrollY}px`; // Align vertically below the image
+});
+
+// Close dropdown when clicking outside
+document.addEventListener('click', function (event) {
+    const dropdown = document.getElementById('user-dropdown');
+    const toggle = document.getElementById('user-dropdown-toggle');
+
+    // Check if the click is outside the dropdown and the toggle button
+    if (!dropdown.contains(event.target) && !toggle.contains(event.target)) {
+        dropdown.classList.remove('active');
+    }
+});
+
+
+function handleLogout() {
+    // Логины өгөгдлийг localStorage-оос устгах
+    localStorage.removeItem('studentId');
+    localStorage.removeItem('isLoggedIn');
+
+    // Гарч явах хуудсанд чиглүүлэх
+    window.location.href = "/pages/signInStud.html"; // Логин хуудсанд шилжүүлэх
+}
+
+// Гарч явах товчийг сонсох
+document.getElementById("logout-button").addEventListener("click", handleLogout);
+
+
+
+

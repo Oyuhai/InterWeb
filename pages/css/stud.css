@@ -1,38 +1,55 @@
+/* overall style */
+
+/* header deerh linkuudee underlinegui tsagaan bolgono */
 a {
-    text-decoration: none;
     color: white;
-    font-size: 1rem;
 }
 
-.flex-row {
-    display: flex;
-    flex-direction: row;
+/* drop down */
+
+/*user menu drop down gargaj irehiin tuld profile zurgiig relative bolgoson*/
+.profile-image {
+    position: relative;
 }
 
-.flex-col {
-    display: flex;
-    flex-direction: column;
+/* Dropdown Styling suuder nemj naashaa haragduulj baigaa */
+#user-dropdown {
+    display: none;
+    position: absolute;
+    background-color: white;
+    border: 0.1rem solid var(--brand-color);
+    box-shadow: 0 0.4rem 0.6rem rgba(0, 0, 0, 0.1);
+    border-radius: 0.5rem;
+    padding: 0.4rem;
+    min-width: 8rem;
 }
 
-header {
-    display: flex;
-    flex-direction: column;
+#user-dropdown a {
+    display: block;
+    padding: 0.5rem 0.8rem;
+    color: black;
+    text-decoration: none;
+    border-bottom: 1px solid #ccc;
 }
+
+/* buh a deeree border bottomtoi bolgoson tul suuliin child bordergui bolgoson */
+#user-dropdown a:last-child {
+    border-bottom: none;
+}
+
+/* js-r active classtai bolgood haruulna*/
+#user-dropdown.active {
+    display: block;
+}
+
+/* header style */
 
 .header-top {
     padding: 2.5rem var(--container-padding) 1rem var(--container-padding);
     gap: 2.75rem;
     align-items: end;
-    /* background-color: var(--brand-color);
-        border: 0.1rem solid var(--brand-color); */
     border: none;
     background: linear-gradient(to bottom, var(--brand-color), rgba(46, 37, 211, 0.65));
-}
-
-h2 {
-    color: white;
-    font-weight: 400;
-    font-size: 2rem;
 }
 
 .profile-image {
@@ -45,9 +62,116 @@ a.profile-image>img {
     border-radius: 50%;
 }
 
-.main{
+.logo {
+    background-color: transparent;
+    color: white;
+    font-weight: 700;
+    font-size: 3rem;
+    line-height: 2.5rem;
+}
+
+/* main */
+
+.main {
     display: flex;
 }
+
+/* suragchiin medeelel */
+
+.link-img {
+    display: flex;
+    margin: 1rem;
+    flex-direction: column;
+    align-items: center;
+}
+
+.link-img img {
+    margin-bottom: 2rem;
+}
+
+.info-container ul {
+    list-style-type: none;
+    line-height: 2rem;
+}
+
+.CV-link {
+    font-size: 1rem;
+    color: #3229DD;
+}
+
+.info-container {
+    padding: 1.5rem;
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+    align-items: center;
+}
+
+/* cv ilgeesen tuuh */
+
+.huseltuud h4 {
+    padding: 2rem 5rem;
+    font-size: 1.5rem;
+    color: #5b5266;
+}
+
+.huseltuud h3 {
+    padding-bottom: 0.5rem;
+    font-size: 1.3rem;
+    font-weight: 400;
+}
+
+@keyframes glitter {
+    0% {
+        background-position: -200% 0;
+        transform: scale(1);
+    }
+
+    50% {
+        background-position: 200% 0;
+        transform: scale(1.05);
+    }
+
+    100% {
+        background-position: -200% 0;
+        transform: scale(1);
+    }
+}
+
+.glitter {
+    font-size: 1.3rem;
+    animation: glitter 3s linear infinite;
+}
+
+.huseltuud .request-section {
+    width: 80%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    justify-content: center;
+}
+
+.huseltuud article ul {
+    border-left: 0.5px solid;
+    padding-left: 15px;
+    margin: 1rem;
+    list-style: none;
+    line-height: 0.3rem;
+    font-size: 1.2rem;
+    display: flex;
+    gap: 0.5rem;
+}
+
+.huseltuud article ul li {
+    padding-left: 15px;
+}
+
+
+.huseltuud article p {
+    font-size: 14px;
+}
+
+/* footer */
 
 .footer-content {
     display: flex;
@@ -76,20 +200,11 @@ a.profile-image>img {
     width: max-content;
 }
 
-.logo {
-    background-color: transparent;
-    color: white;
-    font-weight: 700;
-    font-size: 3rem;
-    line-height: 2.5rem;
-}
-
 footer nav {
     flex: 1;
     display: block;
     justify-content: space-between;
-    color:white;
-
+    color: white;
 }
 
 footer nav a {
@@ -123,16 +238,59 @@ div.footer-logo>p:nth-child(3) {
     font-size: 0.75rem;
 }
 
-/* @media screen and (min-width: 769px) {
-    .desktop-none {
-        display: none;
-    }
-} */
+div.footer-logo>p:nth-child(2) {
+    align-content: end;
+    width: 100%;
+    font-size: 1.2rem;
+}
 
+div.footer-logo>p:nth-child(3) {
+    font-size: 1rem;
+}
+
+/* Dropdown-ийг нууцлах */
+.dropdown {
+    display: none;
+    border: 1px solid #ddd;
+    background-color: #f9f9f9;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.dropdown.open {
+    display: block;
+}
+
+.dropdown ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.dropdown ul li {
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 8px;
+}
+
+.request-section.desktop-none article h3 {
+    text-align: center;
+    background-color: #4e45d0;
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    border: 2px solid;
+    margin: auto;
+    font-size: 1.25rem;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+/* tablet */
 @media screen and (max-width: 768px) {
-    /* .mobile-none {
-        display: none;
-    } */
+
+    .huseltuud .request-section {
+        width: 100%;
+    }
 
     .header-top {
         border: none;
@@ -153,220 +311,26 @@ div.footer-logo>p:nth-child(3) {
         box-shadow: 1rem 0px 4px 1px #eaeaea;
     }
 
-    .ad-container {
-        flex-wrap: wrap;
+    .mobile-nav-icon {
+        font-size: 2rem;
+        color: var(--brand-color);
+        justify-self: center;
+        display: grid;
+        gap: 0.2rem
     }
 
-    .ad-container>div:nth-child(2) {
-        width: 100%;
-        display: flex;
-        justify-content: space-between;
+    .mobile-nav-icon i {
+        justify-self: center;
     }
 
-    .ad-container>div:nth-child(2)>p {
-        margin-top: 0;
-        margin-bottom: 0;
+    .mobile-nav-icon p {
+        margin: 0;
+        font-size: 0.8rem;
+        color: black;
     }
 
-    .ad-container h4 {
-        font-size: 1.5rem;
-    }
-    
-}
-
-.mobile-nav-icon {
-    font-size: 2rem;
-    color: var(--brand-color);
-    justify-self: center;
-    display: grid;
-    gap: 0.2rem
-}
-
-.mobile-nav-icon i {
-    justify-self: center;
-}
-
-.mobile-nav-icon p {
-    margin: 0;
-    font-size: 0.8rem;
-    color: black;
-}
-
-div.footer-logo>p:nth-child(2) {
-    align-content: end;
-    width: 100%;
-    font-size: 1.2rem;
-}
-
-div.footer-logo>p:nth-child(3) {
-    font-size: 1rem;
-}
-
-.info-container {
-    width: 70%;
-    height: auto;
-    margin: 20px auto;
-    padding: 20px;
-    display: flex;
-    gap: 30px; /* zurag info hoorondiin zai */
-    border-radius: 8px; 
-    justify-content: center; /* stud infog golluulj bairluulah*/
-    align-items: center;     /*  */ 
-}
-
-.link-img {
-    margin: auto;
-    display: flex;
-    margin: 10px;
-    flex-direction: column;
-    align-items: center;
-}
-
-.link-img img {
-    width: auto;
-    height: 150px;
-    margin-bottom: 30px; 
-}
-
-.hr-img{
-    flex-direction:row;
-    align-items: center;
-}
-
-.info-container ul {
-    list-style-type: none; 
-    line-height: 30px;
-}
-
-.CV-link {
-    font-size: 14px;
-    color: #3229DD;
-}
-
-.huseltuud h4{
-    margin: 30px ;
-}
-
-.huseltuud h3{
-    margin: 20px ;
-
-}
-
-.huseltuud .request-section {
-    width: 80%;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr); /* 3 columns */
-    gap: 30px;
-    margin: 40px auto;
-    justify-content: center;
-}
-
-.huseltuud article ul{
-    border-left: solid;
-    padding-left: 15px;
-    list-style: none;
-}
-
-.huseltuud article ul li{
-    padding-left: 15px;
-}
-
-
-.huseltuud article p {
-    font-size: 14px;
-}
-
-/* Job posting section */
-.hr-zaruud {
-    margin: 20px auto;
-    max-width: 800px;
-}
-
-.hr-zaruud h4 {
-    font-size: 24px;
-    font-weight: bold;
-    margin-bottom: 15px;
-}
-
-.irsen-huseltuud{
-    display: inline;
-}
-
-.hr-zaruud article h5 {
-    font-size: 20px;
-    font-weight: bold;
-    margin-bottom: 10px;
-}
-
-.hr-zaruud ul {
-    list-style: none;
-    margin-bottom: 20px;
-}
-
-.hr-zaruud ul li {
-    background-color: #e9f3ff;
-    padding: 15px;
-    border-radius: 8px;
-    margin-bottom: 10px;
-    display:contents;
-}
-
-.hr-zaruud ul li h6 {
-    font-size: 16px;
-    margin: 10px 0;
-}
-
-.hr-zaruud ul li p {
-    font-size: 16px;
-}
-
-/* Dropdown-ийг нууцлах */
-.dropdown {
-    display: none;
-    border: 1px solid #ddd;
-    background-color: #f9f9f9;
-    padding: 10px;
-    border-radius: 5px;
-}
-
-.dropdown.open {
-    display: block;
-}
-
-/* List items within the dropdown */
-.dropdown ul {
-    list-style-type: none;
-    padding: 0;
-}
-
-.dropdown ul li {
-    padding: 10px;
-    margin-bottom: 10px;
-    border-radius: 8px;
-}
-
-.request-section.mobile-hidden article h3 {
-    text-align: center;
-    background-color: #4e45d0; /* Арын өнгө */
-    color: white; /* Текстийн өнгө */
-    padding: 10px; /* Дотоод зайн тохируулга */
-    border-radius: 5px; /* Булангийн зайн тохируулга */
-    border: 2px solid; /* Хүрээ */
-    margin: auto; /* Агуулгын өргөнд шаардлагагүй орон зайг хасах */
-    font-size: 1.25rem; /* Текстийн хэмжээг тохируулах */
-    font-weight: bold; /* Текстийн жинг хүнд болгох */
-    cursor: pointer; /* Дарахад гарч ирэх гарчиг */
-}
-
-@media screen and (max-width: 768px) {
-    /* Desktop request section-ийг нуух */
-    .huseltuud .request-section {
-        display: none; /* Харагдахгүй болгох */
-    }
-
-    /* Mobile layout-д харуулах */
-    .request-section.mobile-hidden {
-        display: block; /* Гар утасны дэлгэц дээр харагдах */
+    .request-section.desktop-none {
+        display: block;
     }
 
     .dropdown.open {
@@ -374,10 +338,8 @@ div.footer-logo>p:nth-child(3) {
     }
 }
 
-/* Том дэлгэц дээр request-section харагдахаас зайлсхийх */
-@media screen and (min-width: 769px) {
-    .request-section.mobile-hidden {
-        display: none; /* Харагдахгүй болгох */
+@media screen and (min-width:769px) {
+    .request-section.desktop-none.desktop-none {
+        display: none;
     }
 }
-

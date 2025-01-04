@@ -20,7 +20,12 @@
                 <a class="mobile-none" href="./home.html">Нүүр хуудас</a>
                 <a class="mobile-none" href="./zar.html">Зарууд</a>
                 <a class="mobile-none profile-image" href="./signInStud.html">
-                    <img src="../pics/profile.webp" alt="Хэрэглэгчийн профайл зураг"></a>
+                    <img src="../pics/profile.webp" id="user-dropdown-toggle" alt="Хэрэглэгчийн профайл зураг">
+                </a>
+                <div class="dropdown-content" id="user-dropdown">
+                    <a href="./studprofile.html">Профайл</a>
+                    <a id="logout-button" href="./signInStud.html">Гарах</a>
+                </div>
             </nav>
             <nav class="desktop-none mobile-nav">
                 <a class="mobile-nav-icon" href="#">
@@ -57,9 +62,9 @@
 
             <article class="wrap huseltuud">
                 <h4>Илгээсэн хүсэлтүүд</h4>
-                <div class="wrap request-section">
+                <div class="wrap request-section mobile-none">
                     <article>
-                        <h3>Зөвшөөрсөн</h3>
+                        <h3 class="glitter">Зөвшөөрсөн</h3>
                         <ul>
 
                         </ul>
@@ -78,7 +83,7 @@
                     </article>
                 </div>
 
-                <div class="request-section mobile-hidden">
+                <div class="request-section desktop-none">
                     <div class="dropdown-trigger" onclick="this.nextElementSibling.classList.toggle('open')">
                     </div>
                     <article>
@@ -88,14 +93,14 @@
                                 <!-- Зөвшөөрсөн мэдээ энд гарах болно -->
                             </ul>
                         </div>
-                    
+
                         <h3>Хүлээгдэж байгаа</h3>
                         <div class="dropdown pending-list">
                             <ul>
                                 <!-- Хүлээгдэж байгаа мэдээ энд гарах болно -->
                             </ul>
                         </div>
-                    
+
                         <h3>Татгалзсан</h3>
                         <div class="dropdown notApproved-list">
                             <ul>
@@ -103,11 +108,11 @@
                             </ul>
                         </div>
                     </article>
-                    
-                    
+
+
                 </div>
             </article>
-            <button id="logout-button">Logout</button>
+
         </main>
 
 
@@ -125,10 +130,10 @@
                 <nav class="mobile-none footer-links">
                     <h4>Хэрэгтэй хуудас</h4>
                     <ul>
-                        <li><a href="#">Нүүр хуудас</a></li>
-                        <li><a href="#">Заруд</a></li>
-                        <li><a href="#">Бүртгүүлэх</a></li>
-                        <li><a href="#">Нэвтрэх</a></li>
+                        <li><a href="./home.html">Нүүр хуудас</a></li>
+                        <li><a href="./list.html">Заруд</a></li>
+                        <li><a href="./signupstud.html">Бүртгүүлэх</a></li>
+                        <li><a href="./signInStud.html">Нэвтрэх</a></li>
                     </ul>
                 </nav>
 
@@ -145,17 +150,6 @@
             </div>
             <p class="footer-bottom">© 2024 Internships. All rights reserved.</p>
         </footer>
-        <script>
-            // Гарч явах үйлдэл
-            document.getElementById("logout-button").addEventListener("click", function() {
-                // localStorage-оос оюутны мэдээллийг устгах
-                localStorage.removeItem('studentId');
-                localStorage.removeItem('isLoggedIn');
-                
-                // Логин хуудас руу чиглүүлэх
-                window.location.href = "/pages/signInStud.html"; // signInStud.html руу шилжих
-            });
-        </script>
     </body>
 
 </html>
