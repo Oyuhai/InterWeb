@@ -42,6 +42,7 @@ h2 {
 
 a.profile-image>img {
     width: 3rem;
+    border-radius: 50%;
 }
 
 .main{
@@ -319,22 +320,7 @@ div.footer-logo>p:nth-child(3) {
     font-size: 16px;
 }
 
-
-
-/* Mobile navigation bar */
-
-
-.mobile-nav a:hover {
-    background-color: #575ad0;
-    border-radius: 4px;
-    padding: 5px 10px;
-}
-
-/* Hidden sections on mobile for requests */
-.request-section.mobile-hidden {
-    display: none;
-}
-
+/* Dropdown-ийг нууцлах */
 .dropdown {
     display: none;
     border: 1px solid #ddd;
@@ -343,50 +329,55 @@ div.footer-logo>p:nth-child(3) {
     border-radius: 5px;
 }
 
+.dropdown.open {
+    display: block;
+}
+
+/* List items within the dropdown */
 .dropdown ul {
     list-style-type: none;
     padding: 0;
 }
 
 .dropdown ul li {
-    margin: 10px 0;
-}
-
-.dropdown-trigger {
-    display: block;
-    background-color: #ddd;
     padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 8px;
+}
+
+.request-section.mobile-hidden article h3 {
     text-align: center;
-    border-radius: 5px;
-    cursor: pointer;
+    background-color: #4e45d0; /* Арын өнгө */
+    color: white; /* Текстийн өнгө */
+    padding: 10px; /* Дотоод зайн тохируулга */
+    border-radius: 5px; /* Булангийн зайн тохируулга */
+    border: 2px solid; /* Хүрээ */
+    margin: auto; /* Агуулгын өргөнд шаардлагагүй орон зайг хасах */
+    font-size: 1.25rem; /* Текстийн хэмжээг тохируулах */
+    font-weight: bold; /* Текстийн жинг хүнд болгох */
+    cursor: pointer; /* Дарахад гарч ирэх гарчиг */
 }
 
-/* Responsive styles */
 @media screen and (max-width: 768px) {
-    /* Гар утасны загвар */
-
-    .mobile-nav {
-        display: flex; /* Mobile navigation visible */
+    /* Desktop request section-ийг нуух */
+    .huseltuud .request-section {
+        display: none; /* Харагдахгүй болгох */
     }
 
-    .info-container {
-        flex-direction: column;
-        text-align: center;
-    }
-
-    .request-section {
-        display: none; /* Hide desktop layout for requests */
-    }
-
+    /* Mobile layout-д харуулах */
     .request-section.mobile-hidden {
-        display: block;
+        display: block; /* Гар утасны дэлгэц дээр харагдах */
     }
 
-    .request-section.mobile-hidden .dropdown {
-        display: none;
-    }
-
-    .request-section.mobile-hidden .dropdown.open {
+    .dropdown.open {
         display: block;
     }
 }
+
+/* Том дэлгэц дээр request-section харагдахаас зайлсхийх */
+@media screen and (min-width: 769px) {
+    .request-section.mobile-hidden {
+        display: none; /* Харагдахгүй болгох */
+    }
+}
+

@@ -78,3 +78,51 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     });
 });
+
+document.addEventListener("DOMContentLoaded", () => {
+    // Find corresponding <ul> elements for each category
+    const approvedList = document.querySelector('.approved-list ul');
+    const pendingList = document.querySelector('.pending-list ul');
+    const notApprovedList = document.querySelector('.notApproved-list ul');
+
+    // Iterate over items and create <li> elements
+    items.forEach(item => {
+        const li = document.createElement('li');
+        li.innerHTML = `
+            <h5>${item.profession}</h5>
+            <p> ${item.company}</p>
+            <p>${item.dateSubmitted}</p>
+        `;
+
+        // Append the <li> to the correct list based on approvalStatus
+        if (item.approvalStatus === "approved") {
+            approvedList.appendChild(li);
+        } else if (item.approvalStatus === "pending") {
+            pendingList.appendChild(li);
+        } else if (item.approvalStatus === "notApproved") {
+            notApprovedList.appendChild(li);
+        }
+    });
+});
+
+document.addEventListener("DOMContentLoaded", () => {
+    const headings = document.querySelectorAll("article h3");
+
+    headings.forEach(heading => {
+        heading.addEventListener("click", () => {
+            const dropdown = heading.nextElementSibling; // .dropdown хэсгийг олно
+
+            // Бүх нээлттэй dropdown-уудыг хаах
+            document.querySelectorAll(".dropdown.open").forEach(openDropdown => {
+                if (openDropdown !== dropdown) {
+                    openDropdown.classList.remove("open");
+                }
+            });
+
+            // Өөрийн dropdown-ийг toggle хийнэ
+            dropdown.classList.toggle("open");
+        });
+    });
+});
+
+
