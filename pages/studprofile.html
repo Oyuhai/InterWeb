@@ -10,7 +10,7 @@
         <link rel="stylesheet" href="./css/root.css">
         <link rel="stylesheet"
             href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-        <script type="module" src="../profile.js"></script>
+        <script type="module" src="../studentProfile.js"></script>
     </head>
 
     <body>
@@ -18,7 +18,7 @@
             <nav class="wrap header-top flex-row">
                 <a href="./home.html" class="logo">INTERN</a>
                 <a class="mobile-none" href="./home.html">Нүүр хуудас</a>
-                <a class="mobile-none" href="./zar.html">Зарууд</a>
+                <a class="mobile-none" href="./list.html">Зарууд</a>
                 <a class="mobile-none profile-image" href="./signInStud.html">
                     <img src="../pics/profile.webp" id="user-dropdown-toggle" alt="Хэрэглэгчийн профайл зураг">
                 </a>
@@ -70,23 +70,24 @@
                 <div class="wrap request-section mobile-none">
                     <article>
                         <h3 class="glitter">Зөвшөөрсөн</h3>
-                        <ul>
-
+                        <ul id="approved-list">
+                            <!-- Approved advertisements will be dynamically inserted here -->
                         </ul>
                     </article>
                     <article>
                         <h3>Хүлээгдэж байгаа</h3>
-                        <ul>
-
+                        <ul id="pending-list">
+                            <!-- Pending advertisements will be dynamically inserted here -->
                         </ul>
                     </article>
                     <article>
                         <h3>Татгалзсан</h3>
-                        <ul>
-
+                        <ul id="not-approved-list">
+                            <!-- Not approved advertisements will be dynamically inserted here -->
                         </ul>
                     </article>
                 </div>
+
 
                 <div class="request-section desktop-none">
                     <div class="dropdown-trigger" onclick="this.nextElementSibling.classList.toggle('open')">

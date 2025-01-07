@@ -84,6 +84,10 @@ h3 {
     gap: 0.2rem;
 }
 
+.request-btn {
+    cursor: pointer;
+}
+
 .ad-container {
     display: flex;
     justify-content: space-between;

@@ -7,6 +7,13 @@
         "cvSubmissions": []
     },
     {
+        "userId": "student456",
+        "email": "student456@gmail.com",
+        "password": "456",
+        "type": "student",
+        "cvSubmissions": []
+    },
+    {
         "userId": "hr123",
         "email": "hr@company.com",
         "password": "hrpass",

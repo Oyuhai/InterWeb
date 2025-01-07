@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Job Advertisement Web Components</title>
+        <style>
+            /* Add necessary CSS here */
+            .all-ad {
+                display: flex;
+                flex-direction: column;
+                gap: 1em;
+            }
+
+            .ad-container {
+                border: 1px solid #ddd;
+                padding: 1em;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+            }
+
+            .ad-container img {
+                max-width: 100px;
+                height: auto;
+            }
+        </style>
+    </head>
+
+    <body>
+        <header>
+            <app-header></app-header>
+        </header>
+
+        <main>
+            <job-filter></job-filter>
+            <job-list></job-list>
+            <job-cart></job-cart>
+        </main>
+
+        <footer>
+            <app-footer></app-footer>
+        </footer>
+
+        <script>
+            // JSON Data (mocked here, replace with fetch for real API)
+            const jobData = await fetch('../ mydata.json')
+                .then((response) => response.json())
+
+            // Header Component
+            class AppHeader extends HTMLElement {
+                connectedCallback() {
+                    this.innerHTML = `
+          <div class="header-top">
+            <div class="logo">Job Ads</div>
+          </div>
+          <div class="header-search">
+            <form>
+              <input type="text" placeholder="Search for jobs..." />
+              <button type="submit">Search</button>
+            </form>
+          </div>
+        `;
+                }
+            }
+            customElements.define('app-header', AppHeader);
+
+            // Footer Component
+            class AppFooter extends HTMLElement {
+                connectedCallback() {
+                    this.innerHTML = `
+          <div class="footer-content">
+            <p>© 2025 Job Advertisement Web</p>
+          </div>
+        `;
+                }
+            }
+            customElements.define('app-footer', AppFooter);
+
+            // Filter Component
+            class JobFilter extends HTMLElement {
+                connectedCallback() {
+                    this.innerHTML = `
+          <form class="filter">
+            <select id="location">
+              <option value="">Location</option>
+              <option value="bzd">BZD</option>
+              <option value="chd">CHD</option>
+            </select>
+            <button type="button" id="applyFilter">Apply Filter</button>
+          </form>
+        `;
+
+                    this.querySelector('#applyFilter').addEventListener('click', () => {
+                        const location = this.querySelector('#location').value;
+                        const filterEvent = new CustomEvent('filter-jobs', {
+                            detail: { location },
+                        });
+                        this.dispatchEvent(filterEvent);
+                    });
+                }
+            }
+            customElements.define('job-filter', JobFilter);
+
+            // Job List Component
+            class JobList extends HTMLElement {
+                constructor() {
+                    super();
+                    this.jobs = [];
+                    this.filteredJobs = [];
+                }
+
+                connectedCallback() {
+                    this.innerHTML = '<div class="all-ad"></div>';
+                    this.loadJobs();
+                    document.querySelector('job-filter').addEventListener('filter-jobs', (e) => {
+                        this.filterJobs(e.detail);
+                    });
+                }
+
+                loadJobs() {
+                    this.jobs = jobData; // Use the mocked JSON data
+                    this.filteredJobs = this.jobs;
+                    this.renderJobs();
+                }
+
+                filterJobs({ location }) {
+                    this.filteredJobs = this.jobs.filter((job) => {
+                        return !location || job.location === location;
+                    });
+                    this.renderJobs();
+                }
+
+                renderJobs() {
+                    const jobContainer = this.querySelector('.all-ad');
+                    jobContainer.innerHTML = '';
+                    this.filteredJobs.forEach((job) => {
+                        const jobEl = document.createElement('div');
+                        jobEl.className = 'ad-container';
+                        jobEl.innerHTML = `
+            <div>
+              <h4>${job.profession}</h4>
+              <p>Company: ${job.company}</p>
+              <p>Location: ${job.location}</p>
+              <p>Duration: ${job.duration} months</p>
+              <p>Salary: $${(job.salary / 1000).toLocaleString()}k</p>
+              <p>Status: ${job.status}</p>
+            </div>
+            <img src="${job.image}" alt="${job.company} Logo">
+            <div>
+              <button data-id="${job.id}" class="add-to-cart">Add to Cart</button>
+            </div>
+          `;
+                        jobContainer.appendChild(jobEl);
+                    });
+                    this.querySelectorAll('.add-to-cart').forEach((button) =>
+                        button.addEventListener('click', (e) => {
+                            this.addToCart(e.target.dataset.id);
+                        })
+                    );
+                }
+
+                addToCart(jobId) {
+                    const job = this.jobs.find((j) => j.id === parseInt(jobId));
+                    const cartEvent = new CustomEvent('add-to-cart', { detail: job });
+                    document.querySelector('job-cart').dispatchEvent(cartEvent);
+                }
+            }
+            customElements.define('job-list', JobList);
+
+            // Job Cart Component
+            class JobCart extends HTMLElement {
+                constructor() {
+                    super();
+                    this.cart = [];
+                }
+
+                connectedCallback() {
+                    this.innerHTML = '<div class="cart"><h3>Cart</h3><ul></ul></div>';
+                    this.addEventListener('add-to-cart', (e) => this.addToCart(e.detail));
+                }
+
+                addToCart(job) {
+                    if (!this.cart.some((j) => j.id === job.id)) {
+                        this.cart.push(job);
+                        this.renderCart();
+                    }
+                }
+
+                renderCart() {
+                    const cartList = this.querySelector('.cart ul');
+                    cartList.innerHTML = '';
+                    this.cart.forEach((job) => {
+                        const li = document.createElement('li');
+                        li.textContent = `${job.profession} - $${(job.salary / 1000).toLocaleString()}k`;
+                        cartList.appendChild(li);
+                    });
+                }
+            }
+            customElements.define('job-cart', JobCart);
+        </script>
+    </body>
+
+</html>

@@ -158,8 +158,6 @@ a.profile-image>img {
     list-style: none;
     line-height: 0.3rem;
     font-size: 1.2rem;
-    display: flex;
-    gap: 0.5rem;
 }
 
 .huseltuud article ul li {
