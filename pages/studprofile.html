@@ -155,6 +155,34 @@
             </div>
             <p class="footer-bottom">© 2024 Internships. All rights reserved.</p>
         </footer>
+        <script>
+            // Гарч явах үйлдэл
+            document.getElementById("logout-button").addEventListener("click", function () {
+                // localStorage-оос оюутны мэдээллийг устгах
+                localStorage.removeItem('studentId');
+                localStorage.removeItem('isLoggedIn');
+
+                // Логин хуудас руу чиглүүлэх
+                window.location.href = "/pages/signInStud.html"; // signInStud.html руу шилжих
+            });
+
+            // Хүсэлт илгээгдсэн мэдээллийг localStorage-аас авч үзэх
+            const pendingList = document.querySelector('.pending-list ul');
+
+            Object.keys(localStorage).forEach(key => {
+                if (key.startsWith('request-')) { // Хүсэлттэй холбоотой түлхүүрийг шалгана
+                    const item = JSON.parse(localStorage.getItem(key));
+                    const li = document.createElement('li');
+                    li.innerHTML = `
+                    <h5>${professionDictionary[item.profession]}</h5>
+                    <p>${item.company}</p>
+                    <p>${item.datePublished}</p>
+                `;
+                    pendingList.appendChild(li);
+                }
+            });
+
+        </script>
     </body>
 
 </html>

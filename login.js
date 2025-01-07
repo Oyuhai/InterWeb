@@ -63,3 +63,4 @@ window.onload = function () {
     }
 
     document.getElementById("logout-button").addEventListener("click", handleLogout);
+}
