@@ -72,7 +72,6 @@ listContainer.innerHTML = recentItems.reduce((html, item) => {
 
 
 ActiveZarHAruulah()
-SuuldOruulsanZarHaruulah()
 
 // // Fetch JSON data from `mydata.json`
 // async function fetchItems() {

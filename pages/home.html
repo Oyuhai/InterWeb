@@ -41,25 +41,36 @@
             <div class="flex-col wrap header-search">
                 <h2 class="mobile-none">Хүссэн дадлагын ажлаа эндээс олоорой</h2>
                 <form action="./list.html" method="GET" class="flex-row filter">
+                    <!-- Profession Dropdown -->
+                    <label for="profession" class="sr-only">Мэргэжил сонгох</label>
                     <select onchange="selectHandler(this)" name="profession" id="profession">
                         <option value="">Мэргэжил</option>
                         <option value="system_analist">Систем шинжээч</option>
                         <option value="frontend_developer">Frontend Хөгжүүлэгч</option>
                     </select>
+
+                    <!-- Location Dropdown -->
+                    <label for="location" class="sr-only">Байршил сонгох</label>
                     <select onchange="selectHandler(this)" name="location" id="location">
                         <option value="">Байршил</option>
                         <option value="hud">Хан Уул</option>
                         <option value="chd">Чингэлтэй</option>
                     </select>
+
+                    <!-- Duration Dropdown -->
+                    <label for="duration" class="sr-only">Хугацаа сонгох</label>
                     <select class="mobile-none" onchange="selectHandler(this)" name="duration" id="duration">
                         <option value="">Хугацаа</option>
                         <option value="1_3">1-3 сар</option>
                         <option value="4_6">4-6 сар</option>
                     </select>
+
+                    <!-- Submit Buttons -->
                     <button class="mobile-none" type="submit" href="list.html">Зар шүүх</button>
                     <button class="desktop-none" type="submit">&#x1F50D;</button>
                 </form>
             </div>
+
         </header>
 
         <!-- Main Content -->
@@ -113,7 +124,7 @@
         <script>
             const isLoggedIn = localStorage.getItem('isLoggedIn');
             const profileImage = document.getElementById('profileImage');
-        
+
             if (isLoggedIn) {
                 profileImage.src = '../pics/profile.webp'; // Хэрэглэгчийн профайл зураг
                 profileImage.parentElement.href = './studprofile.html'; // Хэрэглэгчийн профайл руу чиглүүлэх
@@ -122,18 +133,18 @@
                 profileImage.parentElement.href = './signInStud.html'; // Нэвтрэх хуудас руу чиглүүлэх
             }
 
-            document.getElementById('requestButton').addEventListener('click', function() {
+            document.getElementById('requestButton').addEventListener('click', function () {
                 // Товчийг "Хүсэлт илгээгдлээ" гэж өөрчлөх
                 this.textContent = 'Хүсэлт илгээгдлээ';
-        
+
                 // Хүсэлт илгээсэн мэдээллийг localStorage-д хадгалах
                 localStorage.setItem('requestStatus', 'pending'); // Хүсэлтийн статус "Хүлээгдэж буй" гэж тэмдэглэх
-        
+
                 // Хүсэлтийг студийн профайл хуудасны "Хүлээгдэж буй" хэсэгт харуулах
                 window.location.href = './studprofile.html';
             });
         </script>
-        
+
 
     </body>
 
