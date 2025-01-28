@@ -1,12 +1,12 @@
-document.getElementById('login-form').addEventListener('submit', handleLogin);
+document.getElementById('login-form').addEventListener('submit', handleLogin);//submit deer darahad handleLogin funkts ajillana
 
 async function handleLogin(event) {
-    event.preventDefault(); // Prevent the default form submission
+    event.preventDefault();//default http huselt shig shiidverlehees segiilj js uildliig heregjuulne
 
     let usersData;
     try {
-        // Fetch the users data (students or HR)
-        const response = await fetch('../login.json');
+        const response = await fetch('../login.json');//login jsonii medeelliig avna
+        //medeelel tatahad aldaa garval error msg ogno
         if (!response.ok) {
             throw new Error(`HTTP error! status: ${response.status}`);
         }
@@ -16,19 +16,17 @@ async function handleLogin(event) {
         alert("Unable to load login data. Please try again later.");
         return;
     }
-
+    //trim() ashiglaj iluu dutuu zaig arilgana
     const email = document.getElementById('email').value.trim();
     const password = document.getElementById('password').value.trim();
 
-    // Find the user (either student or HR) with the matching email
-    const user = usersData.find(u => u.email === email);
+    const user = usersData.find(u => u.email === email);//userdata dahi mail formiin mailtei ijilhen baigaa esehiig shalgana. olson ehnii utgiig butsaana
 
-    if (user && user.password === password) {
-        // Login successful, store the userId in localStorage and set isLoggedIn flag
-        localStorage.setItem('userId', user.userId);
-        localStorage.setItem('isLoggedIn', 'true'); // Set isLoggedIn flag to 'true'
+    if (user && user.password === password) {//user deerh password json passwortoi taarj baigaa esehiig shalgana
 
-        // Redirect to appropriate page (either student profile or HR dashboard)
+        localStorage.setItem('userId', user.userId);//localstoraged user id bolon nevtresen esehiig temdeglene
+        localStorage.setItem('isLoggedIn', 'true');
+
         if (user.type === 'student') {
             window.location.href = "/pages/studprofile.html";
         } else if (user.type === 'hr') {
@@ -40,27 +38,25 @@ async function handleLogin(event) {
 }
 
 function handleLogout() {
-    // Clear the login data from localStorage
+
     localStorage.removeItem('userId');
     localStorage.removeItem('isLoggedIn');
 
-    // Redirect to login page or homepage
-    window.location.href = "/pages/signInHR.html"; // HR login page
+    window.location.href = "/pages/signInStud.html";
 }
 
-// Хуудас ачаалагдах үед хэрэглэгчийн нэвтэрсэн эсэхийг шалгах
-window.onload = function () {
-    window.onload = function () {
-        const isLoggedIn = localStorage.getItem('isLoggedIn');
 
-        if (isLoggedIn === 'true') {
-            // If logged in, show the logout button
-            document.getElementById('logout-button').style.display = 'block';
-        } else {
-            // If not logged in, hide the logout button
-            document.getElementById('logout-button').style.display = 'none';
-        }
+window.onload = function () {//page deerh buh zurag text buh zuil loaded bolsnii daraa heregjih funkts todorhoilosn
+    const isLoggedIn = localStorage.getItem('isLoggedIn');
+    //nevtersen baival garah tovchiig haruulna
+    if (isLoggedIn === 'true') {
+        document.getElementById('logout-button').style.display = 'block';
+    } else {
+        document.getElementById('logout-button').style.display = 'none';
     }
-
+    //garah tovch daragdsan uyd handleLogout funkts ajillana
     document.getElementById("logout-button").addEventListener("click", handleLogout);
+
 }
+
+

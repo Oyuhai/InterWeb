@@ -1,29 +1,24 @@
-document.addEventListener("DOMContentLoaded", () => {
-    // Get the student ID from localStorage to filter the ads
+document.addEventListener("DOMContentLoaded", () => {//DOM-n elementuud achaallaj duussnii daraa sonsoh trigger, zurag, styleshet zereg gadnii resource duudagdahaas omno gsn ug
     const studentId = localStorage.getItem('userId');
 
-    // If no student is logged in, redirect to the login page
     if (!studentId) {
         alert('Та эхлээд нэвтэрнэ үү!');
         window.location.href = './signInStud.html';
         return;
     }
 
-    // Find corresponding <ul> elements for each category
     const approvedList = document.getElementById('approved-list');
     const pendingList = document.getElementById('pending-list');
     const notApprovedList = document.getElementById('not-approved-list');
-
-    // Get all advertisement keys from localStorage
+    //object.keys(localStorage) local storage deh buh keyg avna
+    //key dotroos request--r ehelsen buh keyg shuuj avna
     const adKeys = Object.keys(localStorage).filter(key => key.startsWith('request-'));
     console.log(adKeys);
 
-
-    // Iterate over each advertisement stored in localStorage
     adKeys.forEach(key => {
+        //key dotorh medeelliig avch  JSON string into a JavaScript object
         const adData = JSON.parse(localStorage.getItem(key));
-        console.log(adData);
-        // Only render the ads for the logged-in student
+        //nevterch orson suragchtai adil id-tai suragchiin medeelliig olno
         if (adData && adData.studentId === studentId) {
             const li = document.createElement('li');
             li.innerHTML = `
@@ -31,8 +26,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 <p>${adData.company}</p>
                 <p>${adData.formattedDate}</p>
             `;
-
-            // Append the <li> to the correct list based on the status
+            //taarsan statustai egneenii door bichne
             if (adData.status === 'approved') {
                 approvedList.appendChild(li);
             } else if (adData.status === 'pending') {
@@ -44,20 +38,15 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 });
 
-// Event listener for handling dropdown toggling for profile image
 document.getElementById('user-dropdown-toggle').addEventListener('click', function (event) {
-    event.preventDefault(); // Prevent default link behavior
-
+    event.preventDefault();
     const dropdown = document.getElementById('user-dropdown');
-    dropdown.classList.toggle('active'); // Toggle the active state
-
-    // Dynamically position the dropdown menu below the profile image
+    dropdown.classList.toggle('active');
     const rect = event.target.getBoundingClientRect();
     dropdown.style.left = `${rect.left}px`;
     dropdown.style.top = `${rect.bottom + window.scrollY}px`;
 });
 
-// Close dropdown when clicking outside of it
 document.addEventListener('click', function (event) {
     const dropdown = document.getElementById('user-dropdown');
     const toggle = document.getElementById('user-dropdown-toggle');
@@ -67,15 +56,10 @@ document.addEventListener('click', function (event) {
     }
 });
 
-// Function to handle logout
 function handleLogout() {
-    // Clear the login data from localStorage
     localStorage.removeItem('studentId');
     localStorage.removeItem('isLoggedIn');
-
-    // Redirect to the login page
     window.location.href = "/pages/signInStud.html";
 }
 
-// Event listener for the logout button
 document.getElementById("logout-button").addEventListener("click", handleLogout);
