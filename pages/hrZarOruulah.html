@@ -80,6 +80,40 @@
             </div>
             <p class="footer-bottom">© 2024 Internships. All rights reserved.</p>
         </footer>
-
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const form = document.querySelector("form");
+        
+            form.addEventListener("submit", async function (event) {
+                event.preventDefault();
+        
+                const formData = {
+                    position: document.getElementById("position").value,
+                    experience: document.querySelector("input[name='experience']").value,
+                    salary: document.getElementById("salary").value,
+                    benefit: document.querySelector("input[name='benefit']:checked")?.value || "",
+                    duration: document.querySelector("input[name='duration']:checked")?.value || "",
+                };
+        
+                try {
+                    const response = await fetch("http://localhost:5000/api/zaruud", {
+                        method: "POST",
+                        headers: { "Content-Type": "application/json" },
+                        body: JSON.stringify(formData),
+                    });
+        
+                    if (response.ok) {
+                        alert("Зар амжилттай нэмэгдлээ!");
+                        form.reset();
+                    } else {
+                        alert("Алдаа гарлаа!");
+                    }
+                } catch (error) {
+                    console.error("Алдаа:", error);
+                }
+            });
+        });
+        
+    </script>
 </body>
 </html>
