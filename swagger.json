@@ -1,0 +1,86 @@
+{
+    "swagger": "2.0",
+    "info": {
+      "title": "Job Listing API",
+      "version": "1.0.0",
+      "description": "HR ажлын заруудын API"
+    },
+    "host": "localhost:5000",
+    "basePath": "/api",
+    "schemes": ["http"],
+    "paths": {
+      "/jobs": {
+        "get": {
+          "summary": "Бүх зар авах",
+          "responses": {
+            "200": {
+              "description": "Амжилттай хариу",
+              "schema": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/definitions/Job"
+                }
+              }
+            }
+          }
+        },
+        "post": {
+          "summary": "Шинэ зар нэмэх",
+          "parameters": [
+            {
+              "in": "body",
+              "name": "job",
+              "required": true,
+              "schema": {
+                "$ref": "#/definitions/Job"
+              }
+            }
+          ],
+          "responses": {
+            "201": {
+              "description": "Амжилттай нэмэгдлээ"
+            }
+          }
+        }
+      },
+      "/jobs/{id}": {
+        "get": {
+          "summary": "Нэг зар авах",
+          "parameters": [
+            {
+              "name": "id",
+              "in": "path",
+              "required": true,
+              "type": "integer"
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Амжилттай",
+              "schema": {
+                "$ref": "#/definitions/Job"
+              }
+            },
+            "404": {
+              "description": "Зар олдсонгүй"
+            }
+          }
+        }
+      }
+    },
+    "definitions": {
+      "Job": {
+        "type": "object",
+        "properties": {
+          "id": { "type": "integer" },
+          "position": { "type": "string" },
+          "experience": { "type": "string" },
+          "salary": { "type": "string" },
+          "benefits": { "type": "string" },
+          "duration": { "type": "string" },
+          "image_url": { "type": "string" }
+        }
+      }
+    }
+  }
+  

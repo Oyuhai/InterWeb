@@ -118,6 +118,34 @@
             }
         });
     </script>
+    <script>
+        async function fetchZaruud() {
+            try {
+                const response = await fetch("http://localhost:5000/api/zaruud");
+                const zaruud = await response.json();
+
+                const zarContainer = document.getElementById("zar-container");
+                zarContainer.innerHTML = "";
+
+                zaruud.forEach((zar) => {
+                    const div = document.createElement("div");
+                    div.innerHTML = `
+                        <h3>${zar.position}</h3>
+                        <p>Шалгуурууд: ${zar.experience}</p>
+                        <p>Цалин: ${zar.salary}</p>
+                        <p>Нэмэлт: ${zar.benefit}</p>
+                        <p>Хугацаа: ${zar.duration}</p>
+                        <hr>
+                    `;
+                    zarContainer.appendChild(div);
+                });
+            } catch (error) {
+                console.error("Алдаа:", error);
+            }
+        }
+
+        fetchZaruud();
+    </script>
 </body>
 
 </html>
