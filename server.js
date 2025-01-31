@@ -2,7 +2,7 @@ const express = require("express");
 const cors = require("cors");
 const jobRoutes = require("../routes/jobs");
 const swaggerUi = require("swagger-ui-express");
-const swaggerDocument = require("./swagger.json");
+const swaggerDocument = require("./zar-api/swagger.json");
 
 const app = express();
 app.use(cors());

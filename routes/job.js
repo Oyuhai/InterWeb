@@ -1,6 +1,6 @@
 const express = require("express");
 const router = express.Router();
-const pool = require("../zar-api/db");
+const pool = require("../db");
 
 // 🔹 1. Зар нэмэх (POST)
 router.post("/", async (req, res) => {
