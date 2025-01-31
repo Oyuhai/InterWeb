@@ -22,6 +22,7 @@ router.get("/", async (req, res) => {
         const jobs = await pool.query("SELECT * FROM jobs");
         res.json(jobs.rows);
     } catch (err) {
+        console.log(err)
         res.status(500).json({ error: err.message });
     }
 });
