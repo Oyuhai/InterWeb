@@ -27,9 +27,10 @@ app.post('/api/zaruud', async (req, res) => {
 
         res.status(201).json(result.rows[0]);
     } catch (error) {
-        console.error("Серверийн алдаа:", error);
+        console.error("Серверийн алдаа:", error.stack); // Алдааны дэлгэрэнгүй мэдээлэл
         res.status(500).json({ message: 'Серверийн алдаа' });
     }
+    
 });
 
 const PORT = process.env.PORT || 5000;
