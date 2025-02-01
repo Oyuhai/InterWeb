@@ -95,6 +95,8 @@
                     duration: document.querySelector("input[name='duration']:checked")?.value || "",
                 };
         
+                console.log("Илгээж буй өгөгдөл:", formData); // 📌 Debugging
+        
                 try {
                     const response = await fetch("http://localhost:5000/api/zaruud", {
                         method: "POST",
@@ -106,7 +108,8 @@
                         alert("Зар амжилттай нэмэгдлээ!");
                         form.reset();
                     } else {
-                        alert("Алдаа гарлаа!");
+                        const errorData = await response.json();
+                        alert("Алдаа: " + errorData.message);
                     }
                 } catch (error) {
                     console.error("Алдаа:", error);
