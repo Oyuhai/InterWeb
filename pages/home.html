@@ -5,12 +5,13 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="description" content="intern home page, companies, advertisements">
-        <link rel="stylesheet" href="./css/root.css">
-        <link rel="stylesheet" href="./css/home.css">
+        <link rel="stylesheet" href="/css/root.css">
+        <link rel="stylesheet" href="/css/home.css">
         <link rel="stylesheet"
             href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <title>INTERN - Homepage</title>
-        <script type="module" src="../front js/home.js"></script>
+
+
     </head>
 
     <body>
@@ -22,7 +23,7 @@
                 <a class="mobile-none" href="./home.html">Нүүр хуудас</a>
                 <a class="mobile-none" href="./list.html">Зарууд</a>
                 <a class="mobile-none profile-image" href="./signInStud.html">
-                    <img id="profileImage" src="../pics/profileIcon.png" alt="Хэрэглэгчийн профайл зураг"></a>
+                    <img id="profileImage" src="/pics/profileIcon.png" alt="Хэрэглэгчийн профайл зураг"></a>
             </nav>
             <nav class="desktop-none mobile-nav">
                 <a class="mobile-nav-icon" href="home.html">
@@ -121,29 +122,9 @@
             </div>
             <p class="footer-bottom">© 2024 Internships. All rights reserved.</p>
         </footer>
-        <script>
-            const isLoggedIn = localStorage.getItem('isLoggedIn');
-            const profileImage = document.getElementById('profileImage');
 
-            if (isLoggedIn) {
-                profileImage.src = '../pics/profile.webp'; // Хэрэглэгчийн профайл зураг
-                profileImage.parentElement.href = './studprofile.html'; // Хэрэглэгчийн профайл руу чиглүүлэх
-            } else {
-                profileImage.src = '../pics/profileIcon.png'; // Нэвтэрч ороогүй хэрэглэгчийн зураг
-                profileImage.parentElement.href = './signInStud.html'; // Нэвтрэх хуудас руу чиглүүлэх
-            }
+        <script type="module" src="/frontJS/home.js"></script>
 
-            document.getElementById('requestButton').addEventListener('click', function () {
-                // Товчийг "Хүсэлт илгээгдлээ" гэж өөрчлөх
-                this.textContent = 'Хүсэлт илгээгдлээ';
-
-                // Хүсэлт илгээсэн мэдээллийг localStorage-д хадгалах
-                localStorage.setItem('requestStatus', 'pending'); // Хүсэлтийн статус "Хүлээгдэж буй" гэж тэмдэглэх
-
-                // Хүсэлтийг студийн профайл хуудасны "Хүлээгдэж буй" хэсэгт харуулах
-                window.location.href = './studprofile.html';
-            });
-        </script>
 
 
     </body>
