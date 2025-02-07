@@ -21,6 +21,10 @@ app.get("/signInStud", (req, res) => {
     res.sendFile(path.join(__dirname, "pages", "signInStud.html"));
 });
 
+app.get("/studprofile", (req, res) => {
+    res.sendFile(path.join(__dirname, "pages", "studprofile"));
+});
+
 app.get("/list", (req, res) => {
     res.sendFile(path.join(__dirname, "componentTest", "list.html"));
 });

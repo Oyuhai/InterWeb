@@ -1,6 +1,6 @@
 import { AdComponent } from './adComponent.js';
 
-export class AdListComponent extends HTMLElement {
+export default class AdListComponent extends HTMLElement {
     constructor() {
         super();
         this.attachShadow({ mode: 'open' });
