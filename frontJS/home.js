@@ -135,8 +135,8 @@ const profileImage = document.getElementById('profileImage');
 
 if (isLoggedIn) {
     profileImage.src = '/pics/profile.webp';
-    profileImage.parentElement.href = './studprofile.html';
+    profileImage.parentElement.href = './studprofile';
 } else {
     profileImage.src = "/pics/profileIcon.png";
-    profileImage.parentElement.href = "./signInStud.html";
+    profileImage.parentElement.href = "./signInStud";
 }
