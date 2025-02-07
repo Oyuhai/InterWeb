@@ -7,8 +7,8 @@ router.post("/", async (req, res) => {
     try {
         const { position, experience, salary, benefits, duration, image_url } = req.body;
         const newJob = await pool.query(
-            "INSERT INTO jobs (position, experience, salary, benefits, duration, image_url) VALUES ($1, $2, $3, $4, $5, $6) RETURNING *",
-            [position, experience, salary, benefits, duration, image_url]
+            "INSERT INTO jobs (position, experience, salary, duration, image_url) VALUES ($1, $2, $3, $4, $5) RETURNING *",
+            [position, experience, salary, duration, image_url]
         );
         res.status(201).json(newJob.rows[0]);
     } catch (err) {

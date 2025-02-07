@@ -1,19 +1,19 @@
 const express = require("express");
 const cors = require("cors");
 const path = require("path");
-const { Pool } = require('pg'); // PostgreSQL санг импортлох
+const { Pool } = require('pg'); 
 
 const app = express();
 const PORT = process.env.PORT || 4000;
 
-// PostgreSQL холбол
+// POstgre holboh
 
 const pool = new Pool({
     user: "postgres",
     host: "localhost",
     database: "webintern",
     password: "22B1NUM2341",
-    port: 5432, // Default PostgreSQL port
+    port: 5432, 
 });
 
 module.exports = pool;
@@ -22,19 +22,19 @@ module.exports = pool;
 app.use(cors());
 app.use(express.json());
 
-// Static файлуудыг серверлэх
+
 app.use('/css', express.static(path.join(__dirname, 'pages', 'css')));
 app.use('/frontJS', express.static(path.join(__dirname, 'frontJS')));
 app.use('/pics', express.static(path.join(__dirname, 'pics')));
 app.use(express.static(path.join(__dirname)));
 
-// 🏠 Хуудасны маршрутууд
+// huudsuudiin zam
 app.get("/", (req, res) => res.sendFile(path.join(__dirname, "pages", "home.html")));
 app.get("/home", (req, res) => res.sendFile(path.join(__dirname, "pages", "home.html")));
 app.get("/signInStud", (req, res) => res.sendFile(path.join(__dirname, "pages", "signInStud.html")));
 app.get("/list", (req, res) => res.sendFile(path.join(__dirname, "component", "list.html")));
 
-// 📌 **Зар нэмэх API**
+// Zar nemeh
 app.post("/api/zaruud", async (req, res) => {
     try {
         console.log("Ирсэн өгөгдөл:", req.body);
@@ -44,12 +44,12 @@ app.post("/api/zaruud", async (req, res) => {
             return res.status(400).json({ message: "Бүх талбарыг бөглөнө үү!" });
         }
 
-        // PostgreSQL руу хадгалах
+        // Postgre ruu hadgalah
         const result = await pool.query(
-            "INSERT INTO zaruud (position, experience, salary, benefit, duration) VALUES ($1, $2, $3, $4, $5) RETURNING *",
-            [position, experience, salary, benefit, duration]
+            "INSERT INTO zaruud (position, experience, salary, duration) VALUES ($1, $2, $3, $4) RETURNING *",
+            [position, experience, salary, duration]
         );
-        res.status(201).json(result.rows[0]); // Амжилттай хадгалсан өгөгдөл
+        res.status(201).json(result.rows[0]); 
 
     } catch (error) {
         console.error("Серверийн алдаа:", error.stack);
@@ -57,5 +57,5 @@ app.post("/api/zaruud", async (req, res) => {
     }
 });
 
-// Сервер эхлүүлэх
+
 app.listen(PORT, () => console.log(`🔥 Сервер ${PORT} порт дээр ажиллаж байна!`));
