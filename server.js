@@ -1,7 +1,15 @@
 const express = require("express");
+const cors = require("cors"); // CORS ашиглах
 const path = require("path");
-const app = express();
+// const pool = require("./db"); // Хэрэв PostgreSQL ашиглаж байгаа бол идэвхжүүлнэ.
 
+const app = express();
+const PORT = process.env.PORT || 4000;
+
+app.use(cors()); // 🔥 CORS тохируулах
+app.use(express.json()); // 🔥 JSON өгөгдлийг зөв уншуулах
+
+// Static файлуудыг серверлэх
 app.use('/css', express.static(path.join(__dirname, 'pages', 'css')));
 app.use('/frontJS', express.static(path.join(__dirname, 'frontJS')));
 app.use('/pics', express.static(path.join(__dirname, 'pics')));
@@ -26,7 +34,7 @@ app.get("/studprofile", (req, res) => {
 });
 
 app.get("/list", (req, res) => {
-    res.sendFile(path.join(__dirname, "componentTest", "list.html"));
+    res.sendFile(path.join(__dirname, "component", "list.html"));
 });
 
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
@@ -53,21 +61,22 @@ app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
 //             return res.status(400).json({ message: 'Бүх талбарыг бөглөнө үү!' });
 //         }
 
-//         const result = await pool.query(
-//             'INSERT INTO zaruud (position, experience, salary, benefit, duration) VALUES ($1, $2, $3, $4, $5) RETURNING *',
-//             [position, experience, salary, benefit, duration]
-//         );
+        // PostgreSQL руу хадгалах (Хэрэв PostgreSQL ашиглаж байгаа бол)
+        /*
+        const result = await pool.query(
+            "INSERT INTO zaruud (position, experience, salary, benefit, duration) VALUES ($1, $2, $3, $4, $5) RETURNING *",
+            [position, experience, salary, benefit, duration]
+        );
+        res.status(201).json(result.rows[0]);
+        */
 
-//         res.status(201).json(result.rows[0]);
-//     } catch (error) {
-//         console.error("Серверийн алдаа:", error.stack); // Алдааны дэлгэрэнгүй мэдээлэл
-//         res.status(500).json({ message: 'Серверийн алдаа' });
-//     }
-    
-// });
+        // 🔥 Хэрэв PostgreSQL ашиглахгүй бол доорх мөрийг хэрэглэнэ.
+        res.status(201).json({ message: "Зар амжилттай нэмэгдлээ!", data: req.body });
+    } catch (error) {
+        console.error("Серверийн алдаа:", error.stack);
+        res.status(500).json({ message: "Серверийн алдаа" });
+    }
+});
 
-// const PORT = process.env.PORT || 5000;
-// app.listen(PORT, () => {
-//     console.log(`Server is running on port ${PORT}`);
-// });
-
+// Сервер эхлүүлэх
+app.listen(PORT, () => console.log(`🔥 Сервер ${PORT} порт дээр ажиллаж байна!`));
