@@ -96,7 +96,7 @@
                 console.log("Илгээж буй өгөгдөл:", formData); // 📌 Debugging
         
                 try {
-                    const response = await fetch("http://localhost:5000/api/zaruud", {
+                    const response = await fetch("http://localhost:4000/api/zaruud", {
                         method: "POST",
                         headers: { "Content-Type": "application/json" },
                         body: JSON.stringify(formData),
