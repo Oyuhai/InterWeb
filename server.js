@@ -22,7 +22,7 @@ app.get("/signInStud", (req, res) => {
 });
 
 app.get("/list", (req, res) => {
-    res.sendFile(path.join(__dirname, "component", "list.html"));
+    res.sendFile(path.join(__dirname, "componentTest", "list.html"));
 });
 
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
