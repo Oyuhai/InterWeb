@@ -6,9 +6,9 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>INTERN - List Page</title>
         <meta name="description" content="Заруудын жагсаалт гарч ирнэ">
-        <script type="module" src="../front js/list.js"></script>
-        <link rel="stylesheet" href="./css/root.css">
-        <link rel="stylesheet" href="./css/list.css">
+        <script type="module" src="../componentTest/component.js"></script>
+        <link rel="stylesheet" href="../pages/css/root.css">
+        <link rel="stylesheet" href="../pages/css/list.css">
         <link rel="stylesheet"
             href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     </head>
@@ -25,28 +25,7 @@
                 </a>
             </nav>
             <div class="flex-col wrap header-search">
-                <form action="#" method="GET" class="flex-row filter">
-                    <select onchange="selectHandler(this)" name="profession" id="profession">
-                        <option value="">Мэргэжил</option>
-                        <option value="backend_developer">Backend хөгжүүлэгч</option>
-                        <option value="system_analyst">Систем шинжээч</option>
-                        <option value="frontend_developer">Frontend Хөгжүүлэгч</option>
-                        <option value="system_admin">Системийн админ</option>
-                        <option value="tuslah_engineer">Туслах инженер</option>
-                    </select>
-                    <select onchange="selectHandler(this)" name="location" id="location">
-                        <option value="">Байршил</option>
-                        <option value="hud">Хан Уул</option>
-                        <option value="chd">Чингэлтэй</option>
-                    </select>
-                    <select class="mobile-none" onchange="selectHandler(this)" name="duration" id="duration">
-                        <option value="">Хугацаа</option>
-                        <option value="1_3">1-3 сар</option>
-                        <option value="4_6">4-6 сар</option>
-                    </select>
-                    <button class="mobile-none" type="submit">Зар шүүх</button>
-                    <button class="desktop-none" type="submit">&#x1F50D;</button>
-                </form>
+                <filter-component></filter-component>
             </div>
             <nav class="desktop-none mobile-nav">
                 <a class="mobile-nav-icon" href="home.html">
@@ -67,8 +46,7 @@
         <main>
             <article class="flex-col wrap container-padding-x">
                 <h3>Олдсон зарууд</h3>
-                <ul class="flex-col all-ad" id="zar">
-                </ul>
+                <ad-list-component></ad-list-component>
             </article>
         </main>
 
@@ -121,7 +99,7 @@
                 }
             });
         </script>
-        <script>
+        <!-- <script>
             async function fetchZaruud() {
                 try {
                     const response = await fetch("http://localhost:5000/api/zaruud");
@@ -148,7 +126,7 @@
             }
 
             fetchZaruud();
-        </script>
+        </script> -->
     </body>
 
 </html>
