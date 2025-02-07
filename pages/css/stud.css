@@ -5,8 +5,6 @@ a {
     color: white;
 }
 
-/* drop down */
-
 /*user menu drop down gargaj irehiin tuld profile zurgiig relative bolgoson*/
 .profile-image {
     position: relative;
@@ -119,6 +117,8 @@ a.profile-image>img {
     padding-bottom: 0.5rem;
     font-size: 1.3rem;
     font-weight: 400;
+    text-align: center; 
+    margin: 0 auto; 
 }
 
 @keyframes glitter {
@@ -168,6 +168,7 @@ a.profile-image>img {
 .huseltuud article p {
     font-size: 14px;
 }
+
 
 /* footer */
 
@@ -283,8 +284,24 @@ div.footer-logo>p:nth-child(3) {
     cursor: pointer;
 }
 
-/* tablet */
+
+
+/* Default style */
+
+
+/* Mobile дээр харагдах хэсэг анх нуух */
+.request-section.desktop-none {
+    display: none;
+}
+
+/* Mobile view (max-width: 768px) */
 @media screen and (max-width: 768px) {
+    .request-section.desktop-none {
+        display: block; /* Mobile дээр харагдах */
+    }
+    .request-section.mobile-none {
+        display: none; /* Desktop хэсгийг нуух */
+    }
 
     .huseltuud .request-section {
         width: 100%;
@@ -331,13 +348,31 @@ div.footer-logo>p:nth-child(3) {
         display: block;
     }
 
-    .dropdown.open {
-        display: block;
-    }
-}
+    /* Mобайл дээр Dropdown харуулах */
 
-@media screen and (min-width:769px) {
-    .request-section.desktop-none.desktop-none {
-        display: none;
+    .dropdown-content {
+      display: none;  /* эхэндээ нууцлах */
+      position: absolute;
+      background-color: #f9f9f9;
+      min-width: 160px;
+      box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+      z-index: 1;
     }
+  
+    .dropdown:hover .dropdown-content {
+      display: block;  /* hover хийхэд dropdown гаргах */
+    }
+  }
+  
+
+/* Desktop view (min-width: 769px) */
+@media screen and (min-width: 769px) {
+    .request-section.desktop-none {
+        display: none; /* Mobile хэсгийг нуух */
+    }
+    .request-section.mobile-none {
+        display: grid; /* Desktop дээр хэвийн харагдах */
+    }
+
+    
 }
