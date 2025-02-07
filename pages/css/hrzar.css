@@ -154,3 +154,65 @@ div.footer-logo>p:nth-child(3) {
 .footer-bottom {
     font-size: 0.75rem;
 }
+
+/* Form container */
+form {
+    max-width: 600px;
+    margin: 50px auto;
+    background-color: #f9f9ff;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    font-family: Arial, sans-serif;
+}
+
+/* Form labels */
+form label {
+    font-size: 14px;
+    font-weight: bold;
+    color: #333;
+    display: block;
+    margin-bottom: 8px;
+}
+
+/* Input fields */
+form input[type="text"], form input[type="number"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 16px;
+    box-sizing: border-box;
+}
+
+/* Radio buttons */
+form input[type="radio"] {
+    margin-right: 8px;
+}
+
+form label[for="radio"] {
+    margin-right: 20px;
+    font-size: 14px;
+    color: #555;
+}
+
+/* Submit button */
+form input[type="submit"] {
+    width: 100%;
+    background-color: #3229dd;
+    color: white;
+    padding: 12px;
+    border: none;
+    border-radius:20px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+aside {
+    border-style: solid;
+    border-color: #3229dd;
+    border-width: 2px;
+}
+
