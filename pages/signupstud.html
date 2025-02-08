@@ -8,6 +8,7 @@
         <title>sign up student</title>
         <meta name="description" content="Оюутан бүртгэлийн форм бөглөх хэсэг">
         <script type="module" src="../frontJS/signupStud.js"></script>
+        <link rel="stylesheet" type="text/css" href="./css/header.css">
 
     </head>
 
@@ -19,30 +20,31 @@
                 <a href="/zar.html">Зарууд</a>
             </nav>
         </header>
-        <nav>
-            <button onclick="location.href='signupstud.html'" class="active">Оюутан</button>
-            <button onclick="location.href='signupHr.html'" class="active">Байгууллага</button>
-        </nav>
+        
         <form id="signupForm">
-
+            <body class="student-page">
+                <nav>
+                    <a href="signupstud.html" class="tab-btn">Оюутан</a>
+                    <a href="signuphr.html" class="tab-btn">Байгууллага</a>
+                </nav>
+            </body>
+            
+            
+        
             <input id="email" type="email" name="email" placeholder="Email Address">
-
-
-            <input type="text" name="firstName" placeholder="First Name">
-            <input type="text" name="lastName" placeholder="Last Name">
-
-
-            <input id="home address" type="text" name="home address" placeholder="Home Address">
-
-            <input id="phoneNumber" type="tel" name="phone number" placeholder="Phone Number">
-
-            <input id="SchoolJobTitle" type="text" name="school job title" placeholder="School and Job title">
-
-            <input id="password" type="password" name="password" placeholder="create password">
-
+        
+            <div class="name-fields">
+                <input type="text" name="firstName" placeholder="First Name">
+                <input type="text" name="lastName" placeholder="Last Name">
+            </div>
+        
+            <input id="homeAddress" type="text" name="homeAddress" placeholder="Home Address">
+            <input id="phoneNumber" type="tel" name="phoneNumber" placeholder="Phone Number">
+            <input id="SchoolJobTitle" type="text" name="schoolJobTitle" placeholder="School and Job Title">
+            <input id="password" type="password" name="password" placeholder="Create Password">
             <input type="submit" value="Бүртгүүлэх">
-
         </form>
+        
     </body>
 
 </html>
