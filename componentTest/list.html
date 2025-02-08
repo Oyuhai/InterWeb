@@ -6,7 +6,9 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>INTERN - List Page</title>
         <meta name="description" content="Заруудын жагсаалт гарч ирнэ">
-        <script type="module" src="../componentTest/component.js"></script>
+        <script type="module" src="../componentTest/filterComponent.js"></script>
+        <script type="module" src="../componentTest/adListComponent.js"></script>
+
         <link rel="stylesheet" href="../pages/css/root.css">
         <link rel="stylesheet" href="../pages/css/list.css">
         <link rel="stylesheet"
@@ -17,9 +19,9 @@
         <!-- Header -->
         <header class="flex-col">
             <nav class="wrap header-top flex-row">
-                <a href="./home.html" class="logo">INTERN</a>
-                <a class="mobile-none" href="./home.html">Нүүр хуудас</a>
-                <a class="mobile-none" href="./list.html">Зарууд</a>
+                <a href="./" class="logo">INTERN</a>
+                <a class="mobile-none" href="./">Нүүр хуудас</a>
+                <a class="mobile-none" href="./list">Зарууд</a>
                 <a class="mobile-none profile-image" id="profileLink">
                     <img id="profileImage" src="../pics/profileIcon.png" alt="Хэрэглэгчийн профайл зураг">
                 </a>
@@ -47,7 +49,6 @@
             <article class="flex-col wrap container-padding-x">
                 <h3>Олдсон зарууд</h3>
                 <ad-list-component></ad-list-component>
-            </article>
         </main>
 
         <footer class="wrap container-padding-x">
@@ -55,7 +56,8 @@
                 <div class="footer-logo">
                     <div class="logo">INTERN</div>
                     <p>Шинэ заруудыг хүлээлгүй авахын тулд манайд нэгдээрэй.</p>
-                    <p>Бүртгүүлснээр та манай <u>Нууцлалын бодлогыг</u> хүлээн зөвшөөрч, манай компанийн мэдээлэл
+                    <p>Бүртгүүлснээр та манай <u>Нууцлалын бодлогыг</u> хүлээн зөвшөөрч, манай компанийн
+                        мэдээлэл
                         мэйлээр авахыг зөвшөөрч байна.</p>
                 </div>
                 <nav class="mobile-none footer-links">
@@ -87,46 +89,18 @@
 
             if (isLoggedIn) {
                 profileImage.src = '../pics/profile.webp';
-                profileLink.href = './studprofile.html'; // Redirect to profile page if logged in
+                profileLink.href = './studprofile';
             } else {
-                profileLink.href = './signInStud.html'; // Redirect to login page if not logged in
+                profileLink.href = './signInStud';
             }
 
-            // Redirect logic for profile link
             profileLink.addEventListener('click', (event) => {
                 if (!isLoggedIn) {
-                    window.location.href = './signInStud.html'; // Redirect to login if not logged in
+                    window.location.href = './signInStud';
                 }
             });
         </script>
-        <!-- <script>
-            async function fetchZaruud() {
-                try {
-                    const response = await fetch("http://localhost:5000/api/zaruud");
-                    const zaruud = await response.json();
 
-                    const zarContainer = document.getElementById("zar-container");
-                    zarContainer.innerHTML = "";
-
-                    zaruud.forEach((zar) => {
-                        const div = document.createElement("div");
-                        div.innerHTML = `
-                        <h3>${zar.position}</h3>
-                        <p>Шалгуурууд: ${zar.experience}</p>
-                        <p>Цалин: ${zar.salary}</p>
-                        <p>Нэмэлт: ${zar.benefit}</p>
-                        <p>Хугацаа: ${zar.duration}</p>
-                        <hr>
-                    `;
-                        zarContainer.appendChild(div);
-                    });
-                } catch (error) {
-                    console.error("Алдаа:", error);
-                }
-            }
-
-            fetchZaruud();
-        </script> -->
     </body>
 
 </html>

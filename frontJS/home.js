@@ -87,7 +87,7 @@ function attachRequestButtonListeners() {
 
             if (!isLoggedIn) {
                 alert('Та эхлээд нэвтэрнэ үү!');
-                window.location.href = './signInStud.html';
+                window.location.href = './signInStud';
                 return;
             }
 

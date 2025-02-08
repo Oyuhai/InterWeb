@@ -10,38 +10,38 @@
         <link rel="stylesheet" href="./css/root.css">
         <link rel="stylesheet"
             href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-        <script type="module" src="../front js/studentProfile.js"></script>
+        <script type="module" src="../frontJS/studentProfile.js"></script>
     </head>
 
     <body>
         <header>
             <nav class="wrap header-top flex-row">
-                <a href="./home.html" class="logo">INTERN</a>
-                <a class="mobile-none" href="./home.html">Нүүр хуудас</a>
-                <a class="mobile-none" href="./list.html">Зарууд</a>
-                <a class="mobile-none profile-image" href="./signInStud.html">
+                <a href="/" class="logo">INTERN</a>
+                <a class="mobile-none" href="/">Нүүр хуудас</a>
+                <a class="mobile-none" href="/list">Зарууд</a>
+                <a class="mobile-none profile-image" href="/signInStud">
                     <img src="../pics/profile.webp" id="user-dropdown-toggle" alt="Хэрэглэгчийн профайл зураг">
                 </a>
                 <div class="dropdown-content" id="user-dropdown">
-                    <a href="./studprofile.html">Профайл</a>
-                    <a id="logout-button" href="./signInStud.html">Гарах</a>
+                    <a href="/studprofile">Профайл</a>
+                    <a id="logout-button" href="/signInStud">Гарах</a>
                 </div>
             </nav>
             <script>
                 document.getElementById('studProfileImage').addEventListener('click', () => {
-                    window.location.href = './studprofile.html'; // Профайл руу чиглүүлэх
+                    window.location.href = '/studprofile'; // Профайл руу чиглүүлэх
                 });
             </script>
             <nav class="desktop-none mobile-nav">
-                <a class="mobile-nav-icon" href="home.html">
+                <a class="mobile-nav-icon" href="/home">
                     <i class="fa fa-home"></i>
                     <p>Нүүр хуудас</p>
                 </a>
-                <a class="mobile-nav-icon" href="list.html">
+                <a class="mobile-nav-icon" href="/list">
                     <i class='fa fa-book'></i>
                     <p>Зарууд</p>
                 </a>
-                <a class="mobile-nav-icon" href="studprofile.html">
+                <a class="mobile-nav-icon" href="/studprofile">
                     <i class='fa fa-user-circle'></i>
                     <p>Профайл</p>
                 </a>
@@ -136,10 +136,10 @@
                 <nav class="mobile-none footer-links">
                     <h4>Хэрэгтэй хуудас</h4>
                     <ul>
-                        <li><a href="./home.html">Нүүр хуудас</a></li>
-                        <li><a href="./list.html">Заруд</a></li>
-                        <li><a href="./signupstud.html">Бүртгүүлэх</a></li>
-                        <li><a href="./signInStud.html">Нэвтрэх</a></li>
+                        <li><a href="/home">Нүүр хуудас</a></li>
+                        <li><a href="/list">Заруд</a></li>
+                        <li><a href="/signupstud">Бүртгүүлэх</a></li>
+                        <li><a href="/signInStud">Нэвтрэх</a></li>
                     </ul>
                 </nav>
 
@@ -164,7 +164,7 @@
                 localStorage.removeItem('isLoggedIn');
 
                 // Логин хуудас руу чиглүүлэх
-                window.location.href = "/pages/signInStud.html"; // signInStud.html руу шилжих
+                window.location.href = "/signInStud"; // signInStud.html руу шилжих
             });
 
             // Хүсэлт илгээгдсэн мэдээллийг localStorage-аас авч үзэх

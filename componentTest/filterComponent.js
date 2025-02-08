@@ -1,13 +1,20 @@
-export default class filterComponent {
+class filterComponent extends HTMLElement {
     constructor() {
         super();
         this.attachShadow({ mode: 'open' });
         this.render();
     }
-
     async fetchData() {
-        const myData = await fetch('/mydata.json')
-        return myData.json();
+        try {
+            const response = await fetch('/api/intern-ads');
+            if (!response.ok) {
+                throw new Error('Failed to fetch internship ads');
+            }
+            return await response.json();
+        } catch (error) {
+            console.error("Error fetching data:", error);
+            return [];
+        }
     }
 
     getFilters() {
@@ -24,16 +31,16 @@ export default class filterComponent {
     }
 
     async applyFilters() {
-        const filtered = await this.filterData();
+        const filteredAds = await this.filterData();
         const adList = document.querySelector('ad-list-component');
         if (adList) {
-            adList.ads = filtered;
+            adList.ads = filteredAds;
         }
     }
 
     formSubmitted(submitted) {
         submitted.preventDefault();
-        const form = this.shadowRoot / this.querySelector('form');
+        const form = this.shadowRoot.querySelector('form');
         const formData = new FormData(form);
         const params = new URLSearchParams();
 
@@ -123,7 +130,8 @@ export default class filterComponent {
             </form>
         `;
 
-        this.shadowRoot.querySelector('form').addEventListener('submit', (submitted) => this.formSubmimtted(submitted));
+        this.shadowRoot.querySelector('form').addEventListener('submit', (submitted) => this.formSubmitted(submitted));
     }
 }
 
+customElements.define('filter-component', filterComponent);

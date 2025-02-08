@@ -1,6 +1,6 @@
-import { AdComponent } from './adComponent.js';
+import AdComponent from './adComponent.js'
 
-export default class AdListComponent extends HTMLElement {
+class AdListComponent extends HTMLElement {
     constructor() {
         super();
         this.attachShadow({ mode: 'open' });
@@ -12,20 +12,16 @@ export default class AdListComponent extends HTMLElement {
 
     render(data) {
         this.shadowRoot.innerHTML = `<style>.all-ad {
-                padding-bottom: 2.25rem;
-                gap: 0.2rem;
-                } 
-                .flex-col {
-                display: flex;
-                flex-direction: column;
-                }
-                .wrap {
-                max-width: 1300px;
-                width: 100%;
-                margin: 0 auto;
-                } 
-                </style>
-                <ul class="flex-col" id="ads-list"></ul>`;
+    padding-bottom: 2.25rem;
+    gap: 0.2rem;
+} .flex-col {
+    display: flex;
+    flex-direction: column;
+}.wrap {
+  max-width: 1300px;
+  width: 100%;
+  margin: 0 auto;
+} </style><ul class="flex-col" id="ads-list"></ul>`;
         const list = this.shadowRoot.getElementById('ads-list');
         data.forEach(ad => {
             const adElement = new AdComponent();
@@ -34,5 +30,4 @@ export default class AdListComponent extends HTMLElement {
         });
     }
 }
-
 customElements.define('ad-list-component', AdListComponent);

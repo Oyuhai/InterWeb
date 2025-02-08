@@ -1,5 +1,4 @@
-
-export default class AdComponent {
+export default class AdComponent extends HTMLElement {
     constructor() {
         super();
         this.attachShadow({ mode: 'open' });
@@ -12,7 +11,7 @@ export default class AdComponent {
     render(data) {
         const professionDictionary = {
             backend_developer: "Backend хөгжүүлэгч",
-            system_analyst: "Систем шинжээч",
+            system_analist: "Систем шинжээч",
             frontend_developer: "Frontend Хөгжүүлэгч",
             system_admin: "Системийн админ",
             tuslah_engineer: "Туслах инженер"
@@ -95,12 +94,11 @@ export default class AdComponent {
                 alert('Та энэ зар дээр аль хэдийн хүсэлт илгээсэн байна!');
                 return;
             }
-            //YYYY-MM-DDTHH:mm:ss.sssZ 2024-12-08T10:15:30.123Z split()-r hoyr husnegted huvaana "2025-02-08", "10:15:30.123Z" [0] ehnii husnegtiig hadgalna
+
             const date = new Date().toISOString().split('T')[0];
             localStorage.setItem(adKey, JSON.stringify({ profession, company, date, studentId, status: 'pending' }));
             alert('Хүсэлт илгээгдлээ!');
         });
     }
 }
-
-// customElements.define('ad-component', AdComponent);
+customElements.define('ad-component', AdComponent);
