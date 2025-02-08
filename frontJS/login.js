@@ -28,9 +28,9 @@ async function handleLogin(event) {
         localStorage.setItem('isLoggedIn', 'true');
 
         if (user.type === 'student') {
-            window.location.href = "../pages/studprofile.html";
+            window.location.href = "/studprofile";
         } else if (user.type === 'hr') {
-            window.location.href = "../pages/HRprofile.html";
+            window.location.href = "/HRprofile";
         }
     } else {
         alert("Invalid email or password.");
@@ -42,7 +42,7 @@ function handleLogout() {
     localStorage.removeItem('userId');
     localStorage.removeItem('isLoggedIn');
 
-    window.location.href = "../pages/signInStud.html";
+    window.location.href = "/signInStud";
 }
 
 

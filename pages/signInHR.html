@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,15 +12,15 @@
     <body>
         <header>
             <nav class="wrap header-top flex-row">
-                <a href="home.html" class="logo">INTERN</a>
-                <a href="home.html">Нүүр хуудас</a>
-                <a href="list.html">Зарууд</a>
+                <a href="/home" class="logo">INTERN</a>
+                <a href="/home">Нүүр хуудас</a>
+                <a href="/list">Зарууд</a>
             </nav>
         </header>
         <form id="login-form">
             <nav>
-                <button onclick="location.href='signInStud.html'" class="active">Оюутан</button>
-                <button onclick="location.href='signInHR.html'" class="active">Байгууллага</button>
+                <button onclick="location.href='/signInStud'" class="active">Оюутан</button>
+                <button onclick="location.href='/signInHR'" class="active">Байгууллага</button>
             </nav>
             <address>
                 <label for="email">Email Address</label>
@@ -36,6 +37,7 @@
                 <input type="submit" value="Нэвтрэх">
             </address>
         </form>
-        <script src="../login.js"></script>
+        <script src="../frontJS/login.js"></script>
     </body>
+
 </html>
