@@ -7,6 +7,8 @@
     <meta name="description" content="HR бүртгэлийн форм бөглөх хэсэг">
     <!-- CSS файлын замыг зассан -->
     <link rel="stylesheet" type="text/css" href="./css/signup.css">
+    <link rel="stylesheet" type="text/css" href="./css/header.css">
+  
 </head>
 <body>
     <header>
@@ -16,11 +18,15 @@
             <a href="/zar.html">Зарууд</a>
         </nav>
     </header>
-    <form>
-        <nav>
-            <button onclick="location.href='signupstud.html'" class="active">Оюутан</button>
-            <button onclick="location.href='signupHr.html'" class="active">Байгууллага</button>
-        </nav>
+    <form >
+        <body class="company-page">
+            <nav>
+                <a href="signupstud.html" class="tab-btn">Оюутан</a>
+                <a href="signuphr.html" class="tab-btn">Байгууллага</a>
+            </nav>
+        </body>
+        
+        
         <address>
             <input id="companyName" type="text" name="company name" placeholder="Company Name">
             <input id="email" type="email" name="email" placeholder="Email Address">
@@ -31,4 +37,5 @@
         </address>
     </form>
 </body>
+
 </html>
