@@ -100,7 +100,7 @@ a.profile-image>img {
 .info-container {
     padding: 1.5rem;
     display: flex;
-    gap: 30px;
+    gap: 20px;
     justify-content: center;
     align-items: center;
 }
