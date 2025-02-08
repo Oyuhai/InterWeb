@@ -117,8 +117,8 @@ a.profile-image>img {
     padding-bottom: 0.5rem;
     font-size: 1.3rem;
     font-weight: 400;
-    text-align: center; 
-    margin: 0 auto; 
+    text-align: center;
+    margin: 0 auto;
 }
 
 @keyframes glitter {
@@ -297,10 +297,13 @@ div.footer-logo>p:nth-child(3) {
 /* Mobile view (max-width: 768px) */
 @media screen and (max-width: 768px) {
     .request-section.desktop-none {
-        display: block; /* Mobile дээр харагдах */
+        display: block;
+        /* Mobile дээр харагдах */
     }
+
     .request-section.mobile-none {
-        display: none; /* Desktop хэсгийг нуух */
+        display: none;
+        /* Desktop хэсгийг нуух */
     }
 
     .huseltuud .request-section {
@@ -350,29 +353,58 @@ div.footer-logo>p:nth-child(3) {
 
     /* Mобайл дээр Dropdown харуулах */
 
-    .dropdown-content {
-      display: none;  /* эхэндээ нууцлах */
-      position: absolute;
-      background-color: #f9f9f9;
-      min-width: 160px;
-      box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
-      z-index: 1;
-    }
-  
-    .dropdown:hover .dropdown-content {
-      display: block;  /* hover хийхэд dropdown гаргах */
-    }
-  }
-  
+    /* .dropdown-trigger {
+        display: none;
+      
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+    /* hover хийхэд dropdown гаргах */
+}
+
+div.dropdown-approved-list>ul {
+    display: none;
+}
+
+div.dropdown-approved-list.open>ul {
+    display: block;
+}
+
+div.dropdown-pending-list>ul {
+    display: none;
+}
+
+div.dropdown-pending-list.open>ul {
+    display: block;
+}
+
+div.dropdown-notApproved-list>ul {
+    display: none;
+}
+
+div.dropdown-notApproved-list.open>ul {
+    display: block;
+}
+
+
 
 /* Desktop view (min-width: 769px) */
 @media screen and (min-width: 769px) {
     .request-section.desktop-none {
-        display: none; /* Mobile хэсгийг нуух */
-    }
-    .request-section.mobile-none {
-        display: grid; /* Desktop дээр хэвийн харагдах */
+        display: none;
+        /* Mobile хэсгийг нуух */
     }
 
-    
+    .request-section.mobile-none {
+        display: grid;
+        /* Desktop дээр хэвийн харагдах */
+    }
+
+
 }

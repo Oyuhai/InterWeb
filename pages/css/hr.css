@@ -23,8 +23,6 @@ header {
     padding: 2.5rem var(--container-padding) 1rem var(--container-padding);
     gap: 2.75rem;
     align-items: end;
-    /* background-color: var(--brand-color);
-        border: 0.1rem solid var(--brand-color); */
     border: none;
     background: linear-gradient(to bottom, var(--brand-color), rgba(46, 37, 211, 0.65));
 }
@@ -46,7 +44,7 @@ a.profile-image>img {
 
 }
 
-.main{
+.main {
     display: flex;
 }
 
@@ -125,16 +123,7 @@ div.footer-logo>p:nth-child(3) {
     font-size: 0.75rem;
 }
 
-/* @media screen and (min-width: 769px) {
-    .desktop-none {
-        display: none;
-    }
-} */
-
 @media screen and (max-width: 768px) {
-    /* .mobile-none {
-        display: none;
-    } */
 
     .header-top {
         border: none;
@@ -155,7 +144,7 @@ div.footer-logo>p:nth-child(3) {
         box-shadow: 1rem 0px 4px 1px #eaeaea;
     }
 
-    
+
 }
 
 .mobile-nav-icon {
@@ -186,82 +175,72 @@ div.footer-logo>p:nth-child(3) {
     font-size: 1rem;
 }
 
-
-
-
 .info-container {
     width: 70%;
     height: auto;
     margin: 20px auto;
     padding: 20px;
     display: flex;
-    gap: 20px; /* zurag info hoorondiin zai */
-    border-radius: 8px; 
-    justify-content: center; 
-    align-items: center;     
+    gap: 20px;
+    border-radius: 8px;
+    justify-content: center;
+    align-items: center;
 }
 
-.info-container .left{
+.info-container .left {
     color: gray;
 }
 
-.info-container .right{
+.info-container .right {
     color: black;
 }
 
 .link-img {
-    margin: 100px ;
+    margin: 100px;
     display: flex;
     margin: 10px;
     flex-direction: column;
     align-items: center;
 }
 
-a.profile-image > img {
-    width: 2rem; 
-    height: 2rem; 
-    border-radius: 50%; 
+a.profile-image>img {
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
 }
 
-.hr-img{
+.hr-img {
     display: flex;
     flex-direction: column;
 }
 
 .hr-img img {
-    width: 100px; 
-    height: 100px; 
+    width: 100px;
+    height: 100px;
     align-items: center;
 }
 
-.hr-img a{
+.hr-img a {
     color: #3229dd;
 }
 
 
 .info-container ul {
-    list-style-type: none; 
+    list-style-type: none;
     line-height: 30px;
 }
 
-
-/* Job posting section */
-/* Job posting section */
-/* General styles */
-/* Header styles */
-.hr-zaruud{
+.hr-zaruud {
     padding: 1.2rem;
     font-size: 24px;
-    
+
 }
 
-.hr-zaruud h3{
+.hr-zaruud h3 {
     margin: 20px auto;
     max-width: 800px;
 }
 
-
-/* General layout */
 .irsen-huseltuud {
     margin: 20px auto;
     max-width: 800px;
@@ -283,25 +262,20 @@ a.profile-image > img {
 }
 
 .irsen-huseltuud ul li {
-    width: calc(20% - 10px); /* 2 item per row */
+    width: calc(20% - 10px);
     padding: 15px;
     background-color: #f8f9fa;
     border-radius: 8px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     position: relative;
     transition: transform 0.2s ease;
-    
-}
 
-/*.irsen-huseltuud ul li p{
-    font-weight: bold;
-}*/
+}
 
 .irsen-huseltuud ul li:hover {
-    transform: translateY(-5px); /* Slight hover effect */
+    transform: translateY(-5px);
 }
 
-/* Details element styling */
 details {
     cursor: pointer;
 }
@@ -332,7 +306,8 @@ details ul li {
 /* Responsive layout for mobile */
 @media screen and (max-width: 480px) {
     .irsen-huseltuud ul li {
-        width: 100%; /* 1 item per row */
+        width: 100%;
+        /* 1 item per row */
     }
 
     .irsen-huseltuud ul {

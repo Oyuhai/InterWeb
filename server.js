@@ -1,7 +1,6 @@
 const express = require("express");
 const path = require("path");
 const cors = require("cors");
-const { Pool } = require('pg');
 const pool = require('./db');
 
 const app = express();
@@ -32,23 +31,6 @@ app.use('/api/intern-ads', internAdsRoutes);
 const authRoutes = require("./routes/authRoutes");
 app.use("/api/auth", authRoutes);
 
-// Example Express route for fetching profile by userId
-app.get('/api/auth/profile', (req, res) => {
-    const { userId } = req.query; // Retrieve userId from query parameters
-    if (!userId) {
-        return res.status(400).json({ error: 'User ID is required' });
-    }
-
-    // Fetch user profile data from the database based on userId
-    const userProfile = database.getUserProfileById(userId);
-    if (!userProfile) {
-        return res.status(404).json({ error: 'User not found' });
-    }
-
-    res.json(userProfile);
-});
-
-
 // Zar nemeh
 app.post("/api/zaruud", async (req, res) => {
     try {
@@ -58,7 +40,6 @@ app.post("/api/zaruud", async (req, res) => {
         if (!position || !experience || !salary) {
             return res.status(400).json({ message: "Бүх талбарыг бөглөнө үү!" });
         }
-
         // Postgre ruu hadgalah
         const result = await pool.query(
             "INSERT INTO zaruud (position, experience, salary, duration) VALUES ($1, $2, $3, $4) RETURNING *",

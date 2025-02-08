@@ -101,13 +101,9 @@ function attachRequestButtonListeners() {
             const company = event.target.dataset.company;
             const studentId = localStorage.getItem('userId');
 
-            const dateSec = new Date();
-            const year = dateSec.getFullYear();
-            const month = String(dateSec.getMonth() + 1).padStart(2, '0');
-            const day = String(dateSec.getDate()).padStart(2, '0');
-            const formattedDate = `${year}-${month}-${day}`;
+            const formattedDate = new Date().toISOString().split('T')[0];
 
-            const zarKey = `request-${profession}-${company}-${studentId}`;
+            const zarKey = `request-${profession} -${company} -${studentId} `;
             if (localStorage.getItem(zarKey)) {
                 alert('Та энэ зар дээр аль хэдийн хүсэлт илгээсэн байна!');
                 return;

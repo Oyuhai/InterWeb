@@ -36,24 +36,14 @@ document.addEventListener("DOMContentLoaded", () => {//DOM-n elementuud achaalla
             }
         }
     });
+
 });
 
-document.getElementById('user-dropdown-toggle').addEventListener('click', function (event) {
-    event.preventDefault();
-    const dropdown = document.getElementById('user-dropdown');
-    dropdown.classList.toggle('active');
-    const rect = event.target.getBoundingClientRect();
-    dropdown.style.left = `${rect.left}px`;
-    dropdown.style.top = `${rect.bottom + window.scrollY}px`;
-});
-
-document.addEventListener('click', function (event) {
-    const dropdown = document.getElementById('user-dropdown');
-    const toggle = document.getElementById('user-dropdown-toggle');
-
-    if (!dropdown.contains(event.target) && !toggle.contains(event.target)) {
-        dropdown.classList.remove('active');
-    }
+document.addEventListener("DOMContentLoaded", () => {
+    document.querySelector(".dropdown-trigger").addEventListener("click", function () {
+        const approvedListDropdown = document.querySelector(".dropdown-approved-list");
+        approvedListDropdown.classList.toggle("open");
+    });
 });
 
 function handleLogout() {
@@ -67,12 +57,10 @@ document.getElementById("logout-button").addEventListener("click", handleLogout)
 async function fetchProfile() {
     const userId = localStorage.getItem('userId');
     if (!userId) {
-        alert('Please log in first.');
+        alert('Эхлээд нэвтэрнэ үү');
         window.location.href = './signInStud.html';
         return;
     }
-
-    console.log('Fetching profile for userId:', userId);  // Log the userId to ensure it's correct
 
     try {
         const response = await fetch(`http://localhost:4000/api/auth/profile?userId=${userId}`, {
@@ -80,21 +68,19 @@ async function fetchProfile() {
         });
 
         if (!response.ok) {
-            throw new Error('Failed to fetch profile data');
+            throw new Error('алдаа гарлаа');
         }
 
         const profileData = await response.json();
-        console.log('Received profile data:', profileData);
         renderProfile(profileData);
     } catch (error) {
-        console.error('Error:', error);
         alert('Error fetching profile data');
     }
 }
 
 
 function renderProfile(data) {
-    document.querySelector('#profile-name').innerText = data.full_name; // Adjust according to your data structure
+    document.querySelector('#profile-name').innerText = data.full_name;
     document.querySelector('#profile-email').innerText = data.email;
     document.querySelector('#profile-job-title').innerText = data.jobTitle;
     document.querySelector('#profile-address').innerText = data.address;

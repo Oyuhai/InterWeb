@@ -95,12 +95,7 @@
 //             const company = event.target.dataset.company;
 //             const studentId = localStorage.getItem('userId');
 
-//             const dateSec = new Date();//current ognoog gargana 00-s hoish secondeer
-//             //secondoor gargaj avsan datagaa ognoo helbert oruulna
-//             const year = dateSec.getFullYear();
-//             const month = String(dateSec.getMonth() + 1).padStart(2, '0');
-//             const day = String(dateSec.getDate()).padStart(2, '0');
-//             const formattedDate = `${year}-${month}-${day}`;
+//              const formattedDate = new Date().toISOString().split('T')[0];
 //             //formatted ognoog student profile dr huselt ilgeesen zariin door haruulna
 //             const zarKey = `request-${profession}-${company}-${studentId}`;
 //             //localstoraged id uusgen ilgeesen zariig hadgalah in neg huselted dahin huselt ilgeehees hamgaalna
