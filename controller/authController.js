@@ -65,5 +65,30 @@ const signinUser = async (req, res) => {
     }
 };
 
+
+const getProfile = async (req, res) => {
+    try {
+        const userId = req.query.userId; // Get userId from query parameters
+
+        if (!userId) {
+            return res.status(400).json({ message: 'User ID is required' });
+        }
+
+        // Fetch user profile from DB (adjust to your actual query and model)
+        const profileData = await pool.query('SELECT * FROM users WHERE username = $1', [userId]);
+
+        if (profileData.rows.length === 0) {
+            return res.status(404).json({ message: "Profile not found" });
+        }
+
+        res.json(profileData.rows[0]); // Send the profile data as response
+    } catch (err) {
+        console.error(err);
+        res.status(500).json({ message: "Error fetching profile data" });
+    }
+};
+
+
+
 // Export both functions in a single object
-module.exports = { signupUser, signinUser };
+module.exports = { signupUser, signinUser, getProfile };

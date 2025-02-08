@@ -32,6 +32,23 @@ app.use('/api/intern-ads', internAdsRoutes);
 const authRoutes = require("./routes/authRoutes");
 app.use("/api/auth", authRoutes);
 
+// Example Express route for fetching profile by userId
+app.get('/api/auth/profile', (req, res) => {
+    const { userId } = req.query; // Retrieve userId from query parameters
+    if (!userId) {
+        return res.status(400).json({ error: 'User ID is required' });
+    }
+
+    // Fetch user profile data from the database based on userId
+    const userProfile = database.getUserProfileById(userId);
+    if (!userProfile) {
+        return res.status(404).json({ error: 'User not found' });
+    }
+
+    res.json(userProfile);
+});
+
+
 // Zar nemeh
 app.post("/api/zaruud", async (req, res) => {
     try {
