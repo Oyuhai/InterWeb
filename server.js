@@ -1,11 +1,13 @@
 const express = require("express");
 const path = require("path");
+const cors = require("cors");
 const { Pool } = require('pg');
 const pool = require('./db');
 
-
 const app = express();
+app.use(cors());
 app.use(express.json());
+
 const PORT = process.env.PORT || 4000;
 
 app.use('/css', express.static(path.join(__dirname, 'pages', 'css')));
@@ -18,12 +20,17 @@ app.get("/", (req, res) => res.sendFile(path.join(__dirname, "pages", "home.html
 app.get("/home", (req, res) => res.sendFile(path.join(__dirname, "pages", "home.html")));
 app.get("/signInStud", (req, res) => res.sendFile(path.join(__dirname, "pages", "signInStud.html")));
 app.get("/signInHR", (req, res) => { res.sendFile(path.join(__dirname, "pages", "signInHR.html")); });
+app.get("/signupStud", (req, res) => res.sendFile(path.join(__dirname, "pages", "signupStud.html")));
+app.get("/signupHR", (req, res) => { res.sendFile(path.join(__dirname, "pages", "signupHR.html")); });
 app.get("/studprofile", (req, res) => { res.sendFile(path.join(__dirname, "pages", "studprofile.html")); });
 app.get("/HRprofile", (req, res) => { res.sendFile(path.join(__dirname, "pages", "HRprofile.html")); });
 app.get("/list", (req, res) => { res.sendFile(path.join(__dirname, "componentTest", "list.html")); });
 
 const internAdsRoutes = require('./routes/internAdsRoutes');;
 app.use('/api/intern-ads', internAdsRoutes);
+
+const authRoutes = require("./routes/authRoutes");
+app.use("/api/auth", authRoutes);
 
 // Zar nemeh
 app.post("/api/zaruud", async (req, res) => {
