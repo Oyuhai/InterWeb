@@ -19,14 +19,51 @@ const signupUser = async (req, res) => {
             [email, `${firstName} ${lastName}`, email, hashedPassword, ['student'], address, jobTitle]
         );
 
-
         console.log("Database Result:", result.rows);
 
-        res.status(201).json({ message: "User registered successfully", user: result.rows[0] });
+        res.status(201).json({ message: "User  registered successfully", user: result.rows[0] });
     } catch (error) {
         console.error("Signup Error:", error);
         res.status(500).json({ error: "Internal server error" });
     }
 };
 
-module.exports = { signupUser };
+const signinUser = async (req, res) => {
+    try {
+        const { email, password } = req.body;
+
+        // Check if the required fields are provided
+        if (!email || !password) {
+            return res.status(400).json({ error: "Email and password are required!" });
+        }
+
+        // Query the database to find the user with the given email
+        const result = await pool.query(
+            `SELECT * FROM users WHERE email = $1`,
+            [email]
+        );
+
+        // Check if the user exists
+        if (result.rows.length === 0) {
+            return res.status(401).json({ error: "Invalid email or password" });
+        }
+
+        // Compare the provided password with the hashed password in the database
+        const isMatch = await bcrypt.compare(password, result.rows[0].password);
+        if (!isMatch) {
+            return res.status(401).json({ error: "Invalid email or password" });
+        }
+
+        // If login is successful, return user data (could be used for session or token)
+        res.status(200).json({
+            message: "Login successful",
+            user: result.rows[0], // You can also send a token here if you're using JWT
+        });
+    } catch (error) {
+        console.error("Signin Error:", error);
+        res.status(500).json({ error: "Internal server error" });
+    }
+};
+
+// Export both functions in a single object
+module.exports = { signupUser, signinUser };

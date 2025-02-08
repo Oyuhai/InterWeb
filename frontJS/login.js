@@ -1,62 +1,34 @@
-document.getElementById('login-form').addEventListener('submit', handleLogin);//submit deer darahad handleLogin funkts ajillana
+document.querySelector("#login-form").addEventListener("submit", async (e) => {
+    e.preventDefault(); // Prevent default page reload
 
-async function handleLogin(event) {
-    event.preventDefault();//default http huselt shig shiidverlehees segiilj js uildliig heregjuulne
+    const email = document.querySelector("#email").value;
+    const password = document.querySelector("#password").value;
 
-    let usersData;
+    const formData = {
+        email,
+        password
+    };
+
     try {
-        const response = await fetch('../login.json');//login jsonii medeelliig avna
-        //medeelel tatahad aldaa garval error msg ogno
-        if (!response.ok) {
-            throw new Error(`HTTP error! status: ${response.status}`);
+        const response = await fetch("http://localhost:4000/api/auth/signin", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(formData)
+        });
+
+        const data = await response.json();
+
+        if (response.ok) {
+            // On successful login, redirect the user to the profile page
+            alert("Login successful!");
+            window.location.href = "/profile.html"; // Redirect to profile page (you can change this URL)
+        } else {
+            alert(data.error); // Display the error message
         }
-        usersData = await response.json();
     } catch (error) {
-        console.error("Error fetching login data:", error);
-        alert("Unable to load login data. Please try again later.");
-        return;
+        console.error("Error:", error);
+        alert("An error occurred. Please try again.");
     }
-    //trim() ashiglaj iluu dutuu zaig arilgana
-    const email = document.getElementById('email').value.trim();
-    const password = document.getElementById('password').value.trim();
-
-    const user = usersData.find(u => u.email === email);//userdata dahi mail formiin mailtei ijilhen baigaa esehiig shalgana. olson ehnii utgiig butsaana
-
-    if (user && user.password === password) {//user deerh password json passwortoi taarj baigaa esehiig shalgana
-
-        localStorage.setItem('userId', user.userId);//localstoraged user id bolon nevtresen esehiig temdeglene
-        localStorage.setItem('isLoggedIn', 'true');
-
-        if (user.type === 'student') {
-            window.location.href = "/studprofile";
-        } else if (user.type === 'hr') {
-            window.location.href = "/HRprofile";
-        }
-    } else {
-        alert("Invalid email or password.");
-    }
-}
-
-function handleLogout() {
-
-    localStorage.removeItem('userId');
-    localStorage.removeItem('isLoggedIn');
-
-    window.location.href = "/signInStud";
-}
-
-
-window.onload = function () {//page deerh buh zurag text buh zuil loaded bolsnii daraa heregjih funkts todorhoilosn
-    const isLoggedIn = localStorage.getItem('isLoggedIn');
-    //nevtersen baival garah tovchiig haruulna
-    if (isLoggedIn === 'true') {
-        document.getElementById('logout-button').style.display = 'block';
-    } else {
-        document.getElementById('logout-button').style.display = 'none';
-    }
-    //garah tovch daragdsan uyd handleLogout funkts ajillana
-    document.getElementById("logout-button").addEventListener("click", handleLogout);
-
-}
-
-
+});

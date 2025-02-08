@@ -31,7 +31,7 @@ document.querySelector("#signupForm").addEventListener("submit", async (e) => {
             const data = await response.json();
             console.log("Signup successful:", data);
             alert("Signup successful!");
-            window.location.href = "/login.html"; // Redirect to login page
+            window.location.href = "/signInStud"; // Redirect to login page
         }
     } catch (error) {
         // Log any network or unexpected error
