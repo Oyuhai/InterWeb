@@ -6,7 +6,7 @@ body {
 
 /*Header heseg*/
 
-header{
+header {
     background-color: #3229DD;
 }
 
@@ -94,15 +94,18 @@ form nav {
 
 /* signupstud.html дээр байвал "Оюутан" товчийг тодруулах */
 .student-page .tab-btn:nth-child(1) {
-    background-color: #3229df; /* Тод өнгө */
+    background-color: #3229df;
+    /* Тод өнгө */
     font-weight: bold;
 }
 
 /* signuphr.html дээр байвал "Байгууллага" товчийг тодруулах */
 .company-page .tab-btn:nth-child(2) {
-    background-color: #3229dd; /* Тод өнгө */
+    background-color: #3229dd;
+    /* Тод өнгө */
     font-weight: bold;
 }
+
 address .links {
     display: flex;
     justify-content: space-between;
@@ -157,7 +160,6 @@ footer {
     width: 185px;
 }
 
-/* Hidden sections on mobile for requests */
 .request-section.mobile-hidden {
     display: none;
 }
@@ -188,7 +190,6 @@ footer {
     cursor: pointer;
 }
 
-/* Responsive styles */
 @media screen and (max-width: 768px) {
     /* Гар утасны загвар */
 
@@ -199,7 +200,6 @@ footer {
 
     .request-section {
         display: none;
-        /* Hide desktop layout for requests */
     }
 
     .request-section.mobile-hidden {

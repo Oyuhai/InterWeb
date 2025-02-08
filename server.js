@@ -31,6 +31,9 @@ app.use('/api/intern-ads', internAdsRoutes);
 const authRoutes = require("./routes/authRoutes");
 app.use("/api/auth", authRoutes);
 
+const { swaggerUi, specs } = require("./swagger");
+app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(specs));
+
 // Zar nemeh
 app.post("/api/zaruud", async (req, res) => {
     try {
