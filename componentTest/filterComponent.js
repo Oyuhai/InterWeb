@@ -8,15 +8,19 @@ class filterComponent extends HTMLElement {
         try {
             const response = await fetch('/api/intern-ads');
             if (!response.ok) {
-                throw new Error('Failed to fetch internship ads');
+                throw new Error('intern_ads tatahad aldaa garlaa');
             }
+            console.log("db-s intern_ads amjiltta tatsan")
             return await response.json();
         } catch (error) {
-            console.error("Error fetching data:", error);
+            console.error("intern_ads tatahad aldaa garlaa ", error);
             return [];
         }
     }
 
+    async connectedCallback() {
+        await this.applyFilters(); // DOM uusenguut duudagdana
+    }
     getFilters() {
         const params = new URLSearchParams(window.location.search);
         return Array.from(params.keys()).map(function (key) {
@@ -27,6 +31,7 @@ class filterComponent extends HTMLElement {
     async filterData() {
         const mydata = await this.fetchData(); //json duudah funktsiig duudna. deer todorhoilson
         const filters = this.getFilters(); //URL deerh haih utguudiig avah funkts mon deer todorhoilson
+        if (filters.length === 0) return mydata;//filter hooson baih uyd buh zariig butsaana
         return mydata.filter(ad => filters.every(({ key, value }) => ad[key] == value));//jish: profession:back_end developer baival filteriin { key, value } in objectiig zadlan, key-d profession, value-d back_end onoogdono. mydata-n ad-n key-tei haritsuulan adilhan objectuudiin husnegtiig butsaana
     }
 
@@ -105,29 +110,38 @@ class filterComponent extends HTMLElement {
                     cursor: pointer;
                     font-size: 1rem;
                 }
+                    label{
+                    display:none;}
             </style>
-            <form action="#" method="GET" class="flex-row filter">
+           <form action="#" method="GET" class="flex-row filter">
+                <label for="profession">Мэргэжил:</label>
                 <select name="profession" id="profession">
                     <option value="">Мэргэжил</option>
                     <option value="backend_developer">Backend хөгжүүлэгч</option>
                     <option value="system_analyst">Систем шинжээч</option>
-                    <option value="frontend_developer">Frontend Хөгжүүлэгч</option>
+                    <option value="frontend_developer">Frontend хөгжүүлэгч</option>
                     <option value="system_admin">Системийн админ</option>
                     <option value="tuslah_engineer">Туслах инженер</option>
                 </select>
+
+                <label for="location">Байршил:</label>
                 <select name="location" id="location">
                     <option value="">Байршил</option>
                     <option value="hud">Хан Уул</option>
                     <option value="chd">Чингэлтэй</option>
                 </select>
+
+                <label for="duration">Хугацаа:</label>
                 <select class="mobile-none" name="duration" id="duration">
                     <option value="">Хугацаа</option>
                     <option value="1_3">1-3 сар</option>
                     <option value="4_6">4-6 сар</option>
                 </select>
+
                 <button class="mobile-none" type="submit">Зар шүүх</button>
                 <button class="desktop-none" type="submit">&#x1F50D;</button>
             </form>
+
         `;
 
         this.shadowRoot.querySelector('form').addEventListener('submit', (submitted) => this.formSubmitted(submitted));

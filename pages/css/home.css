@@ -361,4 +361,8 @@ div.footer-logo>p:nth-child(3) {
     .ad-container h4 {
         font-size: 1.5rem;
     }
+
+    .ad-container>div button {
+        padding: 0rem, 0.2rem;
+    }
 }

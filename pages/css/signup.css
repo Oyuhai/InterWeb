@@ -17,7 +17,8 @@ form {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-form input[type="text"], /*input oruulah hesgiin style*/
+form input[type="text"],
+/*input oruulah hesgiin style*/
 form input[type="email"],
 form input[type="tel"],
 form input[type="password"] {
@@ -32,12 +33,15 @@ form input[type="password"] {
 
 .name-fields {
     display: flex;
-    gap: 10px; /* Талбаруудын хооронд зай */
+    gap: 10px;
+    /* Талбаруудын хооронд зай */
 }
 
 .name-fields input[type="text"] {
-    width: 50%; /* Нэг талбарыг 50%-ийн өргөнтэй болгоно */
-    margin: 0; /* Дотор margin арилгах */
+    width: 50%;
+    /* Нэг талбарыг 50%-ийн өргөнтэй болгоно */
+    margin: 0;
+    /* Дотор margin арилгах */
 }
 
 
@@ -97,7 +101,7 @@ address .register-link {
 }
 
 address .forgot-password-link {
-    color: #777; 
+    color: #777;
     text-decoration: none;
 }
 
@@ -108,190 +112,33 @@ address a:hover {
 /*Footer heseg*/
 
 footer {
-        display: flex;
-        justify-content: space-between;
-        margin: auto;
-        width: 90%;
-        flex-wrap: wrap;
-        gap: 20px;
-        padding: 20px; /* Хүрээний дотор талын зай */
-        border: 1px solid #3229dd; 
-        border-radius: 8px; /* hureenii bulang buurunhii bolgoh */
-   
+    display: flex;
+    justify-content: space-between;
+    margin: auto;
+    width: 90%;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 20px;
+    /* Хүрээний дотор талын зай */
+    border: 1px solid #3229dd;
+    border-radius: 8px;
+    /* hureenii bulang buurunhii bolgoh */
+
 }
 
 .footer-logo {
-    flex:1;
+    flex: 1;
     color: #000;
     font-size: 12px;
 }
 
-.logo{
+.logo {
     background-color: #3229DD;
     color: #ffffff;
     font-weight: 700;
     font-size: 50px;
     line-height: 42px;
     width: 185px;
-}
-
-footer nav {
-    flex:1;
-    display: block;
-    justify-content: space-between;
-    
-}
-
-footer nav a {
-    display: block;
-    color:#000;
-
-}
-
-footer p{
-    align-content: end;
-    width: 100%;
-}
-
-/* Profile style */
-
-.info-container {
-    width: 70%;
-    height: auto;
-    margin: 20px auto;
-    padding: 20px;
-    display: flex;
-    gap: 30px; /* zurag info hoorondiin zai */
-    border-radius: 8px; 
-    justify-content: center; /* stud infog golluulj bairluulah*/
-    align-items: center;     /*  */ 
-}
-
-.link-img {
-    margin: auto;
-    display: flex;
-    margin: 10px;
-    flex-direction: column;
-    align-items: center;
-}
-
-.link-img img {
-    width: auto;
-    height: 150px;
-    margin-bottom: 30px; 
-}
-
-.hr-img{
-    flex-direction:row;
-    align-items: center;
-}
-
-.info-container ul {
-    list-style-type: none; 
-    line-height: 30px;
-}
-
-.CV-link {
-    font-size: 14px;
-    color: #3229DD;
-}
-
-.huseltuud h4{
-    margin: 50px ;
-}
-
-.huseltuud .request-section {
-    width: 80%;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr); /* 3 columns */
-    gap: 30px;
-    margin: 40px auto;
-    justify-content: center;
-}
-
-.huseltuud article{
-    border-left: solid;
-    padding-left: 15px;
-    
-}
-
-.huseltuud article p {
-    font-size: 14px;
-}
-
-/* Job posting section */
-.hr-zaruud {
-    margin: 20px auto;
-    max-width: 800px;
-}
-
-.hr-zaruud h4 {
-    font-size: 24px;
-    font-weight: bold;
-    margin-bottom: 15px;
-}
-
-.irsen-huseltuud{
-    display: inline;
-}
-
-.hr-zaruud article h5 {
-    font-size: 20px;
-    font-weight: bold;
-    margin-bottom: 10px;
-}
-
-.hr-zaruud ul {
-    list-style: none;
-    margin-bottom: 20px;
-}
-
-.hr-zaruud ul li {
-    background-color: #e9f3ff;
-    padding: 15px;
-    border-radius: 8px;
-    margin-bottom: 10px;
-    display:contents;
-}
-
-.hr-zaruud ul li h6 {
-    font-size: 16px;
-    margin: 10px 0;
-}
-
-.hr-zaruud ul li p {
-    font-size: 16px;
-}
-
-
-
-/* Mobile navigation bar */
-.mobile-nav {
-    display: none; /* Default: hidden */
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background-color: #3229DD;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    padding: 10px 0;
-    border-top: 2px solid #3d3d84;
-    z-index: 1000;
-}
-
-.mobile-nav a {
-    color: white;
-    font-size: 14px;
-    text-decoration: none;
-    text-align: center;
-}
-
-.mobile-nav a:hover {
-    background-color: #575ad0;
-    border-radius: 4px;
-    padding: 5px 10px;
 }
 
 /* Hidden sections on mobile for requests */
@@ -335,7 +182,8 @@ footer p{
     }
 
     .request-section {
-        display: none; /* Hide desktop layout for requests */
+        display: none;
+        /* Hide desktop layout for requests */
     }
 
     .request-section.mobile-hidden {
