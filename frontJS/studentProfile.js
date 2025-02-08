@@ -63,16 +63,3 @@ function handleLogout() {
 }
 
 document.getElementById("logout-button").addEventListener("click", handleLogout);
-
-
-document.addEventListener("DOMContentLoaded", function () {
-    const studProfileImage = document.getElementById("studProfileImage");
-
-    if (studProfileImage) {
-        studProfileImage.addEventListener("click", function () {
-            window.location.href = "/studprofile";
-        });
-    } else {
-        console.error("Element with ID 'studProfileImage' not found!");
-    }
-});

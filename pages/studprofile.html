@@ -28,9 +28,12 @@
                 </div>
             </nav>
             <script>
-                document.getElementById('studProfileImage').addEventListener('click', () => {
-                    window.location.href = '/studprofile'; // Профайл руу чиглүүлэх
-                });
+                const profileImage = document.getElementById('studProfileImage');
+                if (profileImage) {
+                    profileImage.addEventListener('click', () => {
+                        window.location.href = '/studprofile';
+                    });
+                }
             </script>
             <nav class="desktop-none mobile-nav">
                 <a class="mobile-nav-icon" href="/home">
@@ -55,13 +58,10 @@
                     <a href="#" class="CV-link">CV upload</a>
                 </div>
                 <ul>
-                    <li> Алтжин</li>
-                    <li> 20</li>
-                    <li> Монгол Улсын Их Сургууль</li>
-                    <li> Хуульч </li>
-                    <li> БЗД, Эрдэм хотхон</li>
-                    <li> p.altjin09@gmail.com</li>
-                    <li> 80570015</li>
+                    <li><strong>Нэр:</strong> <span id="profile-name"></span></li>
+                    <li><strong>Ажлын байр:</strong> <span id="profile-job-title"></span></li>
+                    <li><strong>Хаяг:</strong> <span id="profile-address"></span></li>
+                    <li><strong>И-мэйл:</strong> <span id="profile-email"></span></li>
                 </ul>
             </section>
 
@@ -156,7 +156,7 @@
             </div>
             <p class="footer-bottom">© 2024 Internships. All rights reserved.</p>
         </footer>
-        <script>
+        <!-- <script>
             // Гарч явах үйлдэл
             document.getElementById("logout-button").addEventListener("click", function () {
                 // localStorage-оос оюутны мэдээллийг устгах
@@ -183,7 +183,7 @@
                 }
             });
 
-        </script>
+        </script> -->
     </body>
 
 </html>

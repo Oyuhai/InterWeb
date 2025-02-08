@@ -23,12 +23,13 @@ document.querySelector("#login-form").addEventListener("submit", async (e) => {
         if (response.ok) {
             // On successful login, redirect the user to the profile page
             alert("Login successful!");
-            window.location.href = "/profile.html"; // Redirect to profile page (you can change this URL)
+            localStorage.setItem('userId', user.id);
+            window.location.href = "/studprofile"; // Redirect to profile page (you can change this URL)
         } else {
             alert(data.error); // Display the error message
         }
     } catch (error) {
-        console.error("Error:", error);
+        console.log("Error:", error);
         alert("An error occurred. Please try again.");
     }
 });
