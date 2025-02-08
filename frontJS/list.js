@@ -102,13 +102,13 @@ async function Render() {
             const day = String(dateSec.getDate()).padStart(2, '0');
             const formattedDate = `${year}-${month}-${day}`;
             //formatted ognoog student profile dr huselt ilgeesen zariin door haruulna
-            const adKey = `request-${profession}-${company}-${studentId}`;
+            const zarKey = `request-${profession}-${company}-${studentId}`;
             //localstoraged id uusgen ilgeesen zariig hadgalah in neg huselted dahin huselt ilgeehees hamgaalna
-            if (localStorage.getItem(adKey)) {
+            if (localStorage.getItem(zarKey)) {
                 alert('Та энэ зар дээр аль хэдийн хүсэлт илгээсэн байна!');
                 return;
             }
-            const adData = {
+            const zarData = {
                 profession,
                 company,
                 formattedDate,
@@ -116,7 +116,7 @@ async function Render() {
                 status: 'pending',
             };
             //daraa in student profile dr gargah datagaa hadgalj baina
-            localStorage.setItem(adKey, JSON.stringify(adData));
+            localStorage.setItem(zarKey, JSON.stringify(zarData));
 
             alert('Хүсэлт илгээгдлээ!');
         });

@@ -107,13 +107,13 @@ function attachRequestButtonListeners() {
             const day = String(dateSec.getDate()).padStart(2, '0');
             const formattedDate = `${year}-${month}-${day}`;
 
-            const adKey = `request-${profession}-${company}-${studentId}`;
-            if (localStorage.getItem(adKey)) {
+            const zarKey = `request-${profession}-${company}-${studentId}`;
+            if (localStorage.getItem(zarKey)) {
                 alert('Та энэ зар дээр аль хэдийн хүсэлт илгээсэн байна!');
                 return;
             }
 
-            const adData = {
+            const zarData = {
                 profession,
                 company,
                 formattedDate,
@@ -121,7 +121,7 @@ function attachRequestButtonListeners() {
                 status: 'pending',
             };
 
-            localStorage.setItem(adKey, JSON.stringify(adData));
+            localStorage.setItem(zarKey, JSON.stringify(zarData));
 
             alert('Хүсэлт илгээгдлээ!');
         });
