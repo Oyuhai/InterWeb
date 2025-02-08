@@ -195,10 +195,10 @@ div.footer-logo>p:nth-child(3) {
     margin: 20px auto;
     padding: 20px;
     display: flex;
-    gap: 30px; /* zurag info hoorondiin zai */
+    gap: 20px; /* zurag info hoorondiin zai */
     border-radius: 8px; 
-    justify-content: center; /* stud infog golluulj bairluulah*/
-    align-items: center;     /*  */ 
+    justify-content: center; 
+    align-items: center;     
 }
 
 .info-container .left{
@@ -210,23 +210,34 @@ div.footer-logo>p:nth-child(3) {
 }
 
 .link-img {
-    margin: auto;
+    margin: 100px ;
     display: flex;
     margin: 10px;
     flex-direction: column;
     align-items: center;
 }
 
-.link-img img {
-    width: auto;
-    height: 150px;
-    margin-bottom: 30px; 
+a.profile-image > img {
+    width: 2rem; 
+    height: 2rem; 
+    border-radius: 50%; 
 }
 
 .hr-img{
-    flex-direction:row;
+    display: flex;
+    flex-direction: column;
+}
+
+.hr-img img {
+    width: 100px; 
+    height: 100px; 
     align-items: center;
 }
+
+.hr-img a{
+    color: #3229dd;
+}
+
 
 .info-container ul {
     list-style-type: none; 
